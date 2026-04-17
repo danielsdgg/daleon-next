@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.daleondynamics.com/sitemap.xml
+
+# Block admin or sensitive paths if any
+Disallow: /admin/
+Disallow: /api/
