@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
                 <MapPin className="w-6 h-6 text-blue-400 mt-1" />
                 <div>
                   <p className="text-white font-medium">Office</p>
-                  <p className="text-gray-400">Kikuyu Town, Kenya</p>
+                  <p className="text-gray-400">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
