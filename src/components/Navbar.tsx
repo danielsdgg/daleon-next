@@ -22,46 +22,47 @@ const Navbar = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/60">
+    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
 
           {/* Logo + Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
               src="/assets/logo.png"
               alt="Daleon Dynamics"
-              width={36}
-              height={36}
+              width={40}
+              height={40}
               className="object-contain transition-transform duration-300 group-hover:scale-105"
               priority
             />
-
-            <span className="text-lg font-semibold tracking-tight text-gray-900">
-              Daleon
-              <span className="text-blue-600 ml-1">Dynamics</span>
-            </span>
+            <div>
+              <span className="text-xl font-semibold tracking-tight text-gray-900">
+                Daleon
+                <span className="text-blue-600 ml-1">Dynamics</span>
+              </span>
+              <p className="text-[10px] text-gray-500 -mt-1 tracking-widest">NAIROBI • KENYA</p>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-9">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 className={cn(
-                  "relative text-sm font-medium transition-colors",
+                  "relative text-sm font-medium transition-all duration-200",
                   isActive(link.path)
                     ? "text-gray-900"
-                    : "text-gray-500 hover:text-gray-900"
+                    : "text-gray-600 hover:text-gray-900"
                 )}
               >
                 {link.name}
-
-                {/* Underline animation */}
+                {/* Active underline */}
                 <span
                   className={cn(
-                    "absolute left-0 -bottom-1 h-[2px] bg-blue-600 transition-all duration-300",
+                    "absolute left-0 -bottom-1.5 h-[2.5px] bg-blue-600 rounded-full transition-all duration-300",
                     isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"
                   )}
                 />
@@ -69,23 +70,24 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA */}
+          {/* Desktop CTA - Conversion Focused */}
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300"
+              className="group flex items-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-2xl text-sm font-semibold transition-all active:scale-[0.97] shadow-lg shadow-blue-200"
             >
-              Get in touch
-              <ArrowRight className="w-4 h-4" />
+              Get Free Quote
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-700"
+            className="md:hidden p-3 text-gray-700 hover:text-gray-900 transition-colors"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
@@ -93,18 +95,18 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300",
-          isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          "md:hidden overflow-hidden bg-white border-t border-gray-100 transition-all duration-300",
+          isOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="px-6 pb-6 pt-4 bg-white border-t border-gray-100 flex flex-col gap-4">
+        <div className="px-6 py-8 flex flex-col gap-6 text-lg">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               href={link.path}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "text-base font-medium transition-colors",
+                "font-medium transition-colors py-1",
                 isActive(link.path)
                   ? "text-blue-600"
                   : "text-gray-700 hover:text-blue-600"
@@ -114,14 +116,24 @@ const Navbar = () => {
             </Link>
           ))}
 
+          {/* Strong Mobile CTA */}
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="mt-4 flex items-center justify-center gap-2 bg-gray-900 text-white py-3 rounded-xl text-sm font-medium"
+            className="mt-4 flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-semibold text-base active:scale-[0.98] transition-all"
           >
-            Get in touch
-            <ArrowRight className="w-4 h-4" />
+            Get Your Free Quote
+            <ArrowRight className="w-5 h-5" />
           </Link>
+
+          <a
+            href="https://wa.me/254707319080"
+            target="_blank"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-3 border border-gray-300 hover:border-gray-400 text-gray-700 py-4 rounded-2xl font-medium transition-all"
+          >
+            💬 Chat on WhatsApp
+          </a>
         </div>
       </div>
     </nav>

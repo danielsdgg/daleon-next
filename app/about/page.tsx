@@ -23,7 +23,7 @@ const About = () => {
             </h1>
 
             <p className="text-2xl text-gray-300 leading-relaxed opacity-0 translate-y-8 animate-[fadeInUp_0.8s_0.2s_forwards]">
-              We are Daleon Dynamics — a focused team of engineers and strategists who turn complex challenges 
+              We are Daleon Dynamics  — a focused team of engineers and strategists who turn complex challenges 
               into elegant, high-performing digital solutions.
             </p>
           </div>
