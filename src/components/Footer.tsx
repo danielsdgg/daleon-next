@@ -93,8 +93,8 @@ const Footer: React.FC = () => {
                 <Mail className="w-6 h-6 text-blue-400 mt-1" />
                 <div>
                   <p className="text-white font-medium">Email</p>
-                  <a href="mailto:info@daleondynamics.com" className="text-gray-400 hover:text-white transition-colors">
-                    info@daleondynamics.com
+                  <a href="mailto:daleondynamics@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                    daleondynamics@gmail.com
                   </a>
                 </div>
               </div>

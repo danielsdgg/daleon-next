@@ -286,7 +286,7 @@ const Home = () => {
           </div>
 
           <p className="mt-12 text-gray-400 text-sm">
-            Nairobi, Kenya • info@daleondynamics.com
+            Nairobi, Kenya • daleondynamics@gmail.com
           </p>
         </div>
       </section>
