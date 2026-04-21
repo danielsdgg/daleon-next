@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
               <li><Link href="/services" className="hover:text-white transition-colors">Custom Software</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Websites & Web Apps</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Mobile Applications</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Access Control Systems</Link></li>
+              {/* <li><Link href="/services" className="hover:text-white transition-colors">Access Control Systems</Link></li> */}
             </ul>
           </div>
 
