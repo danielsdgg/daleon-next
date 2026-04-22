@@ -53,7 +53,7 @@ const Home = () => {
 
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
             We build modern, fast-loading websites, custom web applications, and intelligent business systems that attract more customers, 
-            automate operations, and give Kenyan businesses a real competitive edge.
+            automate operations, and give businesses a real competitive edge.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
@@ -276,7 +276,7 @@ const Home = () => {
             </Link>
 
             <a
-              href="https://wa.me/254707319080"
+              href="https://wa.me/254142021359"
               target="_blank"
               className="flex items-center justify-center gap-3 border border-white/40 hover:border-white px-12 py-6 rounded-3xl font-semibold text-xl transition-all"
             >

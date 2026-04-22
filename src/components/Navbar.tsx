@@ -127,7 +127,7 @@ const Navbar = () => {
           </Link>
 
           <a
-            href="https://wa.me/254707319080"
+            href="https://wa.me/254142021359"
             target="_blank"
             onClick={() => setIsOpen(false)}
             className="flex items-center justify-center gap-3 border border-gray-300 hover:border-gray-400 text-gray-700 py-4 rounded-2xl font-medium transition-all"
