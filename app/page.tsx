@@ -12,7 +12,7 @@ const Home = () => {
       category: "Insurance Platform",
       year: "2025",
       description: "Modern insurance platform with policy management, claims processing, and client portal that has helped streamline operations and improve customer experience for one of Nairobi's fastest-growing insurers.",
-      liveUrl: "https://karendirectinsurance.vercel.app",
+      liveUrl: "https://insurancekenya.vercel.app",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
       result: "Meant to increase policy renewals by 42%"
     },

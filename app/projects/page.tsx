@@ -9,10 +9,10 @@ const Projects = () => {
   const projects = [
     {
       title: "An Insurance Platform",
-      category: "Insurance Website",
+      category: "Insurance Kenya Portal",
       year: "2025",
       description: "A modern, secure, and user-friendly insurance platform with seamless policy management, claims processing, and customer portal.",
-      liveUrl: "https://karendirectinsurance.vercel.app",
+      liveUrl: "https://insurancekenya.vercel.app",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
     },
     {
