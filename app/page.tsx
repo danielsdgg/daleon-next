@@ -8,13 +8,13 @@ import { ArrowRight, Sparkles, Zap, Users, Award, ShieldCheck, Globe, Code2, Ext
 const Home = () => {
   const featuredProjects = [
     {
-      title: "Karen Direct Insurance",
+      title: "Insurance Kenya Portal",
       category: "Insurance Platform",
       year: "2025",
       description: "Modern insurance platform with policy management, claims processing, and client portal that has helped streamline operations and improve customer experience for one of Nairobi's fastest-growing insurers.",
       liveUrl: "https://karendirectinsurance.vercel.app",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-      result: "Increased policy renewals by 42%"
+      result: "Meant to increase policy renewals by 42%"
     },
     {
       title: "Morgan Learning Academy",
@@ -77,7 +77,7 @@ const Home = () => {
             <div>✓ Fast &amp; SEO-Optimized</div>
             <div>✓ Mobile-First Design</div>
             <div>✓ Scalable Solutions</div>
-            <div>✓ Local Support in Kenya</div>
+            <div>✓ 1-2 Months Support</div>
           </div>
         </div>
       </section>
@@ -95,7 +95,7 @@ const Home = () => {
               <p className="text-zinc-600 text-lg">
                 Beautiful, fast, and professional websites designed to build trust, attract customers, and turn visitors into loyal clients.
               </p>
-              <Link href="/services" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
+              <Link href="/services/high-converting-website" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -109,7 +109,7 @@ const Home = () => {
               <p className="text-zinc-600 text-lg">
                 Powerful internal tools and web applications that automate processes, improve team efficiency, and scale with your business.
               </p>
-              <Link href="/services" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
+              <Link href="/services/custom-web-apps" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -123,7 +123,7 @@ const Home = () => {
               <p className="text-zinc-600 text-lg">
                 Intelligent biometric and centralized security solutions to protect your premises and streamline staff/visitor management.
               </p>
-              <Link href="/services" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
+              <Link href="/services/access-control-systems" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

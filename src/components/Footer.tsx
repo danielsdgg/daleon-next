@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <div className="mt-12">
               <p className="uppercase text-xs tracking-widest text-gray-500 mb-5">Follow us on</p>
               <div className="flex items-center gap-6">
-                <a href="https://facebook.com/daleon-dynamics" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
+                <a href="https://www.facebook.com/daleondynamics" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
                   <FacebookIcon />
                 </a>
                 <a href="https://x.com/daleondynamics" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-[15.5px]">
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/projects" className="hover:text-white transition-colors">Our Projects</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+              <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link href="/blogs" className="hover:text-white transition-colors">Blog</Link></li>
             </ul>
           </div>
@@ -77,10 +77,10 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <h3 className="text-white font-semibold text-lg mb-6">Services</h3>
             <ul className="space-y-4 text-[15.5px]">
-              <li><Link href="/services" className="hover:text-white transition-colors">Custom Software</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Websites & Web Apps</Link></li>
+              <li><Link href="/services/custom-web-apps" className="hover:text-white transition-colors">Custom Software</Link></li>
+              <li><Link href="/services/high-converting-website" className="hover:text-white transition-colors">Websites & Web Apps</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Mobile Applications</Link></li>
-              {/* <li><Link href="/services" className="hover:text-white transition-colors">Access Control Systems</Link></li> */}
+              <li><Link href="/services/access-control-systems" className="hover:text-white transition-colors">Access Control Systems</Link></li>
             </ul>
           </div>
 
