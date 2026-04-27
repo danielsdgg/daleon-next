@@ -1,49 +1,82 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://daleondynamics.com';
+
+  const currentDate = new Date();
+
   return [
     {
-      url: 'https://www.daleondynamics.com',
-      lastModified: new Date(),
+      url: `${baseUrl}/`,
+      lastModified: currentDate,
       changeFrequency: 'daily',
-      priority: 1,
+      priority: 1.0,
     },
     {
-      url: 'https://www.daleondynamics.com/about',
-      lastModified: new Date(),
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+
+    // SERVICES (MAIN)
     {
-      url: 'https://www.daleondynamics.com/services',
-      lastModified: new Date(),
+      url: `${baseUrl}/services`,
+      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+
+    // STRATEGIC SEO SERVICE PAGES (KEEP THESE 🔥)
     {
-      url: 'https://www.daleondynamics.com/projects',
-      lastModified: new Date(),
+      url: `${baseUrl}/services/high-converting-website`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/services/custom-web-apps`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+
+    // CORE PAGES
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://www.daleondynamics.com/contact',
-      lastModified: new Date(),
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+
+    // BLOG (IMPORTANT FOR SEO)
     {
-      url: 'https://www.daleondynamics.com/blogs',
-      lastModified: new Date(),
+      url: `${baseUrl}/blogs`,
+      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-    // I'll add blog posts here later
+
+    // LEGAL
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+
+    // 👉 privacy page -  later when i create it
     // {
-    //   url: 'https://www.daleondynamics.com/blog/custom-software-2025',
-    //   lastModified: new Date(),
-    //   changeFrequency: 'monthly',
-    //   priority: 0.6,
+    //   url: `${baseUrl}/privacy`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'yearly',
+    //   priority: 0.5,
     // },
   ];
 }
