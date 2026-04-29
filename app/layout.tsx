@@ -4,72 +4,81 @@ import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.daleondynamics.com'),
-  
+  metadataBase: new URL('https://daleondynamics.com'),
+
   title: {
-    default: 'Daleon Dynamics | Custom Software & Web Development',
-    template: '%s | Daleon Dynamics'
+    default: 'Daleon Dynamics | Web Design & Custom Software Development Kenya',
+    template: '%s | Daleon Dynamics',
   },
-  
-  description: 'Daleon Dynamics creates powerful custom software, high-performance websites, and web applications for small businesses, growing companies, and large institutions across Kenya and beyond.',
-  
+
+  description: 'Daleon Dynamics is a leading web development and custom software company in Kenya. We build high-converting websites, powerful custom web applications, business automation systems, and scalable software solutions for businesses across Kenya.',
+
   keywords: [
-    'custom software development',
-    'web development Kenya',
-    'web applications',
-    'website design Kenya',
-    'software company Kenya',
-    'mobile app development',
-    'cloud solutions',
-    'business software',
-    'Daleon Dynamics',
-    'Kikuyu software company',
-    'access control systems Kenya',
-    'digital transformation Kenya'
+    'web development kenya',
+    'website design kenya',
+    'custom software development kenya',
+    'web application development nairobi',
+    'high converting websites kenya',
+    'custom web apps kenya',
+    'business process automation kenya',
+    'software company kenya',
+    'nairobi web design',
+    'm-pesa integration kenya',
+    'custom crm development kenya',
+    'digital transformation kenya',
+    'affordable website development kenya',
+    'daleon dynamics',
+    'kikuyu software company',
   ],
-  
+
   authors: [{ name: 'Daleon Dynamics' }],
   creator: 'Daleon Dynamics',
 
-  // === FAVICON & ICONS SETUP ===
+  // Favicon & Icons
   icons: {
-    icon: [
-      { url: '/icon.png', type: 'image/png' },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/icon.png',
+    apple: '/icon.png',
+    shortcut: '/icon.png',
   },
 
   openGraph: {
-    title: 'Daleon Dynamics | Custom Software & Web Development',
-    description: 'We build scalable custom software, modern websites, and powerful web applications that help businesses grow.',
+    title: 'Daleon Dynamics | Web Design & Custom Software Development in Kenya',
+    description: 'Professional websites, high-converting web designs, and custom business applications built for Kenyan companies.',
+    url: 'https://daleondynamics.com',
+    siteName: 'Daleon Dynamics',
     images: [
       {
-        url: '/assets/logo.png',     
+        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', 
         width: 1200,
         height: 630,
-        alt: 'Daleon Dynamics Logo',
+        alt: 'Daleon Dynamics - Web Development & Custom Software Kenya',
       },
     ],
-    siteName: 'Daleon Dynamics',
+    locale: 'en_KE',
     type: 'website',
-    locale: 'en_US',
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Daleon Dynamics | Custom Software & Web Development',
-    description: 'Professional custom software, websites & web apps for businesses in Kenya.',
-    images: ['/assets/logo.png'],
-    creator: '@daleondynamics',       
+    title: 'Daleon Dynamics | Custom Software & Web Development Kenya',
+    description: 'Building high-performance websites and custom web applications for businesses in Kenya.',
+    images: ['https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75'],
+    creator: '@daleondynamics',
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 
   alternates: {
-    canonical: 'https://www.daleondynamics.com',
+    canonical: 'https://daleondynamics.com',
   },
 };
 
