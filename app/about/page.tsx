@@ -3,6 +3,46 @@
 import React from 'react';
 import Link from 'next/link';
 import { Users, Target, Award, Clock, ArrowRight, Code2, Globe, ShieldCheck } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About us - Websites, Webapps & Access Control Systems in Kenya',
+  description: 'High-converting websites, powerful custom software, and intelligent access control systems built for Kenyan businesses.',
+  
+  keywords: [
+    'web development services kenya',
+    'custom software development nairobi',
+    'website design kenya',
+    'high converting websites kenya',
+    'custom web applications kenya',
+    'access control systems kenya',
+    'biometric access control nairobi',
+    'business automation software kenya',
+    'software development company kenya',
+    'm-pesa integration kenya',
+    'daleon dynamics services'
+  ],
+
+  alternates: {
+    canonical: 'https://daleondynamics.com/about',
+  },
+
+  openGraph: {
+    title: 'About us - Web Design, Custom Software & Access Control Systems in Kenya',
+    description: 'High-converting websites, powerful custom software, and intelligent access control systems built for Kenyan businesses.',
+    url: 'https://daleondynamics.com/about',
+    images: [
+      {
+        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', // Use the same OG image you’ll create for the site
+        width: 1200,
+        height: 630,
+        alt: 'Daleon Dynamics About Us - Web Development Kenya',
+      },
+    ],
+    locale: 'en_KE',
+    type: 'website',
+  },
+};
 
 const About = () => {
   return (

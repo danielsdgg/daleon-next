@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // STRATEGIC SEO SERVICE PAGES (KEEP THESE 🔥)
+    // STRATEGIC SEO SERVICE PAGES
     {
       url: `${baseUrl}/services/high-converting-website`,
       lastModified: currentDate,

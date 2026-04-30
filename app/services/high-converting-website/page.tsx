@@ -14,7 +14,7 @@ import {
 import type { Metadata } from "next";
 
 // =============================================
-// SEO METADATA (Server-side only)
+// SEO METADATA
 // =============================================
 export const metadata: Metadata = {
   title: "High-Converting Websites in Kenya | Professional Web Design Nairobi",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Daleon Dynamics",
     images: [
       {
-        url: "https://daleondynamics.com/og-image-high-converting-websites.jpg", // ← Update this with your real image
+        url: "https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75",  
         width: 1200,
         height: 630,
         alt: "High-Converting Websites in Kenya - Daleon Dynamics",
