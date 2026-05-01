@@ -1,9 +1,47 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Projects - Real Results, Real Impact | Daleon Dynamics',
+  description: 'Explore our portfolio of high-impact projects, from insurance platforms to learning management systems and secure access solutions. See how we deliver real results for Kenyan businesses.',
+  
+  keywords: [
+    'web development projects kenya',
+    'custom software development nairobi',
+    'website design kenya',
+    'high converting websites kenya',
+    'custom web applications kenya',
+    'access control systems kenya',
+    'biometric access control nairobi',
+    'business automation software kenya',
+    'software development company kenya',
+    'm-pesa integration kenya',
+    'daleon dynamics services'
+  ],
+
+  alternates: {
+    canonical: 'https://daleondynamics.com/projects',
+  },
+
+  openGraph: {
+    title: 'Projects - Real Results, Real Impact | Daleon Dynamics',
+    description: 'Explore our portfolio of high-impact projects, from insurance platforms to learning management systems and secure access solutions. See how we deliver real results for Kenyan businesses.',
+    url: 'https://daleondynamics.com/projects',
+    images: [
+      {
+        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', // Use the same OG image you’ll create for the site
+        width: 1200,
+        height: 630,
+        alt: 'Daleon Dynamics Projects - Web Development Kenya',
+      },
+    ],
+    locale: 'en_KE',
+    type: 'website',
+  },
+};
 
 const Projects = () => {
   const projects = [

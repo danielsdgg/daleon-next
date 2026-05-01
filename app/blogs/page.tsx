@@ -5,7 +5,7 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog | Daleon Dynamics - Custom Software & Web Development Insights',
+  title: 'Blog | Daleon Dynamics - Web insights for Kenyan Businesses',
   description: 'Expert articles on custom software development, web development in Kenya, access control systems, digital transformation, and business growth strategies.',
   keywords: 'custom software Kenya, web development Kenya, access control systems, business software, digital transformation Kenya, website development Nairobi',
   openGraph: {
