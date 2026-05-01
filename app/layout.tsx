@@ -32,8 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://daleondynamics.com/assets/og-image.jpg', // Create a proper 1200x630 OG image (logo + tagline)
-        width: 1200,
+        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', 
         height: 630,
         alt: 'Daleon Dynamics - Web Development Kenya',
       },
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daleon Dynamics | Custom Software & Web Development Kenya',
     description: 'High-performance websites and business systems for Kenyan companies.',
-    images: ['https://daleondynamics.com/assets/og-image.jpg'],
+    images: ['https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75'],
   },
 
   robots: {
