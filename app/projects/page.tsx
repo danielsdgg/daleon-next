@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: 'https://daleondynamics.com/projects',
     images: [
       {
-        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', // Use the same OG image you’ll create for the site
+        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', 
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics Projects - Web Development Kenya',
