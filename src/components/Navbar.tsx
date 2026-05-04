@@ -70,7 +70,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop CTA - Conversion Focused */}
+          {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
               href="/contact"
