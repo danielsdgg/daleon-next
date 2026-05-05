@@ -81,7 +81,7 @@ const Contact = () => {
     <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <section className="relative bg-zinc-950 text-white py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-zinc-950 text-white py-4 lg:py-8 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(at_top_right,#3b82f610_0%,transparent_60%)]" />
         
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
@@ -211,7 +211,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Information Sidebar */}
-        <div className="lg:col-span-2 space-y-12 lg:pt-8">
+        <div id="lets-connect" className="lg:col-span-2 space-y-12 lg:pt-8">
           <div>
             <h3 className="text-3xl font-semibold mb-10 text-gray-900">Let&apos;s Connect</h3>
             

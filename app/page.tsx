@@ -39,29 +39,25 @@ const Home = () => {
   return (
     <main className="min-h-screen bg-zinc-950 text-white overflow-hidden">
       {/* HERO SECTION */}
-      <section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
+<section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-6 py-2.5 rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-5 h-5" />
-            BASED IN NAIROBI • SERVING KENYA & BEYOND
+            WE ARE A WEB DEVELOPMENT &amp;  SOFTWARE COMPANY IN NAIROBI, KENYA
           </div>
 
           <h1 className="text-6xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-none mb-8">
-            High-Performance Websites &amp; Systems<br />
-            That Help Your Business <span className="text-blue-600">Grow Faster</span>
+            High-Performance Websites &amp; Custom Systems <br />
+            That Helps Businesses <span className="text-blue-600">Grow Faster</span>
           </h1>
 
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            We build modern, fast-loading websites, custom web applications, and intelligent business systems that attract more customers, 
-            automate operations, and give businesses a real competitive edge.
+            We build modern, fast-loading websites, custom web applications, and intelligent business systems that attract more customers, automate operations, and give businesses a real competitive edge.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-            <Link
-              href="#contact"
-              className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all active:scale-95 shadow-lg shadow-blue-200"
-            >
-              Get Your Free Quote
+            <Link href="/contact" className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all active:scale-95 shadow-lg shadow-blue-200">
+              Get Your Free Quote Today
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
@@ -69,15 +65,15 @@ const Home = () => {
               href="#projects"
               className="flex items-center justify-center gap-3 border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-10 py-5 rounded-2xl font-semibold text-lg transition-all"
             >
-              See Our Recent Work
+              View Our Projects
             </Link>
           </div>
 
           <div className="mt-16 text-sm text-gray-500 flex flex-wrap justify-center gap-x-8 gap-y-3">
-            <div>✓ Fast &amp; SEO-Optimized</div>
+            <div>✓ Fast &amp; SEO Optimized Websites</div>
             <div>✓ Mobile-First Design</div>
-            <div>✓ Scalable Solutions</div>
-            <div>✓ 1-2 Months Support</div>
+            <div>✓ Custom Software Development</div>
+            <div>✓ Access Control Systems Kenya</div>
           </div>
         </div>
       </section>

@@ -100,7 +100,7 @@ const Services = () => {
   const pricingTiers = [
     {
       name: "Starter",
-      price: "From KES 120,000",
+      price: "From KES 80,000",
       desc: "Perfect for small businesses and simple professional websites",
       features: [
         "Modern responsive website (up to 8 pages)",
@@ -113,7 +113,7 @@ const Services = () => {
     },
     {
       name: "Growth",
-      price: "From KES 250,000",
+      price: "From KES 200,000",
       desc: "For growing companies needing custom functionality and better results",
       features: [
         "Advanced website or light web application",

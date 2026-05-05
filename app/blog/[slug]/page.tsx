@@ -35,7 +35,7 @@ const blogPosts = [
       <h2>Why Choose Daleon Dynamics?</h2>
       <p>As a Nairobi-based software company, we combine international standards with deep understanding of the Kenyan market.</p>
 
-      <h2>Take the Next Step in 2025</h2>
+      <h2>Take the Next Step in 2026</h2>
       <p>Invest in <strong>custom software development Kenya</strong> that drives real ROI. Contact Daleon Dynamics for a free consultation.</p>
     `
   },

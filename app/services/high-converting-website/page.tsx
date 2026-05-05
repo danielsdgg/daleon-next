@@ -81,7 +81,7 @@ const structuredData = {
   offers: {
     "@type": "Offer",
     priceCurrency: "KES",
-    price: "120000",
+    price: "80000",
     description: "Starting price for business websites",
   },
 };
@@ -118,7 +118,7 @@ export default function HighConvertingWebsites() {
   const pricingTiers = [
     {
       name: "Starter Business Website",
-      price: "From KES 120,000",
+      price: "From KES 80,000",
       desc: "Ideal for startups and small businesses looking to establish a strong online presence",
       features: [
         "Professional website (up to 8 pages)",
@@ -131,7 +131,7 @@ export default function HighConvertingWebsites() {
     },
     {
       name: "Growth-Focused Website",
-      price: "From KES 250,000",
+      price: "From KES 200,000",
       desc: "Built to generate leads, increase conversions, and grow your business",
       features: [
         "Everything in Starter",

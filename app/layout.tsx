@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import "./globals.css";
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://daleondynamics.com'),
-
+  
   title: {
     default: 'Daleon Dynamics | Web Design & Custom Software Development Kenya',
     template: '%s | Daleon Dynamics',
@@ -17,13 +17,22 @@ export const metadata: Metadata = {
     'web development kenya', 'website design nairobi', 'custom software development kenya',
     'high converting websites kenya', 'custom web apps nairobi', 'business automation kenya',
     'software company kenya', 'm-pesa integration', 'access control systems kenya',
-    'daleon dynamics', 'web developers kikuyu', 'nairobi web design company'
+    'daleon dynamics', 'web developers nairobi', 'web design company nairobi',
+    'custom crm kenya', 'web application development kenya', 'biometric access control nairobi'
   ],
 
   authors: [{ name: 'Daleon Dynamics' }],
   creator: 'Daleon Dynamics',
+  publisher: 'Daleon Dynamics',
 
-  icons: { icon: '/icon.png', apple: '/icon.png' },
+  icons: {
+    icon: [
+      { url: '/icon.png', sizes: '32x32' },
+      { url: '/icon.png', sizes: '192x192' },
+    ],
+    apple: '/icon.png',
+    shortcut: '/icon.png',
+  },
 
   openGraph: {
     title: 'Daleon Dynamics - Web Design & Custom Software Company in Kenya',
@@ -32,7 +41,8 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', 
+        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=1200&q=90',
+        width: 1200,
         height: 630,
         alt: 'Daleon Dynamics - Web Development Kenya',
       },
@@ -45,17 +55,29 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daleon Dynamics | Custom Software & Web Development Kenya',
     description: 'High-performance websites and business systems for Kenyan companies.',
-    images: ['https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75'],
+    images: ['https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=1200&q=90'],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 
   alternates: {
     canonical: 'https://daleondynamics.com',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -80,6 +102,7 @@ export default function RootLayout({
           className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95"
           aria-label="Chat with us on WhatsApp"
         >
+          {/* SVG */}
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="28" 
