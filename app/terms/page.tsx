@@ -24,7 +24,7 @@ const Terms: React.FC = () => {
             Terms of Service
           </h1>
           <p className="text-gray-500 mb-16">
-            Last updated: May 05, 2026
+            Last updated: April 03, 2026
           </p>
 
           <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">

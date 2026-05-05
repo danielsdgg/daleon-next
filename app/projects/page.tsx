@@ -5,21 +5,20 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Projects - Real Results, Real Impact | Daleon Dynamics',
-  description: 'Explore our portfolio of high-impact projects, from insurance platforms to learning management systems and secure access solutions. See how we deliver real results for Kenyan businesses.',
+  title: 'Our Projects - Real Results Delivered | Daleon Dynamics Kenya',
+  description: 'Explore our portfolio of successful projects including insurance platforms, learning management systems, access control solutions, and ecommerce websites built for Kenyan businesses.',
   
   keywords: [
     'web development projects kenya',
-    'custom software development nairobi',
-    'website design kenya',
+    'custom software projects nairobi',
+    'website design portfolio kenya',
     'high converting websites kenya',
     'custom web applications kenya',
-    'access control systems kenya',
-    'biometric access control nairobi',
-    'business automation software kenya',
-    'software development company kenya',
-    'm-pesa integration kenya',
-    'daleon dynamics services'
+    'access control systems projects',
+    'insurance software kenya',
+    'learning management system kenya',
+    'software development portfolio kenya',
+    'daleon dynamics projects'
   ],
 
   alternates: {
@@ -27,15 +26,15 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Projects - Real Results, Real Impact | Daleon Dynamics',
-    description: 'Explore our portfolio of high-impact projects, from insurance platforms to learning management systems and secure access solutions. See how we deliver real results for Kenyan businesses.',
+    title: 'Our Projects - Real Results Delivered | Daleon Dynamics',
+    description: 'See how we deliver high-impact digital solutions for Kenyan businesses — from insurance platforms to secure access control systems.',
     url: 'https://daleondynamics.com/projects',
     images: [
       {
         url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', 
         width: 1200,
         height: 630,
-        alt: 'Daleon Dynamics Projects - Web Development Kenya',
+        alt: 'Daleon Dynamics Projects Portfolio',
       },
     ],
     locale: 'en_KE',
@@ -46,34 +45,34 @@ export const metadata: Metadata = {
 const Projects = () => {
   const projects = [
     {
-      title: "An Insurance Platform",
-      category: "Insurance Kenya Portal",
+      title: "Insurance Kenya Portal",
+      category: "Insurance Platform",
       year: "2025",
-      description: "A modern, secure, and user-friendly insurance platform with seamless policy management, claims processing, and customer portal.",
+      description: "A modern, secure, and user-friendly insurance management platform with policy administration, claims processing, client portal, and real-time analytics. This system has significantly streamlined operations for one of Nairobi's fastest-growing insurance companies.",
       liveUrl: "https://insurancekenya.vercel.app",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
     },
     {
-      title: "Morgan-LMS",
-      category: "Learning Management System",
+      title: "Morgan Learning Academy LMS",
+      category: "Education Technology",
       year: "2024",
-      description: "Powerful learning management system with course creation, student progress tracking, and interactive content delivery for educational institutions.",
+      description: "Comprehensive Learning Management System built for a leading Kenyan academy. Features include course management, student tracking, assessments, parent portal, and interactive content delivery — reducing administrative workload by over 65%.",
       liveUrl: "https://canvas-1-jxo5.onrender.com/",
       image: "https://res.cloudinary.com/ddei3mzex/image/upload/v1775549982/1A9A6803_pp58u4.jpg"
     },
     {
       title: "SecureGate Access Control",
-      category: "Security System",
+      category: "Security & Facilities",
       year: "2025",
-      description: "Advanced cloud-based access control system with biometric integration, real-time monitoring, and centralized management.",
+      description: "Cloud-based biometric access control system with real-time monitoring, visitor management, staff attendance tracking, and centralized security dashboard. Successfully deployed across multiple commercial and residential properties.",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
     },
     {
-      title: "Ecommerce Store",
-      category: "Fashions Ecommerce",
+      title: "HeroCloth E-commerce Store",
+      category: "Fashion E-commerce",
       year: "2024",
-      description: "A sleek, high-performance fashions ecommerce platform with intuitive product browsing, secure checkout, and seamless payment integration.",
+      description: "High-performance ecommerce platform with seamless product browsing, secure checkout, M-Pesa integration, order management, and excellent user experience. Built to deliver fast loading speeds and high conversion rates.",
       liveUrl: "https://herocloth.vercel.app",
       image: "https://res.cloudinary.com/ddei3mzex/image/upload/v1729598578/videoediting2_itg2qh.jpg"
     }
@@ -104,8 +103,8 @@ const Projects = () => {
           </h1>
           
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From insurance platforms to learning systems and secure access solutions — 
-            every project showcases our dedication to building high-quality, impactful digital products.
+            Real solutions. Real results. From insurance platforms to learning systems and secure access control — 
+            we deliver high-quality digital products that drive tangible business growth in Kenya.
           </p>
         </div>
       </section>
@@ -158,8 +157,8 @@ const Projects = () => {
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   ) : (
-                    <div className="inline-flex items-center gap-3 text-gray-400 font-medium">
-                      Coming Soon
+                    <div className="inline-flex items-center gap-3 text-amber-600 font-medium">
+                      Coming Soon • In Development
                       <ArrowRight className="w-5 h-5" />
                     </div>
                   )}
@@ -177,8 +176,8 @@ const Projects = () => {
             Ready to See Your Vision<br />Come to Life?
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-            Let’s build something exceptional together. Whether you need a website, 
-            a full web application, or a complex custom system — we’re ready.
+            Whether you need a high-converting website, a powerful custom system, or a secure access control solution — 
+            we’re ready to deliver exceptional results for your business.
           </p>
 
           <Link

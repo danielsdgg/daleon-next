@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "High-Converting Websites in Kenya | Professional Web Design Nairobi",
   description:
-    "Get a professional, fast-loading, SEO-optimized website in Kenya that turns visitors into customers. High-converting web design for businesses in Nairobi and across Kenya. Starting from KES 120,000.",
+    "Get a professional, fast-loading, SEO-optimized, high-converting website in Kenya. Custom-coded websites for businesses in Nairobi and across Kenya that actually turn visitors into customers.",
   keywords: [
     "web design kenya",
     "website development nairobi",
@@ -30,12 +30,14 @@ export const metadata: Metadata = {
     "affordable web design kenya",
     "mobile responsive website kenya",
     "custom website development kenya",
+    "high performance website kenya",
+    "lead generating website nairobi",
   ],
   authors: [{ name: "Daleon Dynamics" }],
   openGraph: {
     title: "High-Converting Websites in Kenya | Daleon Dynamics",
     description:
-      "Professional SEO-optimized websites that drive real business growth in Kenya. Fast, mobile-friendly, and built to convert visitors into customers.",
+      "Professional SEO-optimized, custom-coded websites that drive real business growth in Kenya. Built to convert visitors into customers.",
     url: "https://daleondynamics.com/services/high-converting-websites",
     siteName: "Daleon Dynamics",
     images: [
@@ -60,7 +62,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured Data for better SEO
+// Structured Data
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -77,12 +79,12 @@ const structuredData = {
   serviceType: "Web Design and Development",
   areaServed: ["Kenya", "Nairobi", "East Africa"],
   description:
-    "Professional high-converting, SEO-optimized websites for businesses in Kenya that drive traffic and increase sales.",
+    "Professional high-converting, SEO-optimized, custom-coded websites for businesses in Kenya.",
   offers: {
     "@type": "Offer",
     priceCurrency: "KES",
     price: "80000",
-    description: "Starting price for business websites",
+    description: "Starting price for professional business websites",
   },
 };
 
@@ -96,22 +98,22 @@ export default function HighConvertingWebsites() {
     {
       icon: <Search className="w-8 h-8" />,
       title: "SEO-Optimized Website Structure",
-      desc: "Every website is built with search engine optimization in mind — helping your business rank on Google and attract organic traffic in Kenya and beyond.",
+      desc: "Every website is built with search engine optimization in mind — helping your business rank higher on Google and attract organic traffic across Kenya.",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Conversion-Focused Design",
-      desc: "Strategic layouts, persuasive sections, and clear calls-to-action designed to turn visitors into paying customers.",
+      desc: "Strategic layouts, persuasive sections, clear calls-to-action, and trust signals designed specifically to turn visitors into paying customers.",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile-Responsive Design",
-      desc: "Your website will look and perform perfectly on all devices — especially mobile, where most of your customers are.",
+      title: "Mobile-First Responsive Design",
+      desc: "Your website will look perfect and perform excellently on all devices — especially mobile, where most Kenyan customers browse.",
     },
     {
       icon: <LineChart className="w-8 h-8" />,
       title: "Analytics & Growth Tracking",
-      desc: "We integrate tracking tools so you can monitor traffic, user behavior, and conversions to continuously improve your results.",
+      desc: "Integrated analytics so you can track performance, understand customer behavior, and continuously improve your results.",
     },
   ];
 
@@ -182,8 +184,8 @@ export default function HighConvertingWebsites() {
             </h1>
 
             <p className="text-xl text-gray-300 mb-10">
-              We design and develop SEO-optimized, high-converting websites for businesses in Kenya and beyond — 
-              built to attract traffic, build trust, and drive real revenue growth.
+              We design and develop fast, modern, SEO-optimized, and high-converting websites for businesses — 
+              built from scratch with clean code to help you attract more customers and grow faster.
             </p>
 
             <Link
@@ -202,9 +204,9 @@ export default function HighConvertingWebsites() {
             Why a High-Converting Website Matters for Your Business
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
-            A professional website is more than just an online presence — it’s your most powerful sales tool.
-            A poorly designed site loses customers, while a well-built, SEO-optimized website helps you rank on Google,
-            attract the right audience, and convert visitors into clients consistently.
+            In today’s digital Kenya, your website is often the first interaction potential customers have with your business. 
+            A poorly designed site loses sales every day, while a professionally built, high-converting website works 24/7 to 
+            generate leads, build trust, and grow your revenue.
           </p>
         </section>
 
@@ -227,8 +229,8 @@ export default function HighConvertingWebsites() {
             Built to Rank on Google & Attract Organic Traffic
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            We don’t just design websites — we build search engine friendly platforms that help your business
-            appear on Google when customers search for your services.
+            We don’t just design beautiful websites — we build search engine friendly platforms using clean, modern code 
+            that help your business appear on Google when people search for your products and services in Kenya.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {[

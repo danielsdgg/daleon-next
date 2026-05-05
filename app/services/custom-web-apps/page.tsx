@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Custom Web Applications Development in Kenya | Tailored Business Systems",
   description:
-    "Build powerful custom web applications in Kenya. We create tailored business systems, automation tools, dashboards, and internal platforms that improve efficiency and scalability. Starting from KES 250,000.",
+    "Build powerful custom web applications in Kenya. We create tailored business systems, automation tools, CRMs, dashboards, and internal platforms that improve efficiency and scalability.",
   keywords: [
     "custom web application kenya",
     "web app development nairobi",
@@ -31,12 +31,13 @@ export const metadata: Metadata = {
     "custom dashboard development kenya",
     "bespoke web applications kenya",
     "enterprise web solutions kenya",
+    "business automation software kenya",
   ],
   authors: [{ name: "Daleon Dynamics" }],
   openGraph: {
     title: "Custom Web Applications Development in Kenya | Daleon Dynamics",
     description:
-      "Transform your business operations with custom-built web applications. Automation, real-time dashboards, secure systems & more.",
+      "Transform your business operations with powerful custom-built web applications, automation systems, and internal tools.",
     url: "https://daleondynamics.com/services/custom-web-apps",
     siteName: "Daleon Dynamics",
     images: [
@@ -92,27 +93,27 @@ export default function CustomWebApps() {
     {
       icon: <Workflow className="w-8 h-8" />,
       title: "Business Process Automation",
-      desc: "We eliminate repetitive manual work by building systems that automate your operations — saving time and reducing errors.",
+      desc: "We eliminate repetitive manual work by building systems that automate your operations — saving time, reducing errors, and increasing efficiency.",
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Centralized Data Management",
-      desc: "All your business data in one secure place — accessible, organized, and easy to manage.",
+      desc: "All your important business data in one secure, organized, and easily accessible platform.",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Role-Based Access Control",
-      desc: "Control who sees what. Assign permissions to staff, admins, or clients with complete flexibility.",
+      desc: "Securely control what each user can see and do — whether staff, managers, or external clients.",
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: "Real-Time Analytics & Dashboards",
-      desc: "Track performance, monitor operations, and make smarter decisions using live data insights.",
+      desc: "Make informed decisions faster with live insights, performance tracking, and custom reports.",
     },
     {
       icon: <ShieldCheck className="w-8 h-8" />,
       title: "Secure & Scalable Architecture",
-      desc: "Built with security best practices and designed to scale as your business grows.",
+      desc: "Built with modern security best practices and designed to grow seamlessly as your business expands.",
     },
   ];
 
@@ -139,8 +140,8 @@ export default function CustomWebApps() {
             </h1>
 
             <p className="text-xl text-gray-300 mb-10">
-              We design and build tailored web applications that automate processes,
-              improve efficiency, and give your business full control over its operations.
+              We design and build tailored web applications and business systems in Kenya that automate processes, 
+              improve efficiency, reduce costs, and give you full control over your operations.
             </p>
 
             <Link
@@ -159,10 +160,9 @@ export default function CustomWebApps() {
             What Is a Custom Web Application?
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
-            A custom web application is a system built specifically for your business — 
-            designed around your workflows, your team, and your goals.
-            Unlike off-the-shelf software, it gives you complete flexibility, control, 
-            and a competitive advantage.
+            A custom web application is a powerful digital system built specifically for your business — 
+            designed around your unique workflows, processes, and goals. Unlike generic software, 
+            it fits your business perfectly and grows with you.
           </p>
         </section>
 
@@ -186,14 +186,16 @@ export default function CustomWebApps() {
           </h2>
           <div className="grid md:grid-cols-2 gap-8 text-gray-700">
             {[
-              "Client portals & dashboards",
-              "Learning management systems (LMS)",
-              "Booking & reservation systems",
-              "Internal business tools & admin systems",
+              "Client portals & customer dashboards",
+              "Learning Management Systems (LMS)",
+              "Booking & reservation platforms",
+              "Internal business tools & admin panels",
               "Inventory & stock management systems",
-              "Custom CRMs (Customer Management Systems)",
-              "Financial tracking & reporting tools",
-              "Multi-user platforms with authentication",
+              "Custom CRMs & client management systems",
+              "Financial tracking & invoicing tools",
+              "Multi-user platforms with secure authentication",
+              "HR & employee management systems",
+              "Real-time monitoring & reporting tools",
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <CheckCircle className="text-green-500 w-5 h-5 mt-1" />
@@ -210,14 +212,14 @@ export default function CustomWebApps() {
               Why Custom Systems Give You a Competitive Advantage
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Off-the-shelf software forces you to adapt to it.  
-              Custom systems are built to adapt to you.
+              Stop forcing your business to fit into someone else’s software. 
+              We build systems that adapt to your processes — giving you speed, control, and efficiency your competitors don’t have.
             </p>
             <div className="mt-10 grid md:grid-cols-3 gap-8 text-left">
               {[
-                "Operate faster with automated workflows",
-                "Reduce human errors and inefficiencies",
-                "Scale your operations without chaos",
+                "Automate repetitive tasks and reduce errors",
+                "Get real-time insights for better decisions",
+                "Scale your operations smoothly as you grow",
               ].map((point, i) => (
                 <div key={i} className="bg-white/10 p-6 rounded-2xl">
                   {point}
@@ -242,7 +244,7 @@ export default function CustomWebApps() {
                 Custom Web Applications
               </h3>
               <div className="text-4xl font-bold mb-4">
-                From KES 200,000+
+                From KES 250,000+
               </div>
               <p className="text-gray-500 mb-8">
                 Tailored systems designed specifically for your business operations
@@ -256,7 +258,8 @@ export default function CustomWebApps() {
                   "Database & backend architecture",
                   "API integrations (M-Pesa, third-party)",
                   "Security implementation",
-                  "Deployment & support",
+                  "Deployment & training",
+                  "Post-launch support",
                 ].map((f, i) => (
                   <li key={i} className="flex gap-3 text-gray-700">
                     <CheckCircle className="text-green-500 w-5 h-5 mt-1" />
@@ -278,7 +281,7 @@ export default function CustomWebApps() {
               <Info className="w-5 h-5 mt-1 text-blue-600" />
               <p>
                 Final pricing is determined after a discovery session where we define
-                your exact requirements, system complexity, and business goals. Some systems may require more advanced features or integrations, which can affect the cost. We provide transparent quotes and work within your budget to deliver maximum value.
+                your exact requirements, system complexity, and business goals. We provide transparent quotes and work within your budget to deliver maximum value.
               </p>
             </div>
           </div>

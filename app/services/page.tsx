@@ -4,8 +4,8 @@ import { Code2, Globe, ShieldCheck, ArrowRight, CheckCircle, Star, Info } from '
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services - Web Design, Custom Software & Access Control Systems in Kenya',
-  description: 'Professional web development, high-converting websites, custom software solutions, and biometric access control systems in Nairobi, Kenya. Tailored digital solutions that drive real business growth.',
+  title: 'Services - Custom Software Development & Web Design Company in Kenya',
+  description: 'Professional web design, high-converting websites, custom software development, business automation systems, and biometric access control solutions in Nairobi, Kenya.',
   
   keywords: [
     'web development services kenya',
@@ -18,6 +18,8 @@ export const metadata: Metadata = {
     'business automation software kenya',
     'software development company kenya',
     'm-pesa integration kenya',
+    'custom crm kenya',
+    'enterprise software development kenya',
     'daleon dynamics services'
   ],
 
@@ -48,13 +50,14 @@ const Services = () => {
       icon: <Code2 className="w-14 h-14" />,
       title: "Custom Software Development",
       shortDesc: "Bespoke software engineered for your exact business needs.",
-      fullDesc: "We build powerful, scalable custom software solutions — from internal automation tools to complex enterprise systems. Every project is designed with performance, security, and long-term maintainability in mind.",
+      fullDesc: "We develop powerful, scalable, and secure custom software solutions tailored to your unique business processes. From internal tools and automation systems to complex enterprise platforms, every solution is built with performance, security, and long-term maintainability in mind.",
       features: [
-        "Custom architecture & database design",
-        "Third-party API integrations",
-        "Role-based access control",
+        "Custom CRM & ERP systems",
+        "Business process automation",
+        "M-Pesa and payment integrations",
         "Real-time analytics & dashboards",
-        "Cross-platform compatibility"
+        "Role-based access control",
+        "Scalable cloud architecture"
       ],
       color: "blue"
     },
@@ -62,13 +65,14 @@ const Services = () => {
       icon: <Globe className="w-14 h-14" />,
       title: "Websites & Web Applications",
       shortDesc: "High-converting digital experiences that represent your brand.",
-      fullDesc: "From elegant corporate websites to full-featured SaaS platforms and client portals, we create fast, responsive, and user-friendly web solutions that drive engagement and business growth.",
+      fullDesc: "We create modern, fast, and SEO-optimized websites and web applications that not only look professional but are built to generate leads, increase sales, and grow your business in Kenya.",
       features: [
-        "Modern, responsive design",
+        "High-converting website design",
         "SEO & performance optimization",
+        "Mobile-first responsive design",
         "Secure user authentication",
         "Content management systems",
-        "Third-party integrations"
+        "Third-party integrations (M-Pesa, etc.)"
       ],
       color: "indigo"
     },
@@ -76,13 +80,14 @@ const Services = () => {
       icon: <ShieldCheck className="w-14 h-14" />,
       title: "Access Control Systems",
       shortDesc: "Smart, secure, and intelligent access management.",
-      fullDesc: "We design and implement advanced access control systems including biometric integration, cloud-based management, real-time monitoring, and detailed reporting for offices and organizations.",
+      fullDesc: "We design and implement advanced biometric and cloud-based access control systems for offices, residential estates, warehouses, and institutions — complete with real-time monitoring and detailed reporting.",
       features: [
-        "Biometric & RFID integration",
+        "Fingerprint & facial recognition",
         "Cloud dashboard & mobile access",
         "Real-time alerts & logs",
         "Visitor management module",
-        "Security compliance standards"
+        "Attendance tracking system",
+        "High-level security compliance"
       ],
       color: "emerald"
     }
@@ -156,8 +161,8 @@ const Services = () => {
           </h1>
 
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-            We don’t just develop software — we create solutions that solve problems, 
-            increase efficiency, and give you a competitive edge.
+            We don’t just develop software — we create powerful, custom-coded solutions that solve real problems, 
+            increase efficiency, and help Kenyan businesses grow faster.
           </p>
         </div>
       </section>

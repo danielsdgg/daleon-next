@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://daleondynamics.com';
-  const currentDate = new Date();
+  const currentDate = new Date().toISOString();
 
   return [
     {
@@ -15,10 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.85,
     },
-
-    // SERVICES (MAIN)
     {
       url: `${baseUrl}/services`,
       lastModified: currentDate,
@@ -26,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // STRATEGIC SEO SERVICE PAGES
+    // === SERVICE PAGES ===
     {
       url: `${baseUrl}/services/high-converting-website`,
       lastModified: currentDate,
@@ -39,8 +37,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.85,
     },
+    {
+      url: `${baseUrl}/services/access-control-systems`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
 
-    // CORE PAGES
+    // === CORE PAGES ===
     {
       url: `${baseUrl}/projects`,
       lastModified: currentDate,
@@ -51,31 +55,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.75,
     },
-
-    // BLOG (IMPORTANT FOR SEO)
     {
       url: `${baseUrl}/blogs`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.85,
     },
 
-    // LEGAL
+    // === LEGAL PAGES ===
     {
       url: `${baseUrl}/terms`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
-      priority: 0.5,
+      priority: 0.4,
     },
-
-    // 👉 privacy page -  later when i create it
-    // {
-    //   url: `${baseUrl}/privacy`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'yearly',
-    //   priority: 0.5,
-    // },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
   ];
 }
