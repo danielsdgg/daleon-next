@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://daleondynamics.com/services',
     images: [
       {
-        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', 
+        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', 
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics Services - Web Development Kenya',

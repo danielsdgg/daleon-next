@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: 'https://daleondynamics.com/projects',
     images: [
       {
-        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=48&q=75', 
+        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', 
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics Projects - Web Development Kenya',
@@ -82,7 +82,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-white">
       
-      {/* Hero Section - More Impactful */}
+      {/* Hero Section */}
       <section className="relative py-32 lg:py-44 overflow-hidden bg-zinc-950">
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -110,7 +110,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Projects Grid - Premium Layout */}
+      {/* Projects Grid */}
       <section className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
@@ -170,7 +170,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Closing / CTA Section - More Convincing */}
+      {/* Closing / CTA Section */}
       <section className="py-28 bg-zinc-950 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8">
