@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Sparkles, Zap, Users, Award, ShieldCheck, Globe, Code2, ExternalLink, MessageCircle } from 'lucide-react';
 
-const Home = () => {
+const Home:React.FC = () => {
   const featuredProjects = [
     {
       title: "Insurance Kenya Portal",
@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <main className="min-h-screen bg-zinc-950 text-white overflow-hidden">
       {/* HERO SECTION */}
-<section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
+      <section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-6 py-2.5 rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-5 h-5" />
@@ -127,7 +127,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS - IMPROVED */}
+      {/* FEATURED PROJECTS */}
       <section id="projects" className="py-24 bg-zinc-950">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">

@@ -27,11 +27,11 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: '/icon.png', sizes: '32x32' },
-      { url: '/icon.png', sizes: '192x192' },
+      { url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', sizes: '32x32' },
+      { url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', sizes: '192x192' },
     ],
-    apple: '/icon.png',
-    shortcut: '/icon.png',
+    apple: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+    shortcut: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
   },
 
   openGraph: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=1200&q=90',
+        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics - Web Development Kenya',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daleon Dynamics | Custom Software & Web Development Kenya',
     description: 'High-performance websites and business systems for Kenyan companies.',
-    images: ['https://daleondynamics.com/_next/image?url=%2Fassets%2Flogo.png&w=1200&q=90'],
+    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
   },
 
   robots: {
