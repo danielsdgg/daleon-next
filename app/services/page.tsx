@@ -50,7 +50,7 @@ const Services = () => {
       icon: <Code2 className="w-14 h-14" />,
       title: "Custom Software Development",
       shortDesc: "Bespoke software engineered for your exact business needs.",
-      fullDesc: "We develop powerful, scalable, and secure custom software solutions tailored to your unique business processes. From internal tools and automation systems to complex enterprise platforms, every solution is built with performance, security, and long-term maintainability in mind.",
+      fullDesc: "We develop powerful, scalable, and secure custom software solutions tailored to your unique business processes. From internal tools and automation systems to complex enterprise platforms, every solution is built with performance, security, and long-term maintainability in mind. Our custom software eliminates inefficiencies and gives you full control over your operations.",
       features: [
         "Custom CRM & ERP systems",
         "Business process automation",
@@ -65,7 +65,7 @@ const Services = () => {
       icon: <Globe className="w-14 h-14" />,
       title: "Websites & Web Applications",
       shortDesc: "High-converting digital experiences that represent your brand.",
-      fullDesc: "We create modern, fast, and SEO-optimized websites and web applications that not only look professional but are built to generate leads, increase sales, and grow your business in Kenya.",
+      fullDesc: "We create modern, fast, and SEO-optimized websites and web applications that not only look professional but are built to generate leads, increase sales, and grow your business in Kenya. Every website is custom-coded for speed, security, and excellent user experience.",
       features: [
         "High-converting website design",
         "SEO & performance optimization",
@@ -80,7 +80,7 @@ const Services = () => {
       icon: <ShieldCheck className="w-14 h-14" />,
       title: "Access Control Systems",
       shortDesc: "Smart, secure, and intelligent access management.",
-      fullDesc: "We design and implement advanced biometric and cloud-based access control systems for offices, residential estates, warehouses, and institutions — complete with real-time monitoring and detailed reporting.",
+      fullDesc: "We design and implement advanced biometric and cloud-based access control systems for offices, residential estates, warehouses, and institutions — complete with real-time monitoring, visitor management, and detailed reporting.",
       features: [
         "Fingerprint & facial recognition",
         "Cloud dashboard & mobile access",
@@ -162,7 +162,7 @@ const Services = () => {
 
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
             We don’t just develop software — we create powerful, custom-coded solutions that solve real problems, 
-            increase efficiency, and help Kenyan businesses grow faster.
+            increase efficiency, reduce costs, and help Kenyan businesses grow faster and compete better.
           </p>
         </div>
       </section>
@@ -219,8 +219,27 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Pricing Section - Improved */}
+      {/* Why Choose Daleon Dynamics Section */}
       <section className="py-28 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold tracking-tighter text-gray-900">Why Businesses Choose Daleon Dynamics</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            <div className="bg-white p-10 rounded-3xl">
+              <h3 className="text-2xl font-semibold mb-4">Custom-Coded Solutions</h3>
+              <p className="text-gray-600">We build most systems from scratch using modern technologies instead of relying on templates. This gives you better performance, security, and full ownership.</p>
+            </div>
+            <div className="bg-white p-10 rounded-3xl">
+              <h3 className="text-2xl font-semibold mb-4">Deep Understanding of Kenya</h3>
+              <p className="text-gray-600">We understand local business challenges, payment systems like M-Pesa, and regulatory requirements — allowing us to deliver practical and effective solutions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold tracking-tighter text-gray-900 mb-4">
@@ -231,7 +250,6 @@ const Services = () => {
             </p>
           </div>
 
-          {/* Important Disclaimer */}
           <div className="max-w-3xl mx-auto mb-12 bg-white border border-gray-100 rounded-2xl p-6 flex gap-4">
             <Info className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
             <p className="text-gray-600 leading-relaxed">
@@ -285,7 +303,6 @@ const Services = () => {
             ))}
           </div>
 
-          {/* Extra Trust Note */}
           <div className="text-center mt-12 text-sm text-gray-500">
             We focus on delivering real ROI — many clients recover their investment within the first 6–12 months.
           </div>
