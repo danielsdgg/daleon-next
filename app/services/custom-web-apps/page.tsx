@@ -83,7 +83,7 @@ const structuredData = {
   offers: {
     "@type": "Offer",
     priceCurrency: "KES",
-    price: "200000",
+    price: "250000",
     description: "Starting price for custom web applications",
   },
 };
@@ -161,8 +161,8 @@ export default function CustomWebApps() {
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
             A custom web application is a powerful digital system built specifically for your business — 
-            designed around your unique workflows, processes, and goals. Unlike generic software, 
-            it fits your business perfectly and grows with you.
+            designed around your unique workflows, processes, and goals. Unlike generic off-the-shelf software, 
+            it fits your business perfectly, eliminates inefficiencies, and gives you a real competitive advantage.
           </p>
         </section>
 
@@ -196,6 +196,8 @@ export default function CustomWebApps() {
               "Multi-user platforms with secure authentication",
               "HR & employee management systems",
               "Real-time monitoring & reporting tools",
+              "Procurement & supply chain systems",
+              "Field service management applications",
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start">
                 <CheckCircle className="text-green-500 w-5 h-5 mt-1" />
