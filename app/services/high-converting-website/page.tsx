@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     "custom website development kenya",
     "high performance website kenya",
     "lead generating website nairobi",
+    "conversion rate optimization kenya",
   ],
   authors: [{ name: "Daleon Dynamics" }],
   openGraph: {
@@ -184,8 +185,8 @@ export default function HighConvertingWebsites() {
             </h1>
 
             <p className="text-xl text-gray-300 mb-10">
-              We design and develop fast, modern, SEO-optimized, and high-converting websites for businesses — 
-              built from scratch with clean code to help you attract more customers and grow faster.
+              We design and develop fast, modern, SEO-optimized, and high-converting websites for businesses in Kenya. 
+              Built from scratch with clean code, strategic design, and conversion-focused architecture to help you attract more customers and grow your revenue.
             </p>
 
             <Link
@@ -206,7 +207,7 @@ export default function HighConvertingWebsites() {
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
             In today’s digital Kenya, your website is often the first interaction potential customers have with your business. 
             A poorly designed site loses sales every day, while a professionally built, high-converting website works 24/7 to 
-            generate leads, build trust, and grow your revenue.
+            generate leads, build trust, and grow your revenue. We combine beautiful design with strategic conversion optimization.
           </p>
         </section>
 
@@ -240,6 +241,8 @@ export default function HighConvertingWebsites() {
               "Clean, SEO-friendly code",
               "Meta tags, schema markup & sitemap",
               "Structured content for higher rankings",
+              "Technical SEO best practices",
+              "Local SEO optimization for Nairobi & Kenya",
             ].map((item, i) => (
               <div key={i} className="flex gap-3 items-start text-gray-700">
                 <CheckCircle className="text-green-500 w-5 h-5 mt-1" />
@@ -324,7 +327,7 @@ export default function HighConvertingWebsites() {
               Ready to Grow Your Business Online?
             </h2>
             <p className="text-xl text-gray-300 mb-10">
-              Let’s build a high-converting website that attracts customers and drives real results.
+              Let’s build a high-converting website that attracts the right customers and drives real results for your business in Kenya.
             </p>
             <Link
               href="/contact"
