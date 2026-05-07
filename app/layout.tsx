@@ -5,7 +5,7 @@ import Footer from '@/src/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://daleondynamics.com'),
-  
+
   title: {
     default: 'Daleon Dynamics | Web Design & Custom Software Development Kenya',
     template: '%s | Daleon Dynamics',
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', sizes: '32x32' },
-      { url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png', sizes: '192x192' },
+      { url: '/icon.png', sizes: '32x32' },
+      { url: '/icon.png', sizes: '192x192' },
     ],
-    apple: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
-    shortcut: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+    apple: '/icon.png',
+    shortcut: '/icon.png',
   },
 
   openGraph: {
@@ -102,7 +102,6 @@ export default function RootLayout({
           className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 active:scale-95"
           aria-label="Chat with us on WhatsApp"
         >
-          {/* SVG */}
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="28" 
@@ -117,4 +116,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
