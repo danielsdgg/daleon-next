@@ -26,10 +26,7 @@ export const metadata: Metadata = {
   publisher: 'Daleon Dynamics',
 
   icons: {
-    icon: [
-      { url: '/icon.png', sizes: '32x32' },
-      { url: '/icon.png', sizes: '192x192' },
-    ],
+    icon: '/icon.png',
     apple: '/icon.png',
     shortcut: '/icon.png',
   },
@@ -116,4 +113,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-};
+}
