@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Sparkles, Zap, Users, Award, ShieldCheck, Globe, Code2, ExternalLink, MessageCircle } from 'lucide-react';
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
   const featuredProjects = [
     {
       title: "Insurance Kenya Portal",
@@ -18,7 +18,7 @@ const Home:React.FC = () => {
     },
     {
       title: "Morgan Learning Academy",
-      category: "Education Technology",
+      category: "Learning Management System",
       year: "2024",
       description: "Comprehensive Learning Management System built for a leading Kenyan academy. Features course management, student tracking, assessments, and parent portal.",
       liveUrl: "https://canvas-1-jxo5.onrender.com/",
@@ -43,20 +43,24 @@ const Home:React.FC = () => {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-6 py-2.5 rounded-full text-sm font-medium mb-6">
             <Sparkles className="w-5 h-5" />
-            WE ARE A WEB DEVELOPMENT &amp;  SOFTWARE COMPANY IN NAIROBI, KENYA
+            WEB DESIGN &amp; CUSTOM SOFTWARE COMPANY IN NAIROBI, KENYA
           </div>
 
           <h1 className="text-6xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-none mb-8">
             High-Performance Websites &amp; Custom Systems <br />
-            That Helps Businesses <span className="text-blue-600">Grow Faster</span>
+            That Help Kenyan Businesses <span className="text-blue-600">Grow Faster</span>
           </h1>
 
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            We build modern, fast-loading websites, custom web applications, and intelligent business systems that attract more customers, automate operations, and give businesses a real competitive edge.
+            We build modern, fast-loading websites, powerful custom web applications, business automation systems, 
+            and secure access control solutions that attract more customers, automate operations, and deliver real competitive advantage.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-            <Link href="/contact" className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all active:scale-95 shadow-lg shadow-blue-200">
+            <Link 
+              href="/contact" 
+              className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all active:scale-95 shadow-lg shadow-blue-200"
+            >
               Get Your Free Quote Today
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
