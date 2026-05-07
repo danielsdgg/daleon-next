@@ -83,7 +83,7 @@ const structuredData = {
   offers: {
     "@type": "Offer",
     priceCurrency: "KES",
-    price: "250000",
+    price: "200000",
     description: "Starting price for custom web applications",
   },
 };
@@ -246,7 +246,7 @@ export default function CustomWebApps() {
                 Custom Web Applications
               </h3>
               <div className="text-4xl font-bold mb-4">
-                From KES 250,000+
+                From KES 200,000+
               </div>
               <p className="text-gray-500 mb-8">
                 Tailored systems designed specifically for your business operations
