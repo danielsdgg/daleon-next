@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "High-Converting Websites in Kenya | Daleon Dynamics",
     description:
       "Professional SEO-optimized, custom-coded websites that drive real business growth in Kenya. Built to convert visitors into customers.",
-    url: "https://daleondynamics.com/services/high-converting-websites",
+    url: "https://daleondynamics.com/services/high-converting-website",
     siteName: "Daleon Dynamics",
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       "Turn website visitors into paying customers with expertly crafted, SEO-optimized websites in Kenya.",
   },
   alternates: {
-    canonical: "https://daleondynamics.com/services/high-converting-websites",
+    canonical: "https://daleondynamics.com/services/high-converting-website",
   },
 };
 
