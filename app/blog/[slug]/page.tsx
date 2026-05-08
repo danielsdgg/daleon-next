@@ -136,18 +136,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  // Optimized shorter title (under 65 characters)
+  const optimizedTitle = post.title.length > 65 
+    ? post.title.substring(0, 62) + "..." 
+    : post.title;
+
   return {
-    title: `${post.title} | Daleon Dynamics`,
+    title: optimizedTitle,
     description: post.excerpt,
     keywords: [
-      'custom software development Kenya',
-      'web development Nairobi',
-      'access control systems Kenya',
-      'software company Kenya',
-      'digital transformation Kenya',
-      post.category.toLowerCase(),
-      ...post.title.toLowerCase().split(' ').slice(0, 12),
-    ].filter(Boolean),
+      'custom software Kenya', 'web development Nairobi', 'access control systems Kenya',
+      'business automation Kenya', post.category.toLowerCase(), 'software development Kenya'
+    ],
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -157,7 +157,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: ['Daleon Dynamics'],
     },
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: `https://daleondynamics.com/blog/${post.slug}`,
     },
   };
 }

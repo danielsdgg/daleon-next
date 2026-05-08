@@ -5,12 +5,19 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog - Insights & Tips | Daleon Dynamics',
-  description: 'Expert articles on custom software development, web development in Kenya, access control systems, digital transformation, and business growth strategies.',
-  keywords: 'custom software Kenya, web development Kenya, access control systems, business software, digital transformation Kenya, website development Nairobi',
+  title: 'Blog - Insights & Tips | Daleon Dynamics Kenya',
+  description: 'Expert articles on custom software development, high-converting websites, access control systems, business automation, and digital growth strategies in Kenya.',
+  keywords: [
+    'custom software Kenya', 'web development Kenya', 'access control systems Kenya',
+    'business automation Kenya', 'digital transformation Kenya', 'software development insights',
+    'high converting websites Kenya', 'tech trends Kenya', 'daleon dynamics blog'
+  ],
+  alternates: {
+    canonical: 'https://daleondynamics.com/blogs',
+  },
   openGraph: {
-    title: 'Blog | Daleon Dynamics',
-    description: 'Insights on custom software, websites, web apps, and security systems for Kenyan businesses.',
+    title: 'Blog - Insights & Tips | Daleon Dynamics',
+    description: 'Expert articles on custom software, web development, and business growth strategies for Kenyan companies.',
     images: ['https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200'],
   },
 };
