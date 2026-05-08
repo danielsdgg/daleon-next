@@ -5,7 +5,7 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Projects - Real Results Delivered | Daleon Dynamics Kenya',
+  title: 'Our Projects | Web Design & Software Kenya',
   description: 'Explore our portfolio of successful projects including insurance platforms, learning management systems, access control solutions, and ecommerce websites built for Kenyan businesses.',
   
   keywords: [

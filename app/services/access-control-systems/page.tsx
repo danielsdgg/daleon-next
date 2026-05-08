@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Access Control Systems in Kenya | Biometric & Security Solutions",
+  title: 'Access Control Systems | Biometric Kenya',
   description:
     "Secure your premises with modern access control systems in Kenya. We design and install biometric, RFID, and cloud-based security systems for businesses, offices, and apartments.",
   keywords: [

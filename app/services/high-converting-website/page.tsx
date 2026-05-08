@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 // SEO METADATA
 // =============================================
 export const metadata: Metadata = {
-  title: "High-Converting Websites in Kenya | Professional Web Design Nairobi",
+  title: 'High-Converting Websites in Kenya | Nairobi',
   description:
     "Get a professional, fast-loading, SEO-optimized, high-converting website in Kenya. Custom-coded websites for businesses in Nairobi and across Kenya that actually turn visitors into customers.",
   keywords: [

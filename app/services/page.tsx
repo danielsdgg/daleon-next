@@ -4,7 +4,7 @@ import { Code2, Globe, ShieldCheck, ArrowRight, CheckCircle, Star, Info } from '
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services - Custom Software Development & Web Design Company in Kenya',
+  title: 'Web Design & Custom Software Development Kenya',
   description: 'Professional web design, high-converting websites, custom software development, business automation systems, and biometric access control solutions in Nairobi, Kenya.',
   
   keywords: [

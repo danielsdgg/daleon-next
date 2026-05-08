@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 // SEO METADATA
 // =============================================
 export const metadata: Metadata = {
-  title: "Custom Web Applications Development in Kenya | Tailored Business Systems",
+  title: 'Custom Web Applications Development | Systems',
   description:
     "Build powerful custom web applications in Kenya. We create tailored business systems, automation tools, CRMs, dashboards, and internal platforms that improve efficiency and scalability.",
   keywords: [

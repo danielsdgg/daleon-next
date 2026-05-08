@@ -4,7 +4,7 @@ import { Users, Target, Award, Clock, ArrowRight, Code2, Globe, ShieldCheck } fr
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Daleon Dynamics | Custom Software & Web Development Company in Kenya',
+  title: 'About Us - Software Development Company Nairobi',
   description: 'We are a Nairobi-based software studio building high-converting websites, custom web applications, business automation systems, and access control solutions for Kenyan businesses.',
   
   keywords: [
