@@ -136,10 +136,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  // Optimized shorter title (under 65 characters)
-  const optimizedTitle = post.title.length > 65 
-    ? post.title.substring(0, 62) + "..." 
-    : post.title;
+  // Shorten title to under 65 characters (Google best practice)
+  let optimizedTitle = post.title;
+  if (post.title.length > 65) {
+    optimizedTitle = post.title.substring(0, 62) + "...";
+  }
 
   return {
     title: optimizedTitle,

@@ -69,7 +69,7 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-zinc-950 to-blue-950 text-white py-28 lg:py-36">
+      <section className="bg-gradient-to-br from-zinc-950 to-blue-950 text-white py-8 lg:py-12">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm font-medium mb-8 border border-white/20">
             KNOWLEDGE HUB
