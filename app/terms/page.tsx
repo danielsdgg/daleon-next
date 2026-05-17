@@ -125,7 +125,7 @@ const Terms: React.FC = () => {
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-12 mb-6">13. Contact Us</h2>
             <p className="mb-4">For any questions regarding these Terms of Service, please contact us:</p>
-            <p className="font-medium">Email: daleondynamics@gmail.com</p>
+            <p className="font-medium">Email: info@daleondynamics.com</p>
             <p className="font-medium">Phone: +254 142 021 359</p>
           </div>
         </div>

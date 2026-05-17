@@ -286,7 +286,7 @@ const Home: React.FC = () => {
           </div>
 
           <p className="mt-12 text-gray-400 text-sm">
-            Nairobi, Kenya • daleondynamics@gmail.com
+            Nairobi, Kenya • info@daleondynamics.com
           </p>
         </div>
       </section>

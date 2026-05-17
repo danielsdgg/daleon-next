@@ -107,7 +107,7 @@ const Privacy: React.FC = () => {
               If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, 
               please contact us:
             </p>
-            <p className="font-medium">Email: daleondynamics@gmail.com</p>
+            <p className="font-medium">Email: info@daleondynamics.com</p>
             <p className="font-medium">Phone: +254 142 021 359</p>
             <p className="font-medium">Address: Nairobi, Kenya</p>
           </div>
