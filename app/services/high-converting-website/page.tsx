@@ -1,344 +1,270 @@
-import React from "react";
-import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle,
-  Zap,
-  LineChart,
-  Smartphone,
-  Search,
-  Users,
-  Star,
-  Info,
-} from "lucide-react";
-import type { Metadata } from "next";
+// app/services/high-converting-website/page.tsx
+import React from 'react';
+import Link from 'next/link';
+import { ArrowRight, CheckCircle, Info } from 'lucide-react';
+import type { Metadata } from 'next';
 
-// =============================================
-// SEO METADATA
-// =============================================
 export const metadata: Metadata = {
-  title: 'High-Converting Websites in Kenya | Nairobi',
+  title: 'High-Converting Websites | Daleon Dynamics',
   description:
-    "Get a professional, fast-loading, SEO-optimized, high-converting website in Kenya. Custom-coded websites for businesses in Nairobi and across Kenya that actually turn visitors into customers.",
+    'High-converting websites in Nairobi, Kenya — fast, SEO-optimized, mobile-first designs that turn visitors into customers. Built by Daleon Dynamics.',
   keywords: [
-    "web design kenya",
-    "website development nairobi",
-    "high converting websites kenya",
-    "professional website kenya",
-    "seo optimized website kenya",
-    "business website design nairobi",
-    "affordable web design kenya",
-    "mobile responsive website kenya",
-    "custom website development kenya",
-    "high performance website kenya",
-    "lead generating website nairobi",
-    "conversion rate optimization kenya",
+    'high converting websites kenya',
+    'website design nairobi',
+    'seo optimized websites kenya',
+    'conversion rate optimization kenya',
+    'landing page design kenya',
+    'daleon dynamics web design'
   ],
-  authors: [{ name: "Daleon Dynamics" }],
+  alternates: {
+    canonical: 'https://daleondynamics.com/services/high-converting-website'
+  },
   openGraph: {
-    title: "High-Converting Websites in Kenya | Daleon Dynamics",
+    title: 'High-Converting Websites | Daleon Dynamics',
     description:
-      "Professional SEO-optimized, custom-coded websites that drive real business growth in Kenya. Built to convert visitors into customers.",
-    url: "https://daleondynamics.com/services/high-converting-website",
-    siteName: "Daleon Dynamics",
+      'Beautiful, fast, and conversion-focused websites built for Kenyan businesses. SEO-first, mobile-first, and optimized for growth.',
+    url: 'https://daleondynamics.com/services/high-converting-website',
     images: [
       {
-        url: "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",  
+        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
         width: 1200,
         height: 630,
-        alt: "High-Converting Websites in Kenya - Daleon Dynamics",
-      },
+        alt: 'High-Converting Websites - Daleon Dynamics'
+      }
     ],
-    locale: "en_KE",
-    type: "website",
+    locale: 'en_KE',
+    type: 'website'
+  }
+};
+
+const features = [
+  {
+    title: 'Conversion-Focused Design',
+    desc: 'Layouts and user journeys designed to reduce friction and increase leads, with clear CTAs and trust signals.'
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "High-Converting Websites in Kenya | Daleon Dynamics",
+  {
+    title: 'SEO & Performance',
+    desc: 'Semantic HTML, fast core web vitals, image optimization, and on-page SEO to help you rank and convert.'
+  },
+  {
+    title: 'Mobile-First Experience',
+    desc: 'Designs that prioritize mobile users and deliver fast, intuitive experiences on any device.'
+  },
+  {
+    title: 'Analytics & A/B Testing',
+    desc: 'Set up analytics, heatmaps, and A/B tests to continuously improve conversion rates.'
+  },
+  {
+    title: 'Secure & Scalable',
+    desc: 'Modern tech stack, secure hosting, and scalable architecture so your site grows with your business.'
+  }
+];
+
+const faqs = [
+  {
+    q: 'How long does it take to build a high-converting website?',
+    a: 'Typical timelines range from 6–9 weeks for normal sites and 10–12+ weeks for complex, conversion-optimized builds depending on scope and integrations.'
+  },
+  {
+    q: 'Do you provide SEO and content support?',
+    a: 'Yes — we include on-page SEO, technical SEO setup, and can provide content strategy and copywriting as an add-on.'
+  },
+  {
+    q: 'Will my website be mobile-friendly?',
+    a: 'Absolutely. Every site we build is mobile-first and tested across devices to ensure excellent user experience and performance.'
+  }
+];
+
+const HighConvertingWebsitePage: React.FC = () => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'High-Converting Websites',
+    provider: {
+      '@type': 'Organization',
+      name: 'Daleon Dynamics',
+      url: 'https://daleondynamics.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Nairobi',
+        addressCountry: 'Kenya'
+      }
+    },
     description:
-      "Turn website visitors into paying customers with expertly crafted, SEO-optimized websites in Kenya.",
-  },
-  alternates: {
-    canonical: "https://daleondynamics.com/services/high-converting-website",
-  },
-};
+      'High-converting websites: fast, SEO-optimized, mobile-first designs that turn visitors into customers.',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'KES',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'KES',
+        price: '80000',
+        description: 'Typical starting price for a high-converting website (starter brochure site).'
+      },
+      url: 'https://daleondynamics.com/services/high-converting-website'
+    }
+  };
 
-// Structured Data
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "High-Converting Website Development in Kenya",
-  provider: {
-    "@type": "Organization",
-    name: "Daleon Dynamics",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Nairobi",
-      addressCountry: "KE",
-    },
-  },
-  serviceType: "Web Design and Development",
-  areaServed: ["Kenya", "Nairobi", "East Africa"],
-  description:
-    "Professional high-converting, SEO-optimized, custom-coded websites for businesses in Kenya.",
-  offers: {
-    "@type": "Offer",
-    priceCurrency: "KES",
-    price: "80000",
-    description: "Starting price for professional business websites",
-  },
-};
-
-export default function HighConvertingWebsites() {
-  const features = [
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Fast-Loading, High-Performance Websites",
-      desc: "We build ultra-fast websites optimized for performance and Core Web Vitals — improving user experience, SEO rankings, and conversion rates.",
-    },
-    {
-      icon: <Search className="w-8 h-8" />,
-      title: "SEO-Optimized Website Structure",
-      desc: "Every website is built with search engine optimization in mind — helping your business rank higher on Google and attract organic traffic across Kenya.",
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Conversion-Focused Design",
-      desc: "Strategic layouts, persuasive sections, clear calls-to-action, and trust signals designed specifically to turn visitors into paying customers.",
-    },
-    {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Mobile-First Responsive Design",
-      desc: "Your website will look perfect and perform excellently on all devices — especially mobile, where most Kenyan customers browse.",
-    },
-    {
-      icon: <LineChart className="w-8 h-8" />,
-      title: "Analytics & Growth Tracking",
-      desc: "Integrated analytics so you can track performance, understand customer behavior, and continuously improve your results.",
-    },
-  ];
-
-  const pricingTiers = [
-    {
-      name: "Starter Business Website",
-      price: "From KES 80,000",
-      desc: "Ideal for startups and small businesses looking to establish a strong online presence",
-      features: [
-        "Professional website (up to 8 pages)",
-        "Mobile-responsive design",
-        "Basic SEO setup (meta tags, sitemap, indexing)",
-        "Contact forms & WhatsApp integration",
-        "Fast loading optimization",
-        "1 month post-launch support",
-      ],
-    },
-    {
-      name: "Growth-Focused Website",
-      price: "From KES 200,000",
-      desc: "Built to generate leads, increase conversions, and grow your business",
-      features: [
-        "Everything in Starter",
-        "Advanced UI/UX design",
-        "Conversion-focused landing pages",
-        "On-page SEO optimization (keywords, structure)",
-        "Blog or content management system",
-        "Google Analytics integration",
-        "2 months support & optimization",
-      ],
-      highlight: true,
-    },
-    {
-      name: "Premium / Custom Website",
-      price: "Custom Pricing",
-      desc: "For established businesses that need advanced features and scalability",
-      features: [
-        "Fully custom website design & development",
-        "Advanced integrations (M-Pesa, APIs, CRM)",
-        "Custom dashboards or portals",
-        "Technical SEO & performance optimization",
-        "Scalable architecture",
-        "Ongoing support options",
-      ],
-    },
-  ];
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.a
+      }
+    }))
+  };
 
   return (
-    <>
-      {/* Structured Data */}
+    <main className="min-h-screen bg-white text-zinc-900">
+      {/* Structured data for crawlers */}
       <script
+        key="service-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        key="faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <div className="min-h-screen bg-white">
-        {/* HERO */}
-        <section className="py-28 bg-zinc-950 text-white text-center px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 bg-white/10 px-6 py-3 rounded-full text-sm mb-6">
-              <Star className="w-5 h-5 text-amber-400" />
-              HIGH-CONVERTING BUSINESS WEBSITES IN KENYA
-            </div>
+      {/* HERO */}
+      <section className="py-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            High-Converting Websites
+          </h1>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-              Professional Websites in Kenya That
-              <span className="text-blue-400"> Turn Visitors Into Customers</span>
-            </h1>
+          <p className="text-lg text-zinc-700 max-w-3xl mx-auto mb-8">
+            Beautiful, fast, and conversion-focused websites built to attract visitors, build trust, and turn traffic into customers.
+            We combine design, performance, and SEO to deliver measurable results.
+          </p>
 
-            <p className="text-xl text-gray-300 mb-10">
-              We design and develop fast, modern, SEO-optimized, and high-converting websites for businesses in Kenya. 
-              Built from scratch with clean code, strategic design, and conversion-focused architecture to help you attract more customers and grow your revenue.
-            </p>
-
+          <div className="flex justify-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-2xl font-semibold"
+              className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-blue-700 transition"
             >
-              Get Your Website Quote
-              <ArrowRight className="w-5 h-5" />
+              Get a Free Quote <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-3 border border-gray-800 px-6 py-3 rounded-2xl text-gray-700 hover:bg-gray-50 transition"
+            >
+              View All Services
             </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* VALUE SECTION */}
-        <section className="py-24 px-6 max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-10">
-            Why a High-Converting Website Matters for Your Business
-          </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto leading-relaxed">
-            In today’s digital Kenya, your website is often the first interaction potential customers have with your business. 
-            A poorly designed site loses sales every day, while a professionally built, high-converting website works 24/7 to 
-            generate leads, build trust, and grow your revenue. We combine beautiful design with strategic conversion optimization.
-          </p>
-        </section>
+      {/* KEY BENEFITS */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Why our websites convert better</h2>
 
-        {/* FEATURES */}
-        <section className="py-24 bg-gray-50 px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-8">
             {features.map((f, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all">
-                <div className="text-blue-600 mb-4">{f.icon}</div>
-                <h3 className="text-2xl font-semibold mb-3">{f.title}</h3>
-                <p className="text-gray-600">{f.desc}</p>
+              <div key={i} className="p-6 bg-gray-50 rounded-2xl">
+                <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
+                <p className="text-gray-700">{f.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* SEO BENEFITS */}
-        <section className="py-24 px-6 max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-center">
-            Built to Rank on Google & Attract Organic Traffic
-          </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            We don’t just design beautiful websites — we build search engine friendly platforms using clean, modern code 
-            that help your business appear on Google when people search for your products and services in Kenya.
+      {/* CASE STUDY HIGHLIGHT */}
+      <section className="py-20 bg-zinc-950 text-white">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Real results for Kenyan businesses</h2>
+          <p className="text-lg text-zinc-300 max-w-3xl mx-auto mb-8">
+            Example: a recent redesign increased lead form submissions by 42% and improved page speed scores across devices.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              "Keyword-optimized page structure",
-              "Fast loading speeds (Core Web Vitals)",
-              "Mobile-first indexing ready",
-              "Clean, SEO-friendly code",
-              "Meta tags, schema markup & sitemap",
-              "Structured content for higher rankings",
-              "Technical SEO best practices",
-              "Local SEO optimization for Nairobi & Kenya",
-            ].map((item, i) => (
-              <div key={i} className="flex gap-3 items-start text-gray-700">
-                <CheckCircle className="text-green-500 w-5 h-5 mt-1" />
-                <span>{item}</span>
-              </div>
+
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-3 bg-white text-zinc-900 px-6 py-3 rounded-2xl font-semibold hover:bg-gray-100 transition"
+          >
+            View Projects <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* DETAILED FEATURES & PROCESS */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-2xl font-bold mb-4">What we include in a high-converting website</h2>
+              <ul className="space-y-4 text-gray-700">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Conversion-focused UX and landing pages tailored to your audience</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Technical SEO: structured data, meta tags, sitemap, robots.txt</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Performance optimization: images, caching, and Core Web Vitals</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span>Analytics setup and conversion tracking (Google Analytics / GA4)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Our process (simple and effective)</h2>
+              <ol className="list-decimal list-inside space-y-4 text-gray-700">
+                <li><strong>Discovery:</strong> goals, audience, and conversion targets.</li>
+                <li><strong>Design:</strong> wireframes and high-fidelity mockups focused on conversion.</li>
+                <li><strong>Build:</strong> fast, accessible, and SEO-friendly implementation (Next.js recommended).</li>
+                <li><strong>Launch & Optimize:</strong> analytics, A/B tests, and iterative improvements.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING SUMMARY */}
+      <section className="py-20 bg-gradient-to-br from-blue-200 via-white to-blue-200">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">Pricing — clear starting points</h2>
+          <p className="text-gray-700 mb-6">
+            Typical starting price for a high-converting starter website is from<strong> KES 80,000</strong>. Complex conversion funnels, integrations, or custom features will increase scope and cost.
+          </p>
+
+          <div className="inline-flex items-center gap-4 bg-white border border-gray-100 rounded-2xl px-6 py-4">
+            <Info className="w-5 h-5 text-blue-600" />
+            <span className="text-gray-700">Prices are starting points. We provide a tailored quote after a short discovery call.</span>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-2xl font-bold mb-6 text-center">Frequently asked questions</h2>
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <details key={i} className="p-4 border border-gray-100 rounded-lg">
+                <summary className="font-semibold cursor-pointer">{f.q}</summary>
+                <p className="mt-3 text-gray-700">{f.a}</p>
+              </details>
             ))}
           </div>
-        </section>
-
-        {/* PRICING */}
-        <section className="py-28 bg-gray-50 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-4">
-                Website Development Pricing in Kenya
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Flexible pricing based on your business goals and website requirements
-              </p>
-            </div>
-
-            <div className="bg-white border rounded-2xl p-6 mb-12 flex gap-4">
-              <Info className="text-blue-600 w-6 h-6 mt-1" />
-              <p className="text-gray-600">
-                These are starting prices for typical business websites in Kenya. Final pricing depends on your
-                exact requirements, features, integrations, and level of customization.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {pricingTiers.map((tier, i) => (
-                <div
-                  key={i}
-                  className={`p-10 rounded-3xl border ${
-                    tier.highlight
-                      ? "border-blue-600 shadow-2xl scale-105 bg-white"
-                      : "border-gray-100 bg-white hover:shadow-xl"
-                  }`}
-                >
-                  {tier.highlight && (
-                    <div className="mb-4 text-xs font-semibold text-blue-600">
-                      MOST POPULAR
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-semibold mb-2">{tier.name}</h3>
-                  <div className="text-3xl font-bold mb-2">{tier.price}</div>
-                  <p className="text-gray-500 mb-6">{tier.desc}</p>
-
-                  <ul className="space-y-4 mb-8">
-                    {tier.features.map((f, idx) => (
-                      <li key={idx} className="flex gap-3 text-gray-700">
-                        <CheckCircle className="text-green-500 w-5 h-5 mt-1" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href="/contact"
-                    className={`block text-center py-4 rounded-xl font-semibold transition ${
-                      tier.highlight
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "border border-gray-300 hover:bg-gray-50"
-                    }`}
-                  >
-                    Get a Quote
-                  </Link>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-12 text-sm text-gray-500">
-              Many of our clients recover their website investment within the first few months through increased leads and sales.
-            </div>
-          </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="py-28 bg-zinc-900 text-white text-center px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-5xl font-bold mb-6">
-              Ready to Grow Your Business Online?
-            </h2>
-            <p className="text-xl text-gray-300 mb-10">
-              Let’s build a high-converting website that attracts the right customers and drives real results for your business in Kenya.
-            </p>
-            <Link
-              href="/contact"
-              className="bg-white text-black px-10 py-5 rounded-2xl font-semibold inline-flex items-center gap-3"
-            >
-              Start Your Project
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </main>
   );
-}
+};
+
+export default HighConvertingWebsitePage;
