@@ -203,7 +203,6 @@ const Navbar = () => {
                       );
                     })}
 
-                    {/* Explore All Services - Now clearly visible on mobile */}
                     <Link
                       href="/services"
                       onClick={() => {
