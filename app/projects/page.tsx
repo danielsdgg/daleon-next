@@ -5,7 +5,7 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Projects | Web Design & Software Kenya',
+  title: 'Projects | Web Design & Software Kenya',
   description: 'Explore our portfolio of successful projects including insurance platforms, learning management systems, access control solutions, and ecommerce websites built for Kenyan businesses.',
   
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Our Projects - Real Results Delivered | Daleon Dynamics',
+    title: 'Projects - Real Results Delivered | Daleon Dynamics',
     description: 'See how we deliver high-impact digital solutions for Kenyan businesses — from insurance platforms to secure access control systems.',
     url: 'https://daleondynamics.com/projects',
     images: [
