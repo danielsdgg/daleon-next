@@ -1,3 +1,4 @@
+// app/blog/[slug]/page.tsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -123,31 +124,21 @@ const blogPosts = [
     `
   }
 ];
-
 // ==================== SEO METADATA ====================
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    return {
-      title: 'Blog Post Not Found | Daleon Dynamics',
-      robots: { index: false },
-    };
-  }
-
-  // Shorten title to under 65 characters (Google best practice)
-  let optimizedTitle = post.title;
-  if (post.title.length > 65) {
-    optimizedTitle = post.title.substring(0, 62) + "...";
+    return { title: 'Blog Post Not Found | Daleon Dynamics', robots: { index: false } };
   }
 
   return {
-    title: optimizedTitle,
+    title: post.title,
     description: post.excerpt,
     keywords: [
       'custom software Kenya', 'web development Nairobi', 'access control systems Kenya',
-      'business automation Kenya', post.category.toLowerCase(), 'software development Kenya'
+      post.category.toLowerCase(), 'software development Kenya', 'business automation Kenya'
     ],
     openGraph: {
       title: post.title,
@@ -167,81 +158,107 @@ export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-// ==================== MAIN SERVER COMPONENT ====================
+// ==================== MAIN COMPONENT ====================
 const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) notFound();
 
+  // Article Structured Data
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "Daleon Dynamics"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Daleon Dynamics",
+      "logo": { "@type": "ImageObject", "url": "https://daleondynamics.com/logo.png" }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-zinc-50">
-      {/* Hero Section */}
-      <div className="relative h-[460px] md:h-[550px] overflow-hidden">
-        <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-zinc-950" />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
 
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-4xl mx-auto px-6 w-full">
-            <Link
-              href="/blogs"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 text-sm font-medium transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              Back to All Articles
-            </Link>
+      <div className="min-h-screen bg-zinc-50">
+        {/* Hero Section */}
+        <div className="relative h-[460px] md:h-[550px] overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-zinc-950" />
 
-            <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/90 mb-6">
-              <span className="bg-blue-600 px-5 py-1.5 rounded-full text-xs font-semibold">
-                {post.category}
-              </span>
-              <div className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4" /> {post.date}
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-4xl mx-auto px-6 w-full">
+              <Link
+                href="/blogs"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 text-sm font-medium transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Back to All Articles
+              </Link>
+
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/90 mb-6">
+                <span className="bg-blue-600 px-5 py-1.5 rounded-full text-xs font-semibold">
+                  {post.category}
+                </span>
+                <div className="flex items-center gap-1.5">
+                  <Calendar className="w-4 h-4" /> {post.date}
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Clock className="w-4 h-4" /> {post.readTime}
+                </div>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" /> {post.readTime}
-              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight text-white">
+                {post.title}
+              </h1>
             </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight text-white">
-              {post.title}
-            </h1>
           </div>
         </div>
-      </div>
 
-      {/* Article Content */}
-      <div className="max-w-4xl mx-auto px-6 -mt-10 md:-mt-14 relative z-10 pb-20">
-        <article className="bg-white rounded-3xl shadow-xl p-9 md:p-16 prose prose-zinc prose-lg max-w-none">
-          <div
-            dangerouslySetInnerHTML={{ __html: post.content }}
-            className="prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:leading-relaxed prose-strong:font-semibold prose-ul:my-8 prose-li:my-2.5"
-          />
-        </article>
-      </div>
+        {/* Article Content */}
+        <div className="max-w-4xl mx-auto px-6 -mt-10 md:-mt-14 relative z-10 pb-20">
+          <article className="bg-white rounded-3xl shadow-xl p-9 md:p-16 prose prose-zinc prose-lg max-w-none">
+            <div
+              dangerouslySetInnerHTML={{ __html: post.content }}
+              className="prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:leading-relaxed prose-strong:font-semibold prose-ul:my-8 prose-li:my-2.5"
+            />
+          </article>
+        </div>
 
-      {/* Bottom Navigation */}
-      <div className="max-w-4xl mx-auto px-6 pb-24 flex flex-col sm:flex-row items-center justify-between gap-8">
-        <Link
-          href="/blogs"
-          className="inline-flex items-center gap-3 text-blue-600 hover:text-blue-700 font-semibold group"
-        >
-          <div className="w-10 h-10 rounded-full border flex items-center justify-center group-hover:border-blue-600 transition-colors">
-            <ArrowLeft className="w-5 h-5" />
-          </div>
-          Browse All Articles
-        </Link>
+        {/* Bottom Navigation */}
+        <div className="max-w-4xl mx-auto px-6 pb-24 flex flex-col sm:flex-row items-center justify-between gap-8">
+          <Link
+            href="/blogs"
+            className="inline-flex items-center gap-3 text-blue-600 hover:text-blue-700 font-semibold group"
+          >
+            <div className="w-10 h-10 rounded-full border flex items-center justify-center group-hover:border-blue-600 transition-colors">
+              <ArrowLeft className="w-5 h-5" />
+            </div>
+            Browse All Articles
+          </Link>
 
-        <ShareButton title={post.title} />
+          <ShareButton title={post.title} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

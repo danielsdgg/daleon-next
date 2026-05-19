@@ -1,3 +1,4 @@
+// app/blogs/page.tsx
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -5,21 +6,26 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blog - Insights & Tips | Daleon Dynamics Kenya',
-  description: 'Expert articles on custom software development, high-converting websites, access control systems, business automation, and digital growth strategies in Kenya.',
+  title: 'Blog | Web Development, Custom Software & Security Insights Kenya',
+  description: 'Expert articles on custom software development, high-converting websites, biometric access control systems, business automation, and digital growth strategies for Kenyan businesses.',
+  
   keywords: [
     'custom software Kenya', 'web development Kenya', 'access control systems Kenya',
-    'business automation Kenya', 'digital transformation Kenya', 'software development insights',
-    'high converting websites Kenya', 'tech trends Kenya', 'daleon dynamics blog'
+    'business automation Kenya', 'high converting websites Kenya', 'software development Nairobi',
+    'biometric security Kenya', 'digital transformation Kenya', 'tech news Kenya', 'daleon dynamics blog'
   ],
+
   alternates: {
     canonical: 'https://daleondynamics.com/blogs',
   },
+
   openGraph: {
-    title: 'Blog - Insights & Tips | Daleon Dynamics',
-    description: 'Expert articles on custom software, web development, and business growth strategies for Kenyan companies.',
+    title: 'Blog - Insights on Software & Web Development in Kenya | Daleon Dynamics',
+    description: 'Practical guides and industry insights for Kenyan businesses looking to grow through technology.',
     images: ['https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200'],
-  },
+    locale: 'en_KE',
+    type: 'website'
+  }
 };
 
 const blogPosts = [
@@ -66,8 +72,27 @@ const blogPosts = [
 ];
 
 const Blogs = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Daleon Dynamics Blog",
+    "description": "Insights on custom software, web development, and security systems in Kenya",
+    "url": "https://daleondynamics.com/blogs",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Daleon Dynamics",
+      "url": "https://daleondynamics.com"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-br from-zinc-950 to-blue-950 text-white py-8 lg:py-12">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -76,7 +101,7 @@ const Blogs = () => {
           </div>
           <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
             Insights &amp; Strategies<br />
-            <span className="text-blue-400">for Growing Businesses</span>
+            <span className="text-blue-400">for Growing Kenyan Businesses</span>
           </h1>
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
             Expert articles on custom software, web development in Kenya, access control systems, 

@@ -1,36 +1,34 @@
 // app/services/custom-web-apps/page.tsx
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Info } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Custom Web Apps & Systems | Daleon Dynamics',
-  description:
-    'Custom web applications and internal systems in Kenya. Automate processes, improve efficiency, and scale your business with Daleon Dynamics.',
+  title: 'Custom Web Apps & Systems Nairobi | Software Development Kenya',
+  description: 'Custom web applications, business automation systems, CRMs, dashboards & internal tools built for Kenyan businesses. Powerful, scalable and secure solutions by Daleon Dynamics Nairobi.',
+  
   keywords: [
-    'custom web apps kenya',
-    'web application development nairobi',
-    'business automation software kenya',
-    'enterprise web systems kenya',
-    'daleon dynamics custom software',
-    'm-pesa integration web apps',
-    'crm development kenya'
+    'custom web apps nairobi', 'web application development nairobi', 'custom software development kenya',
+    'business automation software kenya', 'crm development nairobi', 'enterprise web systems kenya',
+    'custom dashboard development kenya', 'm-pesa integration kenya', 'internal tools development nairobi',
+    'software development company nairobi', 'workflow automation kenya', 'daleon dynamics'
   ],
+
   alternates: {
     canonical: 'https://daleondynamics.com/services/custom-web-apps'
   },
+
   openGraph: {
-    title: 'Custom Web Apps & Systems | Daleon Dynamics',
-    description:
-      'Powerful internal tools and web applications that automate processes, improve team efficiency, and scale with your business.',
+    title: 'Custom Web Apps & Business Systems | Nairobi Software Development',
+    description: 'Tailored web applications, automation tools, CRMs and internal systems that help Kenyan businesses scale efficiently.',
     url: 'https://daleondynamics.com/services/custom-web-apps',
     images: [
       {
         url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
         width: 1200,
         height: 630,
-        alt: 'Custom Web Apps - Daleon Dynamics'
+        alt: 'Custom Web Applications Nairobi - Daleon Dynamics'
       }
     ],
     locale: 'en_KE',
@@ -76,7 +74,7 @@ const faqs = [
   },
   {
     q: 'How long does a typical custom web app take to build?',
-    a: 'Timelines vary by scope. Growth projects often take 10–20 weeks depending on integrations and complexity.'
+    a: 'Timelines vary by scope. Growth projects often take 12–20 weeks depending on integrations and complexity.'
   }
 ];
 
@@ -95,64 +93,70 @@ const growthTier = {
   ]
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Custom Web Applications',
-  provider: {
-    '@type': 'Organization',
-    name: 'Daleon Dynamics',
-    url: 'https://daleondynamics.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Nairobi',
-      addressCountry: 'Kenya'
-    }
-  },
-  description:
-    'Custom web applications and internal systems that automate processes, improve efficiency, and scale with your business in Kenya.',
-  offers: {
-    '@type': 'Offer',
-    name: growthTier.name,
-    priceCurrency: 'KES',
-    price: '200000',
-    url: 'https://daleondynamics.com/services/custom-web-apps'
-  }
-};
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: f.a
-    }
-  }))
-};
-
 export default function CustomWebAppsPage() {
+  // Enhanced Structured Data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Custom Web Applications & Business Systems",
+        "description": "Bespoke web applications, automation tools, CRMs, and internal systems developed for businesses in Nairobi, Kenya.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daleon Dynamics",
+          "url": "https://daleondynamics.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "KE"
+          }
+        },
+        "areaServed": "Kenya",
+        "serviceType": ["Custom Software Development", "Web Application Development", "Business Automation"],
+        "offers": {
+          "@type": "Offer",
+          "name": growthTier.name,
+          "priceCurrency": "KES",
+          "price": "200000",
+          "description": "Starting price for custom web application development"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((f) => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.a
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Custom Web Apps", "item": "https://daleondynamics.com/services/custom-web-apps" }
+        ]
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-white text-zinc-900 antialiased">
-      {/* Structured data for crawlers */}
+      {/* Structured Data */}
       <script
-        key="service-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        key="faq-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* HERO */}
       <section className="py-28 px-6 bg-gradient-to-br from-blue-100 to-white text-center">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            Custom Web Apps & Systems
+            Custom Web Apps & Business Systems in Nairobi
           </h1>
           <p className="text-lg text-zinc-700 max-w-3xl mx-auto mb-8">
             We build powerful internal tools and web applications that automate processes, improve team efficiency, and scale with your business.
@@ -177,7 +181,7 @@ export default function CustomWebAppsPage() {
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* FEATURES - unchanged */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">What Our Custom Web Apps Deliver</h2>
@@ -193,7 +197,7 @@ export default function CustomWebAppsPage() {
         </div>
       </section>
 
-      {/* PROCESS & DETAILS */}
+      {/* PROCESS & DETAILS - unchanged */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
@@ -232,7 +236,7 @@ export default function CustomWebAppsPage() {
         </div>
       </section>
 
-      {/* PRICING — Growth Tier Only */}
+      {/* PRICING — unchanged styling */}
       <section className="py-28 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10">
@@ -281,7 +285,6 @@ export default function CustomWebAppsPage() {
                 </div>
               </div>
 
-              {/* subtle accent */}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2">
                 <div className="text-xs text-gray-400">Price shown is a starting point and subject to discovery</div>
               </div>
@@ -290,7 +293,7 @@ export default function CustomWebAppsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ - unchanged */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold mb-6 text-center">Frequently asked questions</h2>
@@ -305,7 +308,7 @@ export default function CustomWebAppsPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA - unchanged */}
       <section className="py-20 bg-zinc-950 text-white text-center">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to automate and scale?</h2>

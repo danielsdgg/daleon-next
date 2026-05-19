@@ -1,11 +1,29 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Sparkles, Zap, Users, Award, ShieldCheck, Globe, Code2, ExternalLink, MessageCircle } from 'lucide-react';
+import type { Metadata } from 'next';
 
-const Home: React.FC = () => {
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Web Design Company Nairobi | Custom Software Development Kenya | Daleon Dynamics",
+    description: "Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and access control solutions that help Kenyan businesses grow faster.",
+    keywords: ["web design Nairobi", "website development Kenya", "custom software development Nairobi", "web application development Kenya", "SEO optimized websites Nairobi", "access control systems Kenya"],
+    openGraph: {
+      title: "Web Design Company Nairobi | Custom Software & Apps | Daleon Dynamics",
+      description: "High-performance websites and custom systems that help Kenyan businesses grow faster. Based in Nairobi.",
+      images: [{ url: "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png" }],
+      url: "https://daleondynamics.com",
+      siteName: "Daleon Dynamics",
+      locale: "en_Ke",
+    },
+    alternates: {
+      canonical: "https://daleondynamics.com",
+    },
+  };
+};
+
+const Home = () => {
   const featuredProjects = [
     {
       title: "Insurance Kenya Portal",
@@ -36,8 +54,60 @@ const Home: React.FC = () => {
     },
   ];
 
+  // Structured Data (JSON-LD)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://daleondynamics.com/#organization",
+        "name": "Daleon Dynamics",
+        "url": "https://daleondynamics.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://daleondynamics.com/logo.png" // replace with your actual logo
+        },
+        "description": "Web design and custom software development company based in Nairobi, Kenya.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+254142021359",
+          "contactType": "customer service"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://daleondynamics.com/#localbusiness",
+        "name": "Daleon Dynamics",
+        "image": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+        "url": "https://daleondynamics.com",
+        "telephone": "+254142021359",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "priceRange": "$$",
+        "description": "High-performance websites, custom web applications, and access control systems in Nairobi, Kenya.",
+        "areaServed": "Kenya",
+        "serviceType": ["Web Design", "Custom Software Development", "Web Application Development", "Access Control Systems"]
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-zinc-950 text-white overflow-hidden">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* HERO SECTION */}
       <section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -91,7 +161,7 @@ const Home: React.FC = () => {
               <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Globe className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-semibold mb-4">High-Converting Websites</h3>
+              <h2 className="text-3xl font-semibold mb-4">High-Converting Websites</h2>
               <p className="text-zinc-600 text-lg">
                 Beautiful, fast, and professional websites designed to build trust, attract customers, and turn visitors into loyal clients.
               </p>
@@ -105,7 +175,7 @@ const Home: React.FC = () => {
               <div className="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Code2 className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-semibold mb-4">Custom Web Apps & Systems</h3>
+              <h2 className="text-3xl font-semibold mb-4">Custom Web Apps & Systems</h2>
               <p className="text-zinc-600 text-lg">
                 Powerful internal tools and web applications that automate processes, improve team efficiency, and scale with your business.
               </p>
@@ -119,7 +189,7 @@ const Home: React.FC = () => {
               <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <ShieldCheck className="w-8 h-8" />
               </div>
-              <h3 className="text-3xl font-semibold mb-4">Access Control Systems</h3>
+              <h2 className="text-3xl font-semibold mb-4">Access Control Systems</h2>
               <p className="text-zinc-600 text-lg">
                 Intelligent biometric and centralized security solutions to protect your premises and streamline staff/visitor management.
               </p>
@@ -157,7 +227,7 @@ const Home: React.FC = () => {
                 <div className="relative h-80 overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - ${project.category} project by Daleon Dynamics Nairobi`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"

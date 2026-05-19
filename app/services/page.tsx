@@ -13,31 +13,24 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Web Design & Custom Software Development Kenya | Daleon Dynamics',
-  description:
-    'Professional web design, high-converting websites, custom software development, business automation systems, and biometric access control solutions in Nairobi, Kenya.',
+  title: 'Services - Web Design Company Nairobi | Custom Software Development Kenya',
+  description: 'Expert web design, high-converting websites, custom software development, business automation, CRM systems, and biometric access control solutions in Nairobi, Kenya.',
+  
   keywords: [
-    'web development services kenya',
-    'custom software development nairobi',
-    'website design kenya',
-    'high converting websites kenya',
-    'custom web applications kenya',
-    'access control systems kenya',
-    'biometric access control nairobi',
-    'business automation software kenya',
-    'software development company kenya',
-    'm-pesa integration kenya',
-    'custom crm kenya',
-    'enterprise software development kenya',
-    'daleon dynamics services'
+    'web design nairobi', 'website development kenya', 'custom software development nairobi',
+    'high converting websites nairobi', 'custom web applications kenya', 'business automation kenya',
+    'access control systems kenya', 'biometric access control nairobi', 'm-pesa integration kenya',
+    'custom crm development kenya', 'software development company nairobi', 'web development services kenya',
+    'ecommerce website development nairobi', 'enterprise software kenya'
   ],
+
   alternates: {
     canonical: 'https://daleondynamics.com/services'
   },
+
   openGraph: {
-    title: 'Our Services - Web Development & Custom Software Kenya | Daleon Dynamics',
-    description:
-      'High-converting websites, powerful custom software, and intelligent access control systems built for Kenyan businesses.',
+    title: 'Our Services - Web Design & Custom Software Development Nairobi',
+    description: 'Professional websites, custom software, automation systems, and access control solutions built for Kenyan businesses.',
     url: 'https://daleondynamics.com/services',
     images: [
       {
@@ -58,8 +51,7 @@ const ServicesPage: React.FC = () => {
       icon: <Code2 className="w-14 h-14" />,
       title: 'Custom Software Development',
       shortDesc: 'Bespoke software engineered for your exact business needs.',
-      fullDesc:
-        'We develop scalable, secure custom software solutions tailored to your unique business processes. From CRMs and ERPs to enterprise automation, every solution is built for performance and long-term maintainability.',
+      fullDesc: 'We develop scalable, secure custom software solutions tailored to your unique business processes. From CRMs and ERPs to enterprise automation, every solution is built for performance and long-term maintainability.',
       features: [
         'Custom CRM & ERP systems',
         'Business process automation',
@@ -75,8 +67,7 @@ const ServicesPage: React.FC = () => {
       icon: <Globe className="w-14 h-14" />,
       title: 'Websites & Web Applications',
       shortDesc: 'High-converting digital experiences that represent your brand.',
-      fullDesc:
-        'We create modern, fast, and SEO-optimized websites and web applications that generate leads, increase sales, and grow your business in Kenya.',
+      fullDesc: 'We create modern, fast, and SEO-optimized websites and web applications that generate leads, increase sales, and grow your business in Kenya.',
       features: [
         'High-converting website design',
         'SEO & performance optimization',
@@ -92,8 +83,7 @@ const ServicesPage: React.FC = () => {
       icon: <ShieldCheck className="w-14 h-14" />,
       title: 'Access Control Systems',
       shortDesc: 'Smart, secure, and intelligent access management.',
-      fullDesc:
-        'We design and implement advanced biometric and cloud-based access control systems for offices, residential estates, warehouses, and institutions.',
+      fullDesc: 'We design and implement advanced biometric and cloud-based access control systems for offices, residential estates, warehouses, and institutions.',
       features: [
         'Fingerprint & facial recognition',
         'Cloud dashboard & mobile access',
@@ -149,42 +139,53 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
-  // JSON-LD structured data for the page (Service + Offer)
+  // Enhanced Structured Data
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Web Design & Custom Software Development',
-    provider: {
-      '@type': 'Organization',
-      name: 'Daleon Dynamics',
-      url: 'https://daleondynamics.com',
-      sameAs: ['https://www.linkedin.com/company/daleon-dynamics', 'https://twitter.com/daleondynamics'],
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Nairobi',
-        addressCountry: 'Kenya'
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Custom Software Development",
+        "description": "Bespoke software solutions including CRM, ERP, business automation and M-Pesa integrations in Nairobi, Kenya.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daleon Dynamics",
+          "url": "https://daleondynamics.com"
+        },
+        "areaServed": "Kenya",
+        "serviceType": ["Custom Software", "CRM Development", "Business Automation"]
+      },
+      {
+        "@type": "Service",
+        "name": "Web Design & Web Application Development",
+        "description": "High-converting, SEO-optimized websites and custom web applications for Kenyan businesses.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daleon Dynamics",
+          "url": "https://daleondynamics.com"
+        },
+        "areaServed": "Kenya",
+        "serviceType": ["Web Design", "Web Development", "Ecommerce Development"]
+      },
+      {
+        "@type": "Service",
+        "name": "Access Control Systems",
+        "description": "Biometric and cloud-based access control, visitor management and attendance systems in Nairobi.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daleon Dynamics",
+          "url": "https://daleondynamics.com"
+        },
+        "areaServed": "Kenya",
+        "serviceType": ["Access Control Systems", "Security Systems"]
       }
-    },
-    description:
-      'Professional web design, high-converting websites, custom software development, business automation systems, and biometric access control solutions in Nairobi, Kenya.',
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Service Pricing',
-      itemListElement: pricingTiers.map((tier) => ({
-        '@type': 'Offer',
-        name: tier.name,
-        priceCurrency: 'KES',
-        price: tier.price.includes('From') ? tier.price.replace(/[^\d]/g, '') || '0' : tier.price,
-        url: 'https://daleondynamics.com/services'
-      }))
-    }
+    ]
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Inject structured data for crawlers */}
+      {/* Structured Data */}
       <script
-        key="ld-json"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
@@ -250,7 +251,7 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* PRICING - unchanged styling */}
       <section aria-labelledby="pricing" className="py-28 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <h2 id="pricing" className="text-4xl md:text-5xl font-bold text-center mb-6">

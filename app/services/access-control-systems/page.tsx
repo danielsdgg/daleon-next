@@ -1,3 +1,4 @@
+// app/services/access-control-systems/page.tsx
 import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
@@ -14,44 +15,78 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Access Control Systems | Biometric Kenya',
-  description:
-    "Secure your premises with modern access control systems in Kenya. We design and install biometric, RFID, and cloud-based security systems for businesses, offices, and apartments.",
+  title: 'Access Control Systems Nairobi | Biometric Security Kenya',
+  description: 'Professional biometric access control systems, RFID, and cloud-based security solutions in Nairobi, Kenya. Secure your offices, apartments, schools, and commercial properties with Daleon Dynamics.',
+  
   keywords: [
-    "access control systems Kenya",
+    "access control systems Nairobi", 
+    "biometric access control Kenya", 
     "biometric systems Nairobi",
+    "security systems Kenya", 
+    "door access control Nairobi", 
     "RFID access control Kenya",
-    "security systems Kenya",
-    "door access control Nairobi",
-    "biometric attendance systems",
+    "fingerprint access control Nairobi", 
+    "attendance management system Kenya",
+    "smart access control systems Kenya",
+    "daleon dynamics"
   ],
-  openGraph: {
-    title: "Access Control Systems in Kenya | Daleon Dynamics",
-    description:
-      "Modern biometric and access control systems for businesses and properties in Kenya.",
-    url: "https://yourdomain.com/services/access-control-systems",
-    siteName: "Daleon Dynamics",
-    locale: "en_KE",
-    type: "website",
+
+  alternates: {
+    canonical: 'https://daleondynamics.com/services/access-control-systems'
   },
+
+  openGraph: {
+    title: "Access Control Systems Nairobi | Biometric Security Solutions Kenya",
+    description: "Modern biometric, RFID, and cloud-based access control systems for businesses and properties across Kenya.",
+    url: "https://daleondynamics.com/services/access-control-systems",
+    images: [
+      {
+        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        width: 1200,
+        height: 630,
+        alt: 'Access Control Systems Nairobi - Daleon Dynamics'
+      }
+    ],
+    locale: 'en_KE',
+    type: 'website'
+  }
 };
 
 const AccessControlSystems = () => {
+  // Enhanced Structured Data
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: "Access Control Systems",
-    provider: {
-      "@type": "Organization",
-      name: "Daleon Dynamics",
-      url: "https://yourdomain.com",
-    },
-    areaServed: {
-      "@type": "Country",
-      name: "Kenya",
-    },
-    description:
-      "Installation and integration of biometric, RFID, and cloud-based access control systems in Kenya.",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Access Control Systems",
+        "description": "Biometric, RFID, and cloud-based access control systems installation and integration in Nairobi, Kenya.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daleon Dynamics",
+          "url": "https://daleondynamics.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "KE"
+          }
+        },
+        "areaServed": "Kenya",
+        "serviceType": ["Access Control Systems", "Biometric Security", "Security Systems"],
+        "offers": {
+          "@type": "Offer",
+          "description": "Custom pricing based on site assessment and requirements"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" },
+          { "@type": "ListItem", "position": 3, "name": "Access Control Systems", "item": "https://daleondynamics.com/services/access-control-systems" }
+        ]
+      }
+    ]
   };
 
   const features = [
@@ -84,7 +119,7 @@ const AccessControlSystems = () => {
 
   return (
     <>
-      {/* SCHEMA */}
+      {/* Enhanced Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -101,8 +136,8 @@ const AccessControlSystems = () => {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Smart Access Control Systems That
-              <span className="text-blue-400"> Secure Your Premises</span>
+              Smart Access Control Systems in Nairobi
+              <span className="text-blue-400"> That Secure Your Premises</span>
             </h1>
 
             <p className="text-xl text-gray-300 mb-10">

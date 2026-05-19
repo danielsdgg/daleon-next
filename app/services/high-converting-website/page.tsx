@@ -5,31 +5,30 @@ import { ArrowRight, CheckCircle, Info } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'High-Converting Websites | Daleon Dynamics',
-  description:
-    'High-converting websites in Nairobi, Kenya — fast, SEO-optimized, mobile-first designs that turn visitors into customers. Built by Daleon Dynamics.',
+  title: 'High-Converting Websites Nairobi | Web Design Kenya | Daleon Dynamics',
+  description: 'High-converting, SEO-optimized websites in Nairobi, Kenya. Fast, mobile-first, conversion-focused designs that turn visitors into paying customers. Professional web design company.',
+  
   keywords: [
-    'high converting websites kenya',
-    'website design nairobi',
-    'seo optimized websites kenya',
-    'conversion rate optimization kenya',
-    'landing page design kenya',
-    'daleon dynamics web design'
+    'high converting websites nairobi', 'web design nairobi', 'website design kenya',
+    'seo optimized websites nairobi', 'conversion rate optimization kenya',
+    'professional website design nairobi', 'business website kenya', 'landing page design nairobi',
+    'fast loading websites kenya', 'ecommerce website nairobi', 'daleon dynamics'
   ],
+
   alternates: {
     canonical: 'https://daleondynamics.com/services/high-converting-website'
   },
+
   openGraph: {
-    title: 'High-Converting Websites | Daleon Dynamics',
-    description:
-      'Beautiful, fast, and conversion-focused websites built for Kenyan businesses. SEO-first, mobile-first, and optimized for growth.',
+    title: 'High-Converting Websites Nairobi | Professional Web Design Kenya',
+    description: 'We build beautiful, fast, and conversion-focused websites that help Kenyan businesses generate more leads and grow faster.',
     url: 'https://daleondynamics.com/services/high-converting-website',
     images: [
       {
         url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
         width: 1200,
         height: 630,
-        alt: 'High-Converting Websites - Daleon Dynamics'
+        alt: 'High-Converting Websites Nairobi - Daleon Dynamics'
       }
     ],
     locale: 'en_KE',
@@ -76,67 +75,83 @@ const faqs = [
 ];
 
 const HighConvertingWebsitePage: React.FC = () => {
+  // Enhanced Structured Data
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'High-Converting Websites',
-    provider: {
-      '@type': 'Organization',
-      name: 'Daleon Dynamics',
-      url: 'https://daleondynamics.com',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Nairobi',
-        addressCountry: 'Kenya'
-      }
-    },
-    description:
-      'High-converting websites: fast, SEO-optimized, mobile-first designs that turn visitors into customers.',
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'KES',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'KES',
-        price: '80000',
-        description: 'Typical starting price for a high-converting website (starter brochure site).'
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "High-Converting Websites",
+        "description": "Professional high-converting, SEO-optimized websites built for businesses in Nairobi and Kenya.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Daleon Dynamics",
+          "url": "https://daleondynamics.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "KE"
+          }
+        },
+        "areaServed": "Kenya",
+        "serviceType": "Web Design",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "KES",
+          "price": "80000",
+          "description": "Starting price for professional high-converting website"
+        }
       },
-      url: 'https://daleondynamics.com/services/high-converting-website'
-    }
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: f.a
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((f) => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": f.a
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daleondynamics.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://daleondynamics.com/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "High-Converting Websites",
+            "item": "https://daleondynamics.com/services/high-converting-website"
+          }
+        ]
       }
-    }))
+    ]
   };
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
-      {/* Structured data for crawlers */}
+      {/* Structured Data */}
       <script
-        key="service-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        key="faq-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* HERO */}
       <section className="py-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            High-Converting Websites
+            High-Converting Websites in Nairobi
           </h1>
 
           <p className="text-lg text-zinc-700 max-w-3xl mx-auto mb-8">
@@ -162,7 +177,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         </div>
       </section>
 
-      {/* KEY BENEFITS */}
+      {/* KEY BENEFITS - unchanged styling */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Why our websites convert better</h2>
@@ -178,7 +193,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         </div>
       </section>
 
-      {/* CASE STUDY HIGHLIGHT */}
+      {/* CASE STUDY HIGHLIGHT - unchanged */}
       <section className="py-20 bg-zinc-950 text-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Real results for Kenyan businesses</h2>
@@ -195,7 +210,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         </div>
       </section>
 
-      {/* DETAILED FEATURES & PROCESS */}
+      {/* DETAILED FEATURES & PROCESS - unchanged */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -234,7 +249,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         </div>
       </section>
 
-      {/* PRICING SUMMARY */}
+      {/* PRICING SUMMARY - unchanged */}
       <section className="py-20 bg-gradient-to-br from-blue-200 via-white to-blue-200">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Pricing — clear starting points</h2>
@@ -249,7 +264,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ - unchanged */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold mb-6 text-center">Frequently asked questions</h2>
