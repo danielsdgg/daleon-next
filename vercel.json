@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.daleondynamics.com" }],
+      "destination": "https://daleondynamics.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "scheme", "value": "http" }],
+      "destination": "https://daleondynamics.com/:path*",
+      "permanent": true
+    }
+  ]
+}
