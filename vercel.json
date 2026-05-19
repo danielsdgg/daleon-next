@@ -12,5 +12,6 @@
       "destination": "https://daleondynamics.com/:path*",
       "permanent": true
     }
-  ]
+  ],
+  "trailingSlash": false
 }
