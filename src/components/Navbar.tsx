@@ -40,7 +40,6 @@ const Navbar = () => {
     { name: "Blogs", path: "/blogs" },
     { name: "Careers", path: "/careers" },
     { name: "Contact", path: "/contact" },
-    
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -50,7 +49,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo + Brand */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <Image
@@ -61,7 +60,6 @@ const Navbar = () => {
                 className="object-contain transition-all duration-500 group-hover:rotate-12 group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 bg-blue-600/10 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
             </div>
             <div className="-space-y-1">
               <span className="text-2xl font-bold tracking-tighter text-gray-900">
@@ -72,7 +70,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) =>
               link.dropdown ? (
@@ -84,20 +82,16 @@ const Navbar = () => {
                 >
                   <button
                     className={cn(
-                      "flex items-center gap-1.5 text-sm font-semibold tracking-tight transition-all duration-200 py-1.5",
-                      isActive(link.path)
-                        ? "text-gray-900"
-                        : "text-gray-600 hover:text-gray-900"
+                      "flex items-center gap-1.5 text-sm font-semibold tracking-tight py-1.5 transition-all",
+                      isActive(link.path) ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
                     )}
                   >
                     {link.name}
                     <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" />
                   </button>
 
-                  {/* Icon Dropdown */}
-                  <div className={cn(
-                    "absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0"
-                  )}>
+                  {/* Desktop Dropdown */}
+                  <div className="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0">
                     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 w-72 py-2 overflow-hidden">
                       {link.dropdown.map((sub) => {
                         const Icon = sub.icon;
@@ -105,8 +99,7 @@ const Navbar = () => {
                           <Link
                             key={sub.path}
                             href={sub.path}
-                            onClick={() => setServicesOpen(false)}
-                            className="flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-all duration-200 group/item"
+                            className="flex items-center gap-4 px-6 py-4 hover:bg-gray-50 transition-all group/item"
                           >
                             <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover/item:bg-blue-100 transition-colors">
                               <Icon className="w-5 h-5" />
@@ -122,7 +115,6 @@ const Navbar = () => {
                         <Link 
                           href="/services" 
                           className="flex items-center justify-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
-                          onClick={() => setServicesOpen(false)}
                         >
                           Explore All Services
                           <ArrowRight className="w-4 h-4" />
@@ -136,10 +128,8 @@ const Navbar = () => {
                   key={link.path}
                   href={link.path}
                   className={cn(
-                    "relative text-sm font-semibold tracking-tight py-1.5 transition-all duration-200 group",
-                    isActive(link.path)
-                      ? "text-gray-900"
-                      : "text-gray-600 hover:text-gray-900"
+                    "relative text-sm font-semibold tracking-tight py-1.5 transition-all group",
+                    isActive(link.path) ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
                   )}
                 >
                   {link.name}
@@ -156,11 +146,10 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="group relative flex items-center gap-3 overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:brightness-110 text-white px-8 py-3.5 rounded-2xl text-sm font-semibold tracking-tight transition-all duration-300 active:scale-[0.97] shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40"
+              className="group relative flex items-center gap-3 overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 hover:brightness-110 text-white px-8 py-3.5 rounded-2xl text-sm font-semibold tracking-tight transition-all active:scale-[0.97]"
             >
               <span>Get Free Quote</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:-translate-x-[200%] transition-transform duration-700" />
             </Link>
           </div>
 
@@ -175,27 +164,27 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu - Kept simple with icons too */}
+      {/* ==================== MOBILE MENU ==================== */}
       <div
         className={cn(
           "md:hidden bg-white border-t border-gray-100 transition-all duration-300 overflow-hidden",
-          isOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-[750px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="px-6 py-10 flex flex-col gap-8 text-[17px]">
+        <div className="px-6 py-10 flex flex-col gap-8 text-[17px] font-medium">
           {navLinks.map((link) =>
             link.dropdown ? (
-              <div key={link.path} className="space-y-4">
+              <div key={link.path} className="space-y-5">
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
-                  className="flex items-center justify-between w-full font-semibold text-gray-800"
+                  className="flex items-center justify-between w-full text-gray-800 py-2"
                 >
                   {link.name}
                   <ChevronDown className={cn("w-5 h-5 transition-transform", servicesOpen && "rotate-180")} />
                 </button>
-                
+
                 {servicesOpen && (
-                  <div className="ml-6 space-y-5">
+                  <div className="ml-6 space-y-6 border-l border-gray-200 pl-6">
                     {link.dropdown.map((sub) => {
                       const Icon = sub.icon;
                       return (
@@ -206,13 +195,26 @@ const Navbar = () => {
                             setIsOpen(false);
                             setServicesOpen(false);
                           }}
-                          className="flex items-center gap-3 text-gray-600 hover:text-blue-600 font-medium"
+                          className="flex items-center gap-3 text-gray-600 hover:text-blue-600 active:text-blue-700"
                         >
                           <Icon className="w-5 h-5" />
                           {sub.name}
                         </Link>
                       );
                     })}
+
+                    {/* Explore All Services - Now clearly visible on mobile */}
+                    <Link
+                      href="/services"
+                      onClick={() => {
+                        setIsOpen(false);
+                        setServicesOpen(false);
+                      }}
+                      className="flex items-center gap-3 text-blue-600 hover:text-blue-700 font-semibold pt-4 border-t border-gray-200"
+                    >
+                      Explore All Services
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 )}
               </div>
@@ -222,7 +224,7 @@ const Navbar = () => {
                 href={link.path}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "font-semibold py-1 block",
+                  "py-2 block",
                   isActive(link.path) ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
                 )}
               >
@@ -231,11 +233,12 @@ const Navbar = () => {
             )
           )}
 
-          <div className="pt-6 border-t border-gray-100">
+          {/* Mobile CTA */}
+          <div className="pt-8 border-t border-gray-100">
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-2xl font-semibold text-base active:scale-[0.97] shadow-lg transition-all"
+              className="block w-full text-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-2xl font-semibold text-base active:scale-[0.97] shadow-lg"
             >
               Get Your Free Quote
             </Link>
