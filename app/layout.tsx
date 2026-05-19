@@ -11,14 +11,13 @@ export const metadata: Metadata = {
     template: '%s | Daleon Dynamics',
   },
 
-  description: 'Top web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, CRM, and biometric access control solutions for Kenyan businesses.',
+  description: 'Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
 
   keywords: [
-    'web design nairobi', 'website development nairobi', 'web development company kenya',
-    'custom software development nairobi', 'web application development kenya',
-    'high converting websites nairobi', 'custom web apps nairobi', 'business automation kenya',
-    'access control systems kenya', 'biometric access control nairobi', 'm-pesa integration kenya',
-    'software company nairobi', 'ecommerce website development kenya', 'daleon dynamics'
+    'web design nairobi', 'website development nairobi', 'custom software development nairobi',
+    'web application development kenya', 'high converting websites nairobi',
+    'business automation kenya', 'access control systems nairobi', 'biometric access control kenya',
+    'm-pesa integration kenya', 'software company nairobi', 'ecommerce website kenya', 'daleon dynamics'
   ],
 
   authors: [{ name: 'Daleon Dynamics' }],
@@ -32,8 +31,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Web Design Company Nairobi | Custom Software & Web Apps | Daleon Dynamics',
-    description: 'Professional websites, custom software, automation systems and access control solutions built for Kenyan businesses.',
+    title: 'Web Design Company Nairobi | Custom Software Development Kenya',
+    description: 'Professional websites, custom web apps, automation systems and biometric access control solutions in Nairobi, Kenya.',
     url: 'https://daleondynamics.com',
     siteName: 'Daleon Dynamics',
     images: [
@@ -41,18 +40,17 @@ export const metadata: Metadata = {
         url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
         width: 1200,
         height: 630,
-        alt: 'Daleon Dynamics - Web Design & Software Company Nairobi',
+        alt: 'Daleon Dynamics - Web Design & Custom Software Nairobi',
       },
     ],
     locale: 'en_KE',
     type: 'website',
-    countryName: 'Kenya',
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design Company Nairobi | Custom Software Development Kenya',
-    description: 'High-performance websites and business systems for Kenyan companies.',
+    title: 'Web Design Company Nairobi | Custom Software Kenya',
+    description: 'High-performance websites and custom systems for Kenyan businesses.',
     images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
   },
 
@@ -64,18 +62,12 @@ export const metadata: Metadata = {
       follow: true,
       'max-image-preview': 'large',
       'max-snippet': -1,
-      'max-video-preview': -1,
     },
   },
 
   alternates: {
     canonical: 'https://daleondynamics.com',
   },
-
-  // Add these verification tags later in Google Search Console
-  // verification: {
-  //   google: 'your-google-verification-code',
-  // },
 };
 
 export const viewport: Viewport = {
