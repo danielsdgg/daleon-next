@@ -2,13 +2,19 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.daleondynamics.com" }],
+      "has": [
+        { "type": "host", "value": "www.daleondynamics.com" }
+      ],
       "destination": "https://daleondynamics.com/:path*",
       "permanent": true
     },
     {
-      "source": "/:path*",
-      "has": [{ "type": "scheme", "value": "http" }],
+      "source": "http://daleondynamics.com/:path*",
+      "destination": "https://daleondynamics.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://www.daleondynamics.com/:path*",
       "destination": "https://daleondynamics.com/:path*",
       "permanent": true
     }
