@@ -52,7 +52,7 @@ const About = () => {
             </h1>
 
             <p className="text-2xl text-gray-300 leading-relaxed">
-              Daleon Dynamics is a custom software development studio based in Nairobi. 
+              Daleon Dynamics is a custom software development company based in Nairobi. 
               We create high-performance websites, powerful web applications, and intelligent systems 
               that solve real business problems.
             </p>
