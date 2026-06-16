@@ -8,10 +8,12 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow: [
-          '/api/',           // Don't index API routes
-          '/admin/',         // If you ever add an admin area
-          '/private/',       
-          '/*.json$',        // Optional: block JSON files
+          '/api/',        // Block API routes
+          '/admin/',      // Block admin area
+          '/private/',    // Block private content
+          '/_next/',      // Block Next.js build artifacts
+          '/static/',     // Block static assets (optional)
+          '/*.json$',     // Block JSON files
         ],
       },
     ],

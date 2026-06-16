@@ -33,7 +33,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Remove floating Next.js development indicator
   devIndicators: false,
 };
 
