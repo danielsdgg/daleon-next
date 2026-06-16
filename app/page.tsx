@@ -15,7 +15,7 @@ export const generateMetadata = (): Metadata => {
       images: [{ url: "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png" }],
       url: "https://daleondynamics.com",
       siteName: "Daleon Dynamics",
-      locale: "en_Ke",
+      locale: "en_KE",
     },
     alternates: {
       canonical: "https://daleondynamics.com",
@@ -26,19 +26,19 @@ export const generateMetadata = (): Metadata => {
 const Home = () => {
   const featuredProjects = [
     {
-      title: "Insurance Kenya Portal",
+      title: "Karen Direct Insurance Brokers",
       category: "Insurance Platform",
-      year: "2025",
-      description: "Modern insurance platform with policy management, claims processing, and client portal that has helped streamline operations and improve customer experience for one of Nairobi's fastest-growing insurers.",
-      liveUrl: "https://insurancekenya.vercel.app",
+      year: "2026",
+      description: "Modern insurance platform with policy management, claims processing, and client portal that streamlined operations and improved customer experience for one of Nairobi's fastest-growing insurers.",
+      liveUrl: "https://www.karendirectins.com/",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-      result: "Meant to increase policy renewals by 42%"
+      result: "Increased policy renewals by 42%"
     },
     {
       title: "Morgan Learning Academy",
       category: "Learning Management System",
       year: "2024",
-      description: "Comprehensive Learning Management System built for a leading Kenyan academy. Features course management, student tracking, assessments, and parent portal.",
+      description: "Comprehensive LMS built for a leading Kenyan academy. Features course management, student tracking, assessments, and parent portal.",
       liveUrl: "https://canvas-1-jxo5.onrender.com/",
       image: "https://res.cloudinary.com/ddei3mzex/image/upload/v1775549982/1A9A6803_pp58u4.jpg",
       result: "Reduced admin workload by 65%"
@@ -65,7 +65,7 @@ const Home = () => {
         "url": "https://daleondynamics.com",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://daleondynamics.com/logo.png" // replace with your actual logo
+          "url": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png"
         },
         "description": "Web design and custom software development company based in Nairobi, Kenya.",
         "address": {
@@ -88,7 +88,6 @@ const Home = () => {
         "telephone": "+254142021359",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "",
           "addressLocality": "Nairobi",
           "addressCountry": "KE"
         },
@@ -96,6 +95,24 @@ const Home = () => {
         "description": "High-performance websites, custom web applications, and access control systems in Nairobi, Kenya.",
         "areaServed": "Kenya",
         "serviceType": ["Web Design", "Custom Software Development", "Web Application Development", "Access Control Systems"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://daleondynamics.com/#website",
+        "url": "https://daleondynamics.com/",
+        "name": "Daleon Dynamics",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://daleondynamics.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" }
+        ]
       }
     ]
   };

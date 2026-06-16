@@ -45,11 +45,11 @@ export const metadata: Metadata = {
 const Projects = () => {
   const projects = [
     {
-      title: "Insurance Kenya Portal",
+      title: "Karen Direct Insurance Brokers",
       category: "Insurance Platform",
-      year: "2025",
+      year: "2026",
       description: "A modern, secure, and user-friendly insurance management platform with policy administration, claims processing, client portal, and real-time analytics. This system has significantly streamlined operations for one of Nairobi's fastest-growing insurance companies.",
-      liveUrl: "https://insurancekenya.vercel.app",
+      liveUrl: "https://karendirectins.com",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
     },
     {
@@ -71,7 +71,7 @@ const Projects = () => {
     {
       title: "HeroCloth E-commerce Store",
       category: "Fashion E-commerce",
-      year: "2024",
+      year: "2025",
       description: "High-performance ecommerce platform with seamless product browsing, secure checkout, M-Pesa integration, order management, and excellent user experience. Built to deliver fast loading speeds and high conversion rates.",
       liveUrl: "https://herocloth.vercel.app",
       image: "https://res.cloudinary.com/ddei3mzex/image/upload/v1729598578/videoediting2_itg2qh.jpg"
@@ -80,6 +80,56 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-white">
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://daleondynamics.com/projects" }
+              ]
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Karen Direct Insurance Brokers",
+              "description": "Insurance management platform with policy administration, claims processing, client portal, and analytics.",
+              "url": "https://karendirectins.com",
+              "datePublished": "2026",
+              "author": { "@type": "Organization", "name": "Daleon Dynamics" }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "Morgan Learning Academy LMS",
+              "description": "Learning Management System with course management, student tracking, assessments, and parent portal.",
+              "url": "https://canvas-1-jxo5.onrender.com/",
+              "datePublished": "2024",
+              "author": { "@type": "Organization", "name": "Daleon Dynamics" }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "SecureGate Access Control",
+              "description": "Biometric access control system with monitoring, visitor management, and attendance tracking.",
+              "url": "https://daleondynamics.com/projects/securegate",
+              "datePublished": "2025",
+              "author": { "@type": "Organization", "name": "Daleon Dynamics" }
+            },
+            {
+              "@type": "CreativeWork",
+              "name": "HeroCloth E-commerce Store",
+              "description": "Ecommerce platform with product browsing, secure checkout, M-Pesa integration, and order management.",
+              "url": "https://herocloth.vercel.app",
+              "datePublished": "2025",
+              "author": { "@type": "Organization", "name": "Daleon Dynamics" }
+            }
+          ]
+        })
+      }}
+    />
+
       
       {/* Hero Section */}
       <section className="relative py-32 lg:py-44 overflow-hidden bg-zinc-950">

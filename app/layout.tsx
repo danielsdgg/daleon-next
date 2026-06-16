@@ -138,11 +138,30 @@ export default function RootLayout({
                     "Access Control Systems"
                   ],
                   "areaServed": "Kenya"
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://daleondynamics.com/#website",
+                  "url": "https://daleondynamics.com/",
+                  "name": "Daleon Dynamics",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://daleondynamics.com/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" }
+                  ]
                 }
               ]
             })
           }}
         />
+        
 
         {/* Floating WhatsApp Button */}
         <a

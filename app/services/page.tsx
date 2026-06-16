@@ -139,56 +139,119 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
-  // Enhanced Structured Data
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": "Custom Software Development",
-        "description": "Bespoke software solutions including CRM, ERP, business automation and M-Pesa integrations in Nairobi, Kenya.",
-        "provider": {
-          "@type": "Organization",
-          "name": "Daleon Dynamics",
-          "url": "https://daleondynamics.com"
-        },
-        "areaServed": "Kenya",
-        "serviceType": ["Custom Software", "CRM Development", "Business Automation"]
-      },
-      {
-        "@type": "Service",
-        "name": "Web Design & Web Application Development",
-        "description": "High-converting, SEO-optimized websites and custom web applications for Kenyan businesses.",
-        "provider": {
-          "@type": "Organization",
-          "name": "Daleon Dynamics",
-          "url": "https://daleondynamics.com"
-        },
-        "areaServed": "Kenya",
-        "serviceType": ["Web Design", "Web Development", "Ecommerce Development"]
-      },
-      {
-        "@type": "Service",
-        "name": "Access Control Systems",
-        "description": "Biometric and cloud-based access control, visitor management and attendance systems in Nairobi.",
-        "provider": {
-          "@type": "Organization",
-          "name": "Daleon Dynamics",
-          "url": "https://daleondynamics.com"
-        },
-        "areaServed": "Kenya",
-        "serviceType": ["Access Control Systems", "Security Systems"]
-      }
-    ]
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://daleondynamics.com/#organization",
+                "name": "Daleon Dynamics",
+                "url": "https://daleondynamics.com",
+                "logo": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+                "description": "Leading web design and custom software development company in Nairobi, Kenya.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Nairobi",
+                  "addressCountry": "KE"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+254142021359",
+                  "contactType": "customer service",
+                  "availableLanguage": "English"
+                },
+                "areaServed": "Kenya"
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://daleondynamics.com/#localbusiness",
+                "name": "Daleon Dynamics",
+                "image": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+                "url": "https://daleondynamics.com",
+                "telephone": "+254142021359",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Nairobi",
+                  "addressCountry": "KE"
+                },
+                "priceRange": "$$",
+                "description": "Web design, custom software development, and access control systems company in Nairobi, Kenya.",
+                "serviceType": [
+                  "Web Design", 
+                  "Custom Web Applications", 
+                  "Business Automation", 
+                  "Access Control Systems"
+                ],
+                "areaServed": "Kenya"
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://daleondynamics.com/#website",
+                "url": "https://daleondynamics.com/",
+                "name": "Daleon Dynamics",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://daleondynamics.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com/" },
+                  { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" }
+                ]
+              },
+              {
+                "@type": "Service",
+                "name": "High-Converting Websites",
+                "provider": { "@id": "https://daleondynamics.com/#organization" },
+                "description": "Beautiful, fast, and professional websites designed to build trust, attract customers, and convert visitors into clients.",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "KES",
+                  "price": "80000",
+                  "url": "https://daleondynamics.com/services/high-converting-website",
+                  "availability": "https://schema.org/InStock"
+                }
+              },
+              {
+                "@type": "Service",
+                "name": "Custom Web Applications",
+                "provider": { "@id": "https://daleondynamics.com/#organization" },
+                "description": "Tailored web applications that automate processes, improve efficiency, and scale with your business.",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "KES",
+                  "price": "200000",
+                  "url": "https://daleondynamics.com/services/custom-web-apps",
+                  "availability": "https://schema.org/InStock"
+                }
+              },
+              {
+                "@type": "Service",
+                "name": "Access Control Systems",
+                "provider": { "@id": "https://daleondynamics.com/#organization" },
+                "description": "Secure biometric and centralized access control solutions for businesses and residential properties.",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "KES",
+                  "price": "Determined after discovery",
+                  "url": "https://daleondynamics.com/services/access-control-systems",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+            ]
+          })
+        }}
       />
+
 
       {/* HERO */}
       <header className="py-28 bg-zinc-950 text-white text-center">

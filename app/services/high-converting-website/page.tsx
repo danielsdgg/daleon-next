@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: 'Will my website be mobile-friendly?',
-    a: 'Absolutely. Every site we build is mobile-first and tested across devices to ensure excellent user experience and performance.'
+    a: 'Absolutely. Every site we build is mobile-first and tested across devices to ensure excellent user experience and performance. We also optimize for Core Web Vitals, so your site loads quickly and ranks better on Google.'
   }
 ];
 
@@ -264,7 +264,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ - unchanged */}
+      {/* FAQ */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-bold mb-6 text-center">Frequently asked questions</h2>

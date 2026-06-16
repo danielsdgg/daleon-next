@@ -152,6 +152,17 @@ export default function CustomWebAppsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+    {/* Visible Breadcrumbs */}
+    <nav aria-label="Breadcrumb" className="px-6 py-4 text-sm text-black bg-gray-500/10">
+      <ol className="flex space-x-2 bg-black:hover text-indigo-900">
+        <li><Link href="/">Home</Link></li>
+        <li>/</li>
+        <li><Link href="/services">Services</Link></li>
+        <li>/</li>
+        <li><Link href="/services/custom-web-apps">Custom Web Apps</Link></li>
+      </ol>
+    </nav>
+
       {/* HERO */}
       <section className="py-28 px-6 bg-gradient-to-br from-blue-100 to-white text-center">
         <div className="max-w-5xl mx-auto">
