@@ -90,7 +90,7 @@ export default function RootLayout({
         </main>
         <Footer />
 
-        {/* Organization + LocalBusiness Schema (Highly Recommended for Local SEO) */}
+        {/* Organization + LocalBusiness Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

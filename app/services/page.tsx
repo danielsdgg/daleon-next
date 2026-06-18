@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   }
 };
 
-const ServicesPage: React.FC = () => {
+const Services: React.FC = () => {
   const services = [
     {
       icon: <Code2 className="w-14 h-14" />,
@@ -252,7 +252,6 @@ const ServicesPage: React.FC = () => {
         }}
       />
 
-
       {/* HERO */}
       <header className="py-28 bg-zinc-950 text-white text-center">
         <div className="max-w-6xl mx-auto px-6">
@@ -411,4 +410,4 @@ const ServicesPage: React.FC = () => {
   );
 };
 
-export default ServicesPage;
+export default Services;
