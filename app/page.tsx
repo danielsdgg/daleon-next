@@ -23,7 +23,7 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
-const Home = () => {
+const Home:React.FC= () => {
   const featuredProjects = [
     {
       title: "Karen Direct Insurance Brokers",
