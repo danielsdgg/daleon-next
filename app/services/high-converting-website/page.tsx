@@ -1,7 +1,7 @@
 // app/services/high-converting-website/page.tsx
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Info } from 'lucide-react';
+import { ArrowRight, CheckCircle, Info, TrendingUp, Zap, Users, Target } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -36,246 +36,278 @@ export const metadata: Metadata = {
   }
 };
 
-const features = [
-  {
-    title: 'Conversion-Focused Design',
-    desc: 'Layouts and user journeys designed to reduce friction and increase leads, with clear CTAs and trust signals.'
-  },
-  {
-    title: 'SEO & Performance',
-    desc: 'Semantic HTML, fast core web vitals, image optimization, and on-page SEO to help you rank and convert.'
-  },
-  {
-    title: 'Mobile-First Experience',
-    desc: 'Designs that prioritize mobile users and deliver fast, intuitive experiences on any device.'
-  },
-  {
-    title: 'Analytics & A/B Testing',
-    desc: 'Set up analytics, heatmaps, and A/B tests to continuously improve conversion rates.'
-  },
-  {
-    title: 'Secure & Scalable',
-    desc: 'Modern tech stack, secure hosting, and scalable architecture so your site grows with your business.'
-  }
-];
-
-const faqs = [
-  {
-    q: 'How long does it take to build a high-converting website?',
-    a: 'Typical timelines range from 6–9 weeks for normal sites and 10–12+ weeks for complex, conversion-optimized builds depending on scope and integrations.'
-  },
-  {
-    q: 'Do you provide SEO and content support?',
-    a: 'Yes — we include on-page SEO, technical SEO setup, and can provide content strategy and copywriting as an add-on.'
-  },
-  {
-    q: 'Will my website be mobile-friendly?',
-    a: 'Absolutely. Every site we build is mobile-first and tested across devices to ensure excellent user experience and performance. We also optimize for Core Web Vitals, so your site loads quickly and ranks better on Google.'
-  }
-];
-
 const HighConvertingWebsitePage: React.FC = () => {
-  // Enhanced Structured Data
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": "High-Converting Websites",
-        "description": "Professional high-converting, SEO-optimized websites built for businesses in Nairobi and Kenya.",
-        "provider": {
-          "@type": "Organization",
-          "name": "Daleon Dynamics",
-          "url": "https://daleondynamics.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Nairobi",
-            "addressCountry": "KE"
-          }
-        },
-        "areaServed": "Kenya",
-        "serviceType": "Web Design",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "KES",
-          "price": "80000",
-          "description": "Starting price for professional high-converting website"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": faqs.map((f) => ({
-          "@type": "Question",
-          "name": f.q,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": f.a
-          }
-        }))
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://daleondynamics.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://daleondynamics.com/services"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "High-Converting Websites",
-            "item": "https://daleondynamics.com/services/high-converting-website"
-          }
-        ]
-      }
-    ]
-  };
+  const benefits = [
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Higher Conversion Rates",
+      desc: "Strategic layouts, compelling CTAs, and trust signals that guide visitors to take action."
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Lightning-Fast Performance",
+      desc: "Optimized for Core Web Vitals — fast loading speeds that improve rankings and user experience."
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "SEO Built-In",
+      desc: "Technical and on-page SEO that helps your site rank higher on Google for Nairobi and Kenya searches."
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Mobile-First Design",
+      desc: "Perfect experience on phones — critical since most Kenyans browse on mobile."
+    }
+  ];
+
+  const processSteps = [
+    { num: "01", title: "Discovery & Strategy", desc: "Understand your business goals, target customers, and conversion objectives." },
+    { num: "02", title: "User-Centered Design", desc: "Wireframes and high-fidelity designs focused on guiding users toward action." },
+    { num: "03", title: "Development & Optimization", desc: "Built with Next.js for speed, security, and scalability." },
+    { num: "04", title: "Testing & Launch", desc: "Rigorous testing, analytics setup, and launch with post-launch support." }
+  ];
+
+  const faqs = [
+    {
+      q: 'How long does it take to build a high-converting website?',
+      a: 'Typical timelines range from 4–8 weeks for standard sites and 10–14 weeks for complex, conversion-optimized builds with custom integrations.'
+    },
+    {
+      q: 'Do you provide SEO and content support?',
+      a: 'Yes — we include comprehensive on-page SEO, technical setup, and can handle content strategy and professional copywriting as an add-on service.'
+    },
+    {
+      q: 'Will my website be mobile-friendly?',
+      a: 'Absolutely. Every website is built mobile-first and thoroughly tested across devices. We optimize for excellent Core Web Vitals so your site loads quickly and ranks better on Google.'
+    },
+    {
+      q: 'Do you integrate M-Pesa and other payment systems?',
+      a: 'Yes. We specialize in secure M-Pesa Daraja API integration and other Kenyan payment gateways for seamless online transactions.'
+    }
+  ];
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Service",
+                "name": "High-Converting Websites Nairobi",
+                "description": "Professional high-converting, SEO-optimized websites built for businesses in Nairobi and across Kenya.",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Daleon Dynamics",
+                  "url": "https://daleondynamics.com",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Nairobi",
+                    "addressCountry": "KE"
+                  }
+                },
+                "areaServed": "Kenya",
+                "serviceType": "Web Design",
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "KES",
+                  "price": "80000",
+                  "description": "Starting price for a professional high-converting website"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": faqs.map((f) => ({
+                  "@type": "Question",
+                  "name": f.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": f.a
+                  }
+                }))
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com" },
+                  { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" },
+                  { "@type": "ListItem", "position": 3, "name": "High-Converting Websites", "item": "https://daleondynamics.com/services/high-converting-website" }
+                ]
+              }
+            ]
+          })
+        }}
       />
 
-      {/* HERO */}
-      <section className="py-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      {/* UNIQUE HERO - Fresh & Energetic Design */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-emerald-900 via-cyan-700 to-emerald-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(at_top_right,#ffffff15_0%,transparent_50%)]" />
+        
+        <div className="max-w-6xl mx-auto px-6 text-center relative">
+          <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-sm font-medium mb-8">
+            <TrendingUp className="w-5 h-5" /> PROVEN TO CONVERT
+          </div>
+
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            High-Converting Websites in Nairobi
+            High-Converting Websites in <span className="text-amber-300">Nairobi, Kenya</span>
           </h1>
 
-          <p className="text-lg text-zinc-700 max-w-3xl mx-auto mb-8">
-            Beautiful, fast, and conversion-focused websites built to attract visitors, build trust, and turn traffic into customers.
-            We combine design, performance, and SEO to deliver measurable results.
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-10">
+            We design and develop fast, beautiful, and conversion-optimized websites that don’t just look good — they generate leads, build trust, and grow your revenue.
           </p>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-2xl font-semibold hover:bg-blue-700 transition"
+              className="inline-flex items-center justify-center gap-3 bg-white text-teal-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/90 transition"
             >
-              Get a Free Quote <ArrowRight className="w-4 h-4" />
+              Start Your Project <ArrowRight className="w-5 h-5" />
             </Link>
-
             <Link
-              href="/services"
-              className="inline-flex items-center gap-3 border border-gray-800 px-6 py-3 rounded-2xl text-gray-700 hover:bg-gray-50 transition"
+              href="#process"
+              className="inline-flex items-center justify-center gap-3 border-2 border-white/70 hover:bg-white/10 px-8 py-4 rounded-2xl font-semibold text-lg transition"
             >
-              View All Services
+              See Our Process
             </Link>
           </div>
         </div>
       </section>
 
-      {/* KEY BENEFITS - unchanged styling */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Why our websites convert better</h2>
+      {/* INTRO / VALUE */}
+      <section className="py-16 bg-white border-b">
+        <div className="max-w-4xl mx-auto px-6 prose prose-lg text-gray-700">
+          <p>
+            In today’s competitive Kenyan market, having a website is not enough. 
+            Your website must work hard — attracting the right visitors, building instant credibility, and converting them into customers. 
+            At Daleon Dynamics, we build high-converting websites tailored for Kenyan businesses & beyond.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((f, i) => (
-              <div key={i} className="p-6 bg-gray-50 rounded-2xl">
-                <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
-                <p className="text-gray-700">{f.desc}</p>
+      {/* KEY BENEFITS */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Our Websites Convert Better</h2>
+            <p className="text-xl text-gray-600">Designed with strategy, not just aesthetics</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, i) => (
+              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition">
+                <div className="text-teal-600 mb-6">{benefit.icon}</div>
+                <h3 className="text-2xl font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CASE STUDY HIGHLIGHT - unchanged */}
-      <section className="py-20 bg-zinc-950 text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Real results for Kenyan businesses</h2>
-          <p className="text-lg text-zinc-300 max-w-3xl mx-auto mb-8">
-            Example: a recent redesign increased lead form submissions by 42% and improved page speed scores across devices.
+      {/* PROCESS */}
+      <section id="process" className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16">Our Proven Website Development Process</h2>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            {processSteps.map((step, i) => (
+              <div key={i} className="relative text-center md:text-left">
+                {i < processSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-12 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-0.5 bg-gray-200" />
+                )}
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 font-bold text-xl mb-6">
+                  {step.num}
+                </div>
+                <h3 className="font-semibold text-xl mb-3">{step.title}</h3>
+                <p className="text-gray-600">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE DELIVER */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16">What’s Included in Your High-Converting Website</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <ul className="space-y-6">
+              {[
+                "Modern, professional design that reflects your brand",
+                "Fast loading speeds (optimized with Next.js)",
+                "Mobile-first & fully responsive design",
+                "Advanced on-page and technical SEO",
+                "Contact forms, lead capture, and clear CTAs",
+                "Google Analytics 4 + conversion tracking",
+                "SSL security, speed optimization & hosting setup",
+                "Training and handover with cPanel access"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-4 text-lg">
+                  <CheckCircle className="w-7 h-7 text-teal-600 mt-1 flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-6">Transparent Pricing</h2>
+          <p className="text-2xl font-semibold text-teal-700 mb-4">Starting from KES 80,000</p>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            This is the starting price for a professional high-converting business website. 
+            Final cost depends on features, number of pages, and integrations.
           </p>
 
+          <div className="inline-flex items-center gap-4 bg-amber-50 border border-amber-200 rounded-2xl px-8 py-5 text-left max-w-md mx-auto">
+            <Info className="w-6 h-6 text-amber-600 flex-shrink-0" />
+            <p className="text-gray-700">Every project receives a custom quote after a short discovery call.</p>
+          </div>
+
           <Link
-            href="/projects"
-            className="inline-flex items-center gap-3 bg-white text-zinc-900 px-6 py-3 rounded-2xl font-semibold hover:bg-gray-100 transition"
+            href="/contact"
+            className="mt-10 inline-block bg-teal-600 text-white px-10 py-4 rounded-2xl font-semibold hover:bg-teal-700 transition"
           >
-            View Projects <ArrowRight className="w-4 h-4" />
+            Get Your Personalized Quote
           </Link>
         </div>
       </section>
 
-      {/* DETAILED FEATURES & PROCESS - unchanged */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">What we include in a high-converting website</h2>
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Conversion-focused UX and landing pages tailored to your audience</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Technical SEO: structured data, meta tags, sitemap, robots.txt</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Performance optimization: images, caching, and Core Web Vitals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span>Analytics setup and conversion tracking (Google Analytics / GA4)</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Our process (simple and effective)</h2>
-              <ol className="list-decimal list-inside space-y-4 text-gray-700">
-                <li><strong>Discovery:</strong> goals, audience, and conversion targets.</li>
-                <li><strong>Design:</strong> wireframes and high-fidelity mockups focused on conversion.</li>
-                <li><strong>Build:</strong> fast, accessible, and SEO-friendly implementation (Next.js recommended).</li>
-                <li><strong>Launch & Optimize:</strong> analytics, A/B tests, and iterative improvements.</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING SUMMARY - unchanged */}
-      <section className="py-20 bg-gradient-to-br from-blue-200 via-white to-blue-200">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4">Pricing — clear starting points</h2>
-          <p className="text-gray-700 mb-6">
-            Typical starting price for a high-converting starter website is from<strong> KES 80,000</strong>. Complex conversion funnels, integrations, or custom features will increase scope and cost.
-          </p>
-
-          <div className="inline-flex items-center gap-4 bg-white border border-gray-100 rounded-2xl px-6 py-4">
-            <Info className="w-5 h-5 text-blue-600" />
-            <span className="text-gray-700">Prices are starting points. We provide a tailored quote after a short discovery call.</span>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-bold mb-6 text-center">Frequently asked questions</h2>
-          <div className="space-y-4">
-            {faqs.map((f, i) => (
-              <details key={i} className="p-4 border border-gray-100 rounded-lg">
-                <summary className="font-semibold cursor-pointer">{f.q}</summary>
-                <p className="mt-3 text-gray-700">{f.a}</p>
+          <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          
+          <div className="space-y-6">
+            {faqs.map((faq, i) => (
+              <details key={i} className="bg-white p-8 rounded-3xl border group">
+                <summary className="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                  {faq.q}
+                  <span className="text-teal-600 group-open:rotate-45 transition">✕</span>
+                </summary>
+                <p className="mt-6 text-gray-700 leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-24 bg-zinc-950 text-white text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get More Customers Online?</h2>
+          <p className="text-xl text-gray-400 mb-10">Let’s build a website that actually works for your business.</p>
+          
+          <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 rounded-2xl text-xl font-semibold hover:bg-gray-100 transition">
+            Book a Free Discovery Call
+          </Link>
         </div>
       </section>
     </main>
