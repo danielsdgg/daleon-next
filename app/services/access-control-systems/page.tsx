@@ -15,8 +15,8 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Access Control Systems Nairobi | Biometric Security Kenya',
-  description: 'Professional biometric access control systems with fingerprint, facial recognition & cloud solutions in Nairobi, Kenya. Secure offices, estates, schools & commercial properties.',
+  title: 'Access Control Systems Nairobi | Biometric Security',
+  description: 'Biometric access control systems with fingerprint, facial recognition & cloud solutions in Nairobi, Kenya.',
   
   keywords: [
     "access control systems Nairobi", 

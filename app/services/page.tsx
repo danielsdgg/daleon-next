@@ -16,7 +16,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Web Dev & Custom Software Development Nairobi',
-  description: 'Leading web design and custom software company in Nairobi, Kenya. We build high-converting websites, powerful web apps, business automation, and biometric access control systems.',
+  description: 'We build high-converting websites, custom web apps, and biometric access control systems.',
   
   keywords: [
     'web design nairobi', 'website development kenya', 'custom software development nairobi',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Web Design & Custom Software Development Nairobi | Daleon Dynamics',
+    title: 'Web Dev & Custom Software Development Nairobi | Daleon Dynamics',
     description: 'Professional websites, custom software, automation systems, and access control solutions built for Kenyan businesses.',
     url: 'https://daleondynamics.com/services',
     images: [
