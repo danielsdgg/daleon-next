@@ -1,3 +1,4 @@
+// app/page.tsx
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,19 +7,32 @@ import type { Metadata } from 'next';
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: "Web Design Company Nairobi | Custom Software Development Kenya | Daleon Dynamics",
-    description: "Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and access control solutions that help Kenyan businesses grow faster.",
-    keywords: ["web design Nairobi", "website development Kenya", "custom software development Nairobi", "web application development Kenya", "SEO optimized websites Nairobi", "access control systems Kenya"],
-    openGraph: {
-      title: "Web Design Company Nairobi | Custom Software & Apps | Daleon Dynamics",
-      description: "High-performance websites and custom systems that help Kenyan businesses grow faster. Based in Nairobi.",
-      images: [{ url: "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png" }],
-      url: "https://daleondynamics.com",
-      siteName: "Daleon Dynamics",
-      locale: "en_KE",
-    },
+    title: 'Web Design Company Nairobi | Custom Software Development Kenya',
+    description: 'Daleon Dynamics is a leading web design and custom software development company in Nairobi, Kenya. We create high-converting websites, powerful web apps, automation systems, and biometric access control solutions.',
+    
+    keywords: [
+      'web design nairobi', 'custom software development nairobi', 'website development kenya',
+      'high converting websites nairobi', 'business automation kenya', 'access control systems kenya'
+    ],
+
     alternates: {
-      canonical: "https://daleondynamics.com",
+      canonical: 'https://daleondynamics.com',
+    },
+
+    openGraph: {
+      title: 'Web Design Company Nairobi | Custom Software Development Kenya',
+      description: 'Leading digital solutions company in Nairobi building high-converting websites, custom web applications, and intelligent business systems.',
+      images: [
+        {
+          url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+          width: 1200,
+          height: 630,
+          alt: 'Daleon Dynamics - Web Design & Software Company Nairobi'
+        }
+      ],
+      url: 'https://daleondynamics.com',
+      locale: 'en_KE',
+      type: 'website',
     },
   };
 };
@@ -54,75 +68,55 @@ const Home:React.FC= () => {
     },
   ];
 
-  // Structured Data (JSON-LD)
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://daleondynamics.com/#organization",
-        "name": "Daleon Dynamics",
-        "url": "https://daleondynamics.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png"
-        },
-        "description": "Web design and custom software development company based in Nairobi, Kenya.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Nairobi",
-          "addressCountry": "KE"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+254142021359",
-          "contactType": "customer service"
-        }
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://daleondynamics.com/#localbusiness",
-        "name": "Daleon Dynamics",
-        "image": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
-        "url": "https://daleondynamics.com",
-        "telephone": "+254142021359",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Nairobi",
-          "addressCountry": "KE"
-        },
-        "priceRange": "$$",
-        "description": "High-performance websites, custom web applications, and access control systems in Nairobi, Kenya.",
-        "areaServed": "Kenya",
-        "serviceType": ["Web Design", "Custom Software Development", "Web Application Development", "Access Control Systems"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://daleondynamics.com/#website",
-        "url": "https://daleondynamics.com/",
-        "name": "Daleon Dynamics",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://daleondynamics.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://daleondynamics.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://daleondynamics.com/services" }
-        ]
-      }
-    ]
-  };
-
   return (
     <main className="min-h-screen bg-zinc-950 text-white overflow-hidden">
       {/* Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://daleondynamics.com/#organization",
+                "name": "Daleon Dynamics",
+                "url": "https://daleondynamics.com",
+                "logo": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+                "description": "Leading web design and custom software development company in Nairobi, Kenya.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Nairobi",
+                  "addressCountry": "KE"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+254142021359",
+                  "contactType": "customer service"
+                },
+                "areaServed": "Kenya",
+                "foundingDate": "2024"
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://daleondynamics.com/#localbusiness",
+                "name": "Daleon Dynamics",
+                "image": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+                "url": "https://daleondynamics.com",
+                "telephone": "+254142021359",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Nairobi",
+                  "addressCountry": "KE"
+                },
+                "priceRange": "$$",
+                "description": "High-performance websites, custom web applications, business automation, and access control systems in Nairobi, Kenya.",
+                "areaServed": "Kenya",
+                "serviceType": ["Web Design", "Custom Software Development", "Business Automation", "Access Control Systems"]
+              }
+            ]
+          })
+        }}
       />
 
       {/* HERO SECTION */}
