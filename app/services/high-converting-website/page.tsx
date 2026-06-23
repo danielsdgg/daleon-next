@@ -5,9 +5,8 @@ import { ArrowRight, CheckCircle, Info, TrendingUp, Zap, Users, Target } from 'l
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'High-Converting Websites Nairobi | Web Design Kenya',
-  description: 'Professional high-converting websites in Nairobi, Kenya. Fast, mobile-first, SEO-optimized designs that turn visitors into customers. Expert web design company.',
-  
+  title: 'High-Converting Websites Nairobi',
+  description: 'High-converting, fast & SEO-optimized websites in Nairobi, Kenya. Professional web design that turns visitors into customers.',  
   keywords: [
     'high converting websites nairobi', 'web design nairobi', 'website design kenya',
     'seo optimized websites nairobi', 'conversion rate optimization kenya',
