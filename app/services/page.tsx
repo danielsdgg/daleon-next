@@ -15,15 +15,14 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services - Web Design Company Nairobi | Custom Software Development Kenya',
-  description: 'Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
+  title: 'Web Design & Custom Software Development Nairobi | Daleon Dynamics',
+  description: 'Leading web design and custom software company in Nairobi, Kenya. We build high-converting websites, powerful web apps, business automation, and biometric access control systems.',
   
   keywords: [
     'web design nairobi', 'website development kenya', 'custom software development nairobi',
     'high converting websites nairobi', 'custom web applications kenya', 'business automation kenya',
     'access control systems kenya', 'biometric access control nairobi', 'm-pesa integration kenya',
-    'custom crm development kenya', 'software development company nairobi', 'web development services kenya',
-    'ecommerce website development nairobi', 'enterprise software kenya', 'software company nairobi'
+    'custom crm development kenya', 'software development company nairobi', 'web development services kenya'
   ],
 
   alternates: {
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Our Services - Web Design & Custom Software Development Nairobi',
+    title: 'Web Design & Custom Software Development Nairobi | Daleon Dynamics',
     description: 'Professional websites, custom software, automation systems, and access control solutions built for Kenyan businesses.',
     url: 'https://daleondynamics.com/services',
     images: [

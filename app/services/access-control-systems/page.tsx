@@ -15,8 +15,8 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Access Control Systems Nairobi | Biometric Security Kenya | Daleon Dynamics',
-  description: 'Professional biometric access control systems, fingerprint, facial recognition, and cloud-based security solutions in Nairobi, Kenya. Secure offices, estates, schools & commercial properties.',
+  title: 'Access Control Systems Nairobi | Biometric Security Kenya',
+  description: 'Professional biometric access control systems with fingerprint, facial recognition & cloud solutions in Nairobi, Kenya. Secure offices, estates, schools & commercial properties.',
   
   keywords: [
     "access control systems Nairobi", 
@@ -25,11 +25,9 @@ export const metadata: Metadata = {
     "facial recognition security Kenya",
     "smart access control systems Nairobi",
     "RFID access control Kenya", 
-    "door access control Nairobi", 
     "attendance management system Kenya",
     "cloud based security systems Nairobi",
-    "security systems installation Kenya",
-    "daleon dynamics"
+    "security systems installation Kenya"
   ],
 
   alternates: {

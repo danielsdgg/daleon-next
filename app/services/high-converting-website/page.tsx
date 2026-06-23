@@ -5,14 +5,14 @@ import { ArrowRight, CheckCircle, Info, TrendingUp, Zap, Users, Target } from 'l
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'High-Converting Websites Nairobi | Web Design Kenya | Daleon Dynamics',
-  description: 'High-converting, SEO-optimized websites in Nairobi, Kenya. Fast, mobile-first, conversion-focused designs that turn visitors into paying customers. Professional web design company.',
+  title: 'High-Converting Websites Nairobi | Web Design Kenya',
+  description: 'Professional high-converting websites in Nairobi, Kenya. Fast, mobile-first, SEO-optimized designs that turn visitors into customers. Expert web design company.',
   
   keywords: [
     'high converting websites nairobi', 'web design nairobi', 'website design kenya',
     'seo optimized websites nairobi', 'conversion rate optimization kenya',
     'professional website design nairobi', 'business website kenya', 'landing page design nairobi',
-    'fast loading websites kenya', 'ecommerce website nairobi', 'daleon dynamics'
+    'fast loading websites kenya', 'ecommerce website nairobi'
   ],
 
   alternates: {
