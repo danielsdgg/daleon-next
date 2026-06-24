@@ -6,17 +6,18 @@ const KEY_LOCATION = 'https://daleondynamics.com/27502b85ea3a479f8071f26fd9bfb7f
 
 export async function POST(request: NextRequest) {
   try {
-    const { urls } = await request.json();
+    const body = await request.json();
+    const { urls } = body;
 
     if (!urls || !Array.isArray(urls) || urls.length === 0) {
-      return NextResponse.json({ error: 'Please provide an array of URLs' }, { status: 400 });
+      return NextResponse.json({ error: 'URLs array is required' }, { status: 400 });
     }
+
+    console.log('Submitting to IndexNow:', urls);
 
     const response = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         host: 'daleondynamics.com',
         key: INDEXNOW_KEY,
@@ -25,17 +26,26 @@ export async function POST(request: NextRequest) {
       }),
     });
 
+    const responseText = await response.text();
+
     if (response.ok) {
       return NextResponse.json({
         success: true,
-        message: `Successfully submitted ${urls.length} URL(s) to IndexNow`
+        message: `Successfully submitted ${urls.length} URL(s)`,
+        submitted: urls
       });
     } else {
-      const errorText = await response.text();
-      return NextResponse.json({ error: errorText }, { status: response.status });
+      return NextResponse.json({
+        error: 'IndexNow API error',
+        status: response.status,
+        details: responseText
+      }, { status: response.status });
     }
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: 'Failed to submit to IndexNow' }, { status: 500 });
+  } catch (error: any) {
+    console.error('IndexNow Error:', error);
+    return NextResponse.json({
+      error: 'Server error',
+      message: error.message
+    }, { status: 500 });
   }
 }
