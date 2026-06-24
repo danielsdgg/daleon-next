@@ -7,12 +7,12 @@ import type { Metadata } from 'next';
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Web Design Company Nairobi | Custom Software Development Kenya',
-    description: 'Daleon Dynamics is a leading web design and custom software development company in Nairobi, Kenya. We create high-converting websites, powerful web apps, automation systems, and biometric access control solutions.',
+    title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+    description: 'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
     
     keywords: [
-      'web design nairobi', 'custom software development nairobi', 'website development kenya',
-      'high converting websites nairobi', 'business automation kenya', 'access control systems kenya'
+      'daleon dynamics', 'web design nairobi', 'custom software development nairobi',
+      'website development kenya', 'software company nairobi', 'high converting websites nairobi'
     ],
 
     alternates: {
@@ -20,8 +20,8 @@ export const generateMetadata = (): Metadata => {
     },
 
     openGraph: {
-      title: 'Web Design Company Nairobi | Custom Software Development Kenya',
-      description: 'Leading digital solutions company in Nairobi building high-converting websites, custom web applications, and intelligent business systems.',
+      title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+      description: 'Leading digital solutions company in Nairobi, Kenya. High-converting websites, custom web apps, automation & security systems.',
       images: [
         {
           url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
@@ -37,13 +37,13 @@ export const generateMetadata = (): Metadata => {
   };
 };
 
-const Home:React.FC= () => {
+const Home: React.FC = () => {
   const featuredProjects = [
     {
       title: "Karen Direct Insurance Brokers",
       category: "Insurance Platform",
       year: "2026",
-      description: "Modern insurance platform with policy management, claims processing, and client portal that streamlined operations and improved customer experience for one of Nairobi's fastest-growing insurers.",
+      description: "Modern insurance platform with policy management, claims processing, and client portal that streamlined operations and improved customer experience.",
       liveUrl: "https://www.karendirectins.com/",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
       result: "Increased policy renewals by 42%"
@@ -61,7 +61,7 @@ const Home:React.FC= () => {
       title: "SecureGate Access Control",
       category: "Security & Facilities",
       year: "2025",
-      description: "Cloud-based biometric access control system with real-time monitoring, visitor management, and staff attendance tracking for commercial and residential properties.",
+      description: "Cloud-based biometric access control system with real-time monitoring, visitor management, and staff attendance tracking.",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
       result: "Deployed across 12 locations"
@@ -110,34 +110,35 @@ const Home:React.FC= () => {
                   "addressCountry": "KE"
                 },
                 "priceRange": "$$",
-                "description": "High-performance websites, custom web applications, business automation, and access control systems in Nairobi, Kenya.",
-                "areaServed": "Kenya",
-                "serviceType": ["Web Design", "Custom Software Development", "Business Automation", "Access Control Systems"]
+                "description": "Web design, custom software development, and biometric access control systems in Nairobi, Kenya.",
+                "areaServed": "Kenya"
               }
             ]
           })
         }}
       />
 
-      {/* HERO SECTION */}
-      <section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      {/* HERO SECTION - Brand Focused */}
+      <section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100 text-center">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-6 py-2.5 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-5 h-5" />
-            WEB DESIGN &amp; CUSTOM SOFTWARE COMPANY IN NAIROBI, KENYA
+            <Sparkles className="w-5 h-5" /> NAIROBI • KENYA
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-none mb-8">
-            High-Performance Websites &amp; Custom Systems <br />
-            That Help Kenyan Businesses <span className="text-blue-600">Grow Faster</span>
+          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-none mb-6">
+            Daleon Dynamics
           </h1>
-
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            We build modern, fast-loading websites, powerful custom web applications, business automation systems, 
-            and secure access control solutions that attract more customers, automate operations, and deliver real competitive advantage.
+          
+          <p className="text-4xl md:text-5xl font-semibold text-gray-700 mb-8">
+            Web Design &amp; Custom Software Development Company Nairobi
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+          <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
+            We build high-converting websites, powerful custom web applications, business automation systems, 
+            and secure biometric access control solutions that help Kenyan businesses grow faster and operate smarter.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link 
               href="/contact" 
               className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all active:scale-95 shadow-lg shadow-blue-200"
@@ -147,36 +148,41 @@ const Home:React.FC= () => {
             </Link>
 
             <Link
-              href="#projects"
+              href="/services"
               className="flex items-center justify-center gap-3 border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-10 py-5 rounded-2xl font-semibold text-lg transition-all"
             >
-              View Our Projects
+              Explore Our Services
             </Link>
           </div>
 
           <div className="mt-16 text-sm text-gray-500 flex flex-wrap justify-center gap-x-8 gap-y-3">
-            <div>✓ Fast &amp; SEO Optimized Websites</div>
-            <div>✓ Mobile-First Design</div>
-            <div>✓ Custom Software Development</div>
-            <div>✓ Access Control Systems Kenya</div>
+            <div>✓ High-Converting Websites</div>
+            <div>✓ Custom Web Applications</div>
+            <div>✓ Business Automation</div>
+            <div>✓ Access Control Systems</div>
           </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* SERVICES TEASER */}
       <section className="py-24 bg-white text-zinc-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600">Tailored digital solutions for Kenyan businesses</p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {/* Service 1 */}
             <div className="group p-10 bg-zinc-50 rounded-3xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Globe className="w-8 h-8" />
               </div>
-              <h2 className="text-3xl font-semibold mb-4">High-Converting Websites</h2>
-              <p className="text-zinc-600 text-lg">
-                Beautiful, fast, and professional websites designed to build trust, attract customers, and turn visitors into loyal clients.
+              <h3 className="text-3xl font-semibold mb-4">High-Converting Websites</h3>
+              <p className="text-zinc-600 text-lg mb-8">
+                Beautiful, fast, and conversion-focused websites designed to attract customers and generate leads.
               </p>
-              <Link href="/services/high-converting-website" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
+              <Link href="/services/high-converting-website" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -186,11 +192,11 @@ const Home:React.FC= () => {
               <div className="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Code2 className="w-8 h-8" />
               </div>
-              <h2 className="text-3xl font-semibold mb-4">Custom Web Apps & Systems</h2>
-              <p className="text-zinc-600 text-lg">
-                Powerful internal tools and web applications that automate processes, improve team efficiency, and scale with your business.
+              <h3 className="text-3xl font-semibold mb-4">Custom Web Apps & Systems</h3>
+              <p className="text-zinc-600 text-lg mb-8">
+                Powerful internal tools, CRMs, and automation systems built to match your exact business processes.
               </p>
-              <Link href="/services/custom-web-apps" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
+              <Link href="/services/custom-web-apps" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -200,14 +206,20 @@ const Home:React.FC= () => {
               <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <ShieldCheck className="w-8 h-8" />
               </div>
-              <h2 className="text-3xl font-semibold mb-4">Access Control Systems</h2>
-              <p className="text-zinc-600 text-lg">
-                Intelligent biometric and centralized security solutions to protect your premises and streamline staff/visitor management.
+              <h3 className="text-3xl font-semibold mb-4">Access Control Systems</h3>
+              <p className="text-zinc-600 text-lg mb-8">
+                Smart biometric and cloud-based security solutions for offices, estates, and institutions.
               </p>
-              <Link href="/services/access-control-systems" className="inline-flex items-center gap-2 mt-8 text-blue-600 font-medium hover:gap-3 transition-all">
+              <Link href="/services/access-control-systems" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
                 Learn more <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/services" className="inline-flex items-center gap-3 text-blue-600 font-semibold text-lg hover:gap-4 transition-all">
+              View All Services <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -231,14 +243,11 @@ const Home:React.FC= () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <div
-                key={index}
-                className="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-blue-600/50 transition-all duration-500 hover:shadow-2xl"
-              >
+              <div key={index} className="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-blue-600/50 transition-all duration-500 hover:shadow-2xl">
                 <div className="relative h-80 overflow-hidden">
                   <Image
                     src={project.image}
-                    alt={`${project.title} - ${project.category} project by Daleon Dynamics Nairobi`}
+                    alt={`${project.title} - ${project.category} project by Daleon Dynamics`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -265,14 +274,8 @@ const Home:React.FC= () => {
                   </p>
 
                   {project.liveUrl !== "#" ? (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 text-blue-500 hover:text-blue-400 font-semibold group-hover:gap-4 transition-all"
-                    >
-                      View Live Project
-                      <ExternalLink className="w-5 h-5" />
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-blue-500 hover:text-blue-400 font-semibold group-hover:gap-4 transition-all">
+                      View Live Project <ExternalLink className="w-5 h-5" />
                     </a>
                   ) : (
                     <div className="inline-flex items-center gap-3 text-amber-500 font-medium">
@@ -290,36 +293,16 @@ const Home:React.FC= () => {
       <section className="py-24 bg-white text-zinc-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">
-              Why Ambitious Businesses Choose Daleon Dynamics
-            </h2>
-            <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-              We don’t just build websites — we build growth engines.
-            </p>
+            <h2 className="text-5xl font-bold tracking-tight mb-4">Why Businesses Choose Daleon Dynamics</h2>
+            <p className="text-xl text-zinc-600 max-w-2xl mx-auto">We don’t just build websites — we build growth engines.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                icon: <Zap className="w-10 h-10" />,
-                title: "Results Over Features",
-                desc: "We focus on outcomes — more revenue, lower costs, happier customers, and smoother operations.",
-              },
-              {
-                icon: <Users className="w-10 h-10" />,
-                title: "True Partnership",
-                desc: "Your success is our success. Transparent communication and ongoing support every step of the way.",
-              },
-              {
-                icon: <Award className="w-10 h-10" />,
-                title: "Premium Quality",
-                desc: "Clean code, modern technologies, and obsessive attention to detail in every project.",
-              },
-              {
-                icon: <ShieldCheck className="w-10 h-10" />,
-                title: "Built to Last",
-                desc: "Scalable, secure, and maintainable solutions designed to serve your business for years.",
-              },
+              { icon: <Zap className="w-10 h-10" />, title: "Results Over Features", desc: "We focus on outcomes — more revenue, lower costs, and smoother operations." },
+              { icon: <Users className="w-10 h-10" />, title: "True Partnership", desc: "Transparent communication and ongoing support every step of the way." },
+              { icon: <Award className="w-10 h-10" />, title: "Premium Quality", desc: "Clean code, modern technologies, and obsessive attention to detail." },
+              { icon: <ShieldCheck className="w-10 h-10" />, title: "Built to Last", desc: "Scalable, secure, and maintainable solutions." },
             ].map((item, i) => (
               <div key={i} className="bg-zinc-50 p-10 rounded-3xl hover:shadow-xl transition-all">
                 <div className="text-blue-600 mb-6">{item.icon}</div>
@@ -344,23 +327,16 @@ const Home:React.FC= () => {
           </h2>
 
           <p className="text-2xl text-gray-300 max-w-2xl mx-auto mb-12">
-            Let’s discuss how we can build technology that drives real growth for your business.
+            Let’s discuss how we can build technology that drives real growth for your business in Kenya.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Link
-              href="/contact"
-              className="group flex items-center justify-center gap-3 bg-white text-gray-900 hover:bg-gray-100 px-12 py-6 rounded-3xl font-semibold text-xl transition-all active:scale-95"
-            >
+            <Link href="/contact" className="group flex items-center justify-center gap-3 bg-white text-gray-900 hover:bg-gray-100 px-12 py-6 rounded-3xl font-semibold text-xl transition-all active:scale-95">
               Start Your Project
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <a
-              href="https://wa.me/254142021359"
-              target="_blank"
-              className="flex items-center justify-center gap-3 border border-white/40 hover:border-white px-12 py-6 rounded-3xl font-semibold text-xl transition-all"
-            >
+            <a href="https://wa.me/254142021359" target="_blank" className="flex items-center justify-center gap-3 border border-white/40 hover:border-white px-12 py-6 rounded-3xl font-semibold text-xl transition-all">
               <MessageCircle className="w-6 h-6" />
               Chat on WhatsApp
             </a>
