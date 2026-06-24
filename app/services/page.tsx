@@ -100,7 +100,7 @@ const Services: React.FC = () => {
 
   const pricingTiers = [
     {
-      name: 'Starter',
+      name: 'High-Converting Website',
       price: 'From KES 80,000',
       desc: 'Perfect for small businesses and simple professional websites',
       features: [
@@ -113,7 +113,7 @@ const Services: React.FC = () => {
       ]
     },
     {
-      name: 'Growth',
+      name: 'Custom Software / Web Application',
       price: 'From KES 200,000',
       desc: 'For growing companies needing custom functionality and better results',
       features: [
@@ -339,7 +339,7 @@ const Services: React.FC = () => {
                   </div>
                 )}
 
-                <h3 className="text-2xl font-semibold mb-1">{tier.name}</h3>
+                <h3 className="text-2xl font-semibold mb-1">{tier.name}</h3> <hr className="my-4 border-gray-400" />
                 <div className="text-4xl font-bold mb-2">{tier.price}</div>
                 <p className="text-gray-500 mb-8">{tier.desc}</p>
 
