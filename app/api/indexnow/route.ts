@@ -41,11 +41,12 @@ export async function POST(request: NextRequest) {
         details: responseText
       }, { status: response.status });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('IndexNow Error:', error);
+    const message = error instanceof Error ? error.message : String(error);
     return NextResponse.json({
       error: 'Server error',
-      message: error.message
+      message
     }, { status: 500 });
   }
 }
