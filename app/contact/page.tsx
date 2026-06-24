@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import ContactClient from './ContactClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Web Design & Custom Software Company Nairobi',
+  title: 'Contact - Web Design & Custom Software Company Nairobi',
   description: 'Get a free quote for professional websites, custom web applications, business automation systems, or biometric access control solutions in Nairobi, Kenya.',
   
   keywords: [

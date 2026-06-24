@@ -8,7 +8,7 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us - Software Development Company Nairobi | Daleon Dynamics',
+  title: 'About Daleon - Software Development Company Nairobi | Daleon Dynamics',
   description: 'Daleon Dynamics is a Nairobi-based custom software development company specializing in high-converting websites, powerful web applications, business automation, and biometric access control systems for Kenyan businesses.',
   
   keywords: [
