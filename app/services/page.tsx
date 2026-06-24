@@ -15,14 +15,14 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Web Dev & Custom Software Development Nairobi',
-  description: 'We build high-converting websites, custom web apps, and biometric access control systems.',
+  title: 'Our Services - Web Design & Custom Software Development Nairobi',
+  description: 'Professional web design, high-converting websites, custom web applications, business automation systems, and biometric access control solutions in Nairobi, Kenya.',
   
   keywords: [
     'web design nairobi', 'website development kenya', 'custom software development nairobi',
     'high converting websites nairobi', 'custom web applications kenya', 'business automation kenya',
     'access control systems kenya', 'biometric access control nairobi', 'm-pesa integration kenya',
-    'custom crm development kenya', 'software development company nairobi', 'web development services kenya'
+    'custom crm development kenya', 'software development company nairobi'
   ],
 
   alternates: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Web Dev & Custom Software Development Nairobi | Daleon Dynamics',
+    title: 'Our Services - Web Design & Custom Software Development Nairobi',
     description: 'Professional websites, custom software, automation systems, and access control solutions built for Kenyan businesses.',
     url: 'https://daleondynamics.com/services',
     images: [
@@ -142,7 +142,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Enhanced Structured Data */}
+      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -162,22 +162,24 @@ const Services: React.FC = () => {
               },
               {
                 "@type": "Service",
-                "name": "Custom Software Development Nairobi",
+                "name": "Web Design and Development Nairobi",
                 "provider": { "@id": "https://daleondynamics.com/#organization" },
-                "description": "Bespoke software solutions including CRM, ERP, and business automation systems.",
+                "description": "High-converting, SEO-optimized websites and web applications for Kenyan businesses.",
                 "areaServed": "Kenya"
               },
               {
                 "@type": "Service",
-                "name": "Web Design and Development Nairobi",
+                "name": "Custom Software Development Nairobi",
                 "provider": { "@id": "https://daleondynamics.com/#organization" },
-                "description": "High-converting, SEO-optimized websites for Kenyan businesses."
+                "description": "Bespoke CRMs, ERPs, automation systems and web applications.",
+                "areaServed": "Kenya"
               },
               {
                 "@type": "Service",
                 "name": "Access Control Systems Kenya",
                 "provider": { "@id": "https://daleondynamics.com/#organization" },
-                "description": "Biometric and cloud-based access control solutions."
+                "description": "Biometric and cloud-based access control solutions.",
+                "areaServed": "Kenya"
               },
               {
                 "@type": "FAQPage",
@@ -205,19 +207,20 @@ const Services: React.FC = () => {
         }}
       />
 
-      {/* HERO */}
+      {/* HERO - Services Focused */}
       <header className="pt-32 pb-20 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium mb-6">
-            <Star className="w-5 h-5 text-amber-400" /> EXPERT DIGITAL SOLUTIONS IN NAIROBI
+            <Star className="w-5 h-5 text-amber-400" /> OUR SERVICES
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-            Professional Web Design &amp; Custom Software Development <span className="text-blue-400">in Nairobi, Kenya</span>
+            Web Design &amp; Custom Software Development Services in Nairobi, Kenya
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-            We create high-converting websites, powerful custom applications, and intelligent systems that help Kenyan businesses automate, grow, and compete effectively.
+            From high-converting websites to powerful custom applications and secure access control systems — 
+            we deliver digital solutions that solve real business challenges and drive growth.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mt-10">
@@ -235,8 +238,10 @@ const Services: React.FC = () => {
       <section className="py-16 bg-white border-b">
         <div className="max-w-4xl mx-auto px-6 prose prose-lg">
           <p className="text-lg text-gray-700">
-            At Daleon Dynamics, we don’t just build websites and software — we engineer digital solutions that solve real business problems in the Kenyan market. 
-            Whether you need a high-converting business website, a custom CRM, or a secure access control system, our team delivers results-driven systems tailored to local needs including M-Pesa integration, regulatory compliance, and scalability.
+            At Daleon Dynamics, we provide end-to-end digital solutions tailored for the Kenyan market. 
+            Whether you need a professional business website, a custom CRM system, workflow automation, 
+            or a reliable biometric access control system — our team delivers high-quality, scalable solutions 
+            built with modern technologies and deep local understanding (including M-Pesa integration).
           </p>
         </div>
       </section>
@@ -411,7 +416,7 @@ const Services: React.FC = () => {
           <div className="space-y-8">
             <details className="bg-white p-8 rounded-3xl border">
               <summary className="font-semibold text-lg cursor-pointer">How long does it take to build a website?</summary>
-              <p className="mt-4 text-gray-700">A standard professional website takes 4–8 weeks. Complex web applications or custom software can take 12–20 weeks depending on scope.</p>
+              <p className="mt-4 text-gray-700">A standard professional website takes 4–8 weeks. Complex web applications or custom software can take 12–20 weeks or more, depending on scope.</p>
             </details>
             
             <details className="bg-white p-8 rounded-3xl border">
