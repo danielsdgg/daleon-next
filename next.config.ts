@@ -1,17 +1,21 @@
-// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
+
   async redirects() {
     return [
-      // Redirect www → non-www
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.daleondynamics.com" }],
         destination: "https://daleondynamics.com/:path*",
         permanent: true,
       },
-      // Fix specific service page typo
+      {
+        source: "/blog",
+        destination: "/blogs",
+        permanent: true,
+      },
       {
         source: "/services/high-converting-websites",
         destination: "/services/high-converting-website",
