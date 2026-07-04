@@ -1,7 +1,7 @@
 // app/services/custom-web-apps/page.tsx
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Zap, BarChart3, Users, Shield, Globe, Clock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, BarChart3, Users, Globe } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   }
 };
 
-const AccessControlSystems = () => {
+const AccessControlSystems:React.FC = () => {
   const features = [
     {
       icon: <Fingerprint className="w-8 h-8" />,
@@ -160,7 +160,7 @@ const AccessControlSystems = () => {
         }}
       />
 
-      {/* UNIQUE HERO - Security / Trust Theme */}
+      {/* UNIQUE HERO - Security */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(at_center,#33415540_0%,transparent_70%)]" />
         

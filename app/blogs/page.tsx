@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,7 +34,6 @@ const blogPosts = [
     title: "How Custom Software Development Can Transform Your Business in 2025",
     excerpt: "Discover how tailored software solutions can automate processes, reduce costs, and give your business a competitive advantage in today's digital economy.",
     date: "April 5, 2026",
-    readTime: "8 min read",
     category: "Custom Software",
     slug: "custom-software-2025",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800"
@@ -44,7 +43,6 @@ const blogPosts = [
     title: "The Ultimate Guide to Building High-Converting Websites in Kenya",
     excerpt: "Learn the key principles of modern web design, performance optimization, and conversion strategies that actually work for Kenyan businesses.",
     date: "March 28, 2026",
-    readTime: "12 min read",
     category: "Web Development",
     slug: "high-converting-websites-kenya",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
@@ -54,7 +52,6 @@ const blogPosts = [
     title: "Why Your Business Needs a Professional Access Control System",
     excerpt: "Explore the benefits of modern access control systems, from biometric security to cloud-based management, and how they protect your organization.",
     date: "March 15, 2026",
-    readTime: "6 min read",
     category: "Security",
     slug: "access-control-systems",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
@@ -64,7 +61,6 @@ const blogPosts = [
     title: "The Cost of Poor Software vs Investing in Quality Development",
     excerpt: "A detailed breakdown of hidden costs of using outdated or poorly built software and why investing in professional development pays off long-term.",
     date: "February 20, 2026",
-    readTime: "10 min read",
     category: "Business Strategy",
     slug: "cost-of-poor-software",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
@@ -135,10 +131,10 @@ const Blogs = () => {
                       <Calendar className="w-4 h-4" />
                       {post.date}
                     </div>
-                    <div className="flex items-center gap-1.5">
+                    {/* <div className="flex items-center gap-1.5">
                       <Clock className="w-4 h-4" />
                       {post.readTime}
-                    </div>
+                    </div> */}
                     <span className="ml-auto bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-medium">
                       {post.category}
                     </span>
