@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
 };
 
-const About = () => {
+const About: React.FC = () => {
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
