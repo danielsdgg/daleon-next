@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles, Zap, Users, Award, ShieldCheck, Globe, Code2, ExternalLink, MessageCircle } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Globe, Code2, ExternalLink, MessageCircle } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const generateMetadata = (): Metadata => {
@@ -283,31 +283,6 @@ const Home: React.FC = () => {
                     </div>
                   )}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US SECTION */}
-      <section className="py-24 bg-white text-zinc-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Why Businesses Choose Daleon Dynamics</h2>
-            <p className="text-xl text-zinc-600 max-w-2xl mx-auto">We don’t just build websites — we build growth engines.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: <Zap className="w-10 h-10" />, title: "Results Over Features", desc: "We focus on outcomes — more revenue, lower costs, and smoother operations." },
-              { icon: <Users className="w-10 h-10" />, title: "True Partnership", desc: "Transparent communication and ongoing support every step of the way." },
-              { icon: <Award className="w-10 h-10" />, title: "Premium Quality", desc: "Clean code, modern technologies, and obsessive attention to detail." },
-              { icon: <ShieldCheck className="w-10 h-10" />, title: "Built to Last", desc: "Scalable, secure, and maintainable solutions." },
-            ].map((item, i) => (
-              <div key={i} className="bg-zinc-50 p-10 rounded-3xl hover:shadow-xl transition-all">
-                <div className="text-blue-600 mb-6">{item.icon}</div>
-                <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

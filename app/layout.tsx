@@ -7,17 +7,17 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://daleondynamics.com'),
 
   title: {
-    default: 'Web Design Company Nairobi | Custom Software Development Kenya',
+    default: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
     template: '%s | Daleon Dynamics',
   },
 
-  description: 'Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
+  description: 'Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful custom applications, automation systems, and secure biometric access control solutions.',
 
   keywords: [
     'web design nairobi', 'website development nairobi', 'custom software development nairobi',
     'web application development kenya', 'high converting websites nairobi',
     'business automation kenya', 'access control systems nairobi', 'biometric access control kenya',
-    'm-pesa integration kenya', 'software company nairobi', 'ecommerce website kenya', 'daleon dynamics'
+    'software company nairobi', 'ecommerce website kenya', 'daleon dynamics', 'm-pesa integration kenya'
   ],
 
   authors: [{ name: 'Daleon Dynamics' }],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: 'Web Design Company Nairobi | Custom Software Development Kenya',
+    title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
     description: 'Professional websites, custom web apps, automation systems and biometric access control solutions in Nairobi, Kenya.',
     url: 'https://daleondynamics.com',
     siteName: 'Daleon Dynamics',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design Company Nairobi | Custom Software Kenya',
+    title: 'Daleon Dynamics - Web Design & Custom Software Nairobi',
     description: 'High-performance websites and custom systems for Kenyan businesses.',
     images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
   },
@@ -82,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-KE">
+    <html lang="en-KE" suppressHydrationWarning>
       <body className="antialiased">
         <Navbar />
         <main>
@@ -90,7 +90,7 @@ export default function RootLayout({
         </main>
         <Footer />
 
-        {/* Organization + LocalBusiness Schema */}
+        {/* Structured Data (Schema.org) - Good for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -112,31 +112,8 @@ export default function RootLayout({
                   "contactPoint": {
                     "@type": "ContactPoint",
                     "telephone": "+254142021359",
-                    "contactType": "customer service",
-                    "availableLanguage": "English"
+                    "contactType": "customer service"
                   },
-                  "areaServed": "Kenya"
-                },
-                {
-                  "@type": "LocalBusiness",
-                  "@id": "https://daleondynamics.com/#localbusiness",
-                  "name": "Daleon Dynamics",
-                  "image": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
-                  "url": "https://daleondynamics.com",
-                  "telephone": "+254142021359",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Nairobi",
-                    "addressCountry": "KE"
-                  },
-                  "priceRange": "$$",
-                  "description": "Web design, custom software development, and access control systems company in Nairobi, Kenya.",
-                  "serviceType": [
-                    "Web Design", 
-                    "Custom Web Applications", 
-                    "Business Automation", 
-                    "Access Control Systems"
-                  ],
                   "areaServed": "Kenya"
                 },
                 {
@@ -149,7 +126,6 @@ export default function RootLayout({
             })
           }}
         />
-        
 
         {/* Floating WhatsApp Button */}
         <a

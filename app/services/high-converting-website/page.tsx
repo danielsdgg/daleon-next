@@ -113,7 +113,7 @@ const HighConvertingWebsitePage: React.FC = () => {
                 "offers": {
                   "@type": "Offer",
                   "priceCurrency": "KES",
-                  "price": "80000",
+                  "price": "60000",
                   "description": "Starting price for a professional high-converting website"
                 }
               },
@@ -259,7 +259,7 @@ const HighConvertingWebsitePage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6">Transparent Pricing</h2>
-          <p className="text-2xl font-semibold text-teal-700 mb-4">Starting from KES 80,000</p>
+          <p className="text-2xl font-semibold text-teal-700 mb-4">Starting from KES 60,000</p>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             This is the starting price for a professional high-converting business website. 
             Final cost depends on features, number of pages, and integrations.

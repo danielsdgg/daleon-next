@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
+/* ====================== CUSTOM ANIMATIONS ====================== */
 
-
-/* about page */
+/* Fade In Up */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -14,7 +14,11 @@
   }
 }
 
-/* services page */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Marquee Animation */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -30,4 +34,39 @@
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* ====================== GLOBAL STYLES ====================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(255 255 255);
+    color: rgb(17 24 39);
+  }
+
+  .dark body {
+    background-color: rgb(3 7 18);
+    color: rgb(243 244 246);
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.5);
+  }
+
+  .dark :focus-visible {
+    box-shadow: 0 0 0 3px rgb(147 197 253 / 0.5);
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 }

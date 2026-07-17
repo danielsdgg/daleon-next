@@ -101,7 +101,7 @@ const Services: React.FC = () => {
   const pricingTiers = [
     {
       name: 'High-Converting Website',
-      price: 'From KES 80,000',
+      price: 'From KES 60,000',
       desc: 'Perfect for small businesses and simple professional websites',
       features: [
         'Modern responsive website (up to 8 pages)',
