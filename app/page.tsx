@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+    title: 'Daleon Dynamics | Web & Custom Software Company Nairobi',
     description: 'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
     
     keywords: [

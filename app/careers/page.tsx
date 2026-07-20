@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers at Daleon Dynamics | Join Our Team",
+  title: "Careers | Join Our Team",
   description:
     "Explore career opportunities at Daleon Dynamics. We are always looking for talented developers, designers, and innovators in Kenya.",
   keywords: [

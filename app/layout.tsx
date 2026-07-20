@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://daleondynamics.com'),
 
   title: {
-    default: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+    default: 'Daleon Dynamics | Web & Custom Software Company Nairobi',
     template: '%s | Daleon Dynamics',
   },
 
