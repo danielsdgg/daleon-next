@@ -2,222 +2,291 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles, ShieldCheck, Globe, Code2, ExternalLink, MessageCircle } from 'lucide-react';
+import {
+  ArrowRight,
+  ShieldCheck,
+  Globe,
+  Code2,
+  ExternalLink,
+  MessageCircle,
+  CheckCircle2,
+  Smartphone,
+  Zap,
+  Receipt,
+  Headphones,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 
-export const generateMetadata = (): Metadata => {
-  return {
-    title: 'Daleon Dynamics | Web & Custom Software Company Nairobi',
-    description: 'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
-    
-    keywords: [
-      'daleon dynamics', 'web design nairobi', 'custom software development nairobi',
-      'website development kenya', 'software company nairobi', 'high converting websites nairobi'
+export const metadata: Metadata = {
+  title: { absolute: 'Daleon Dynamics | Web & Custom Software Company Nairobi' },
+  description:
+    'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
+  keywords: [
+    'daleon dynamics', 'web design nairobi', 'custom software development nairobi',
+    'website development kenya', 'software company nairobi', 'high converting websites nairobi',
+  ],
+  alternates: {
+    canonical: 'https://daleondynamics.com',
+  },
+  openGraph: {
+    title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+    description:
+      'Leading digital solutions company in Nairobi, Kenya. High-converting websites, custom web apps, automation & security systems.',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        width: 1200,
+        height: 630,
+        alt: 'Daleon Dynamics - Web Design & Software Company Nairobi',
+      },
     ],
-
-    alternates: {
-      canonical: 'https://daleondynamics.com',
-    },
-
-    openGraph: {
-      title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
-      description: 'Leading digital solutions company in Nairobi, Kenya. High-converting websites, custom web apps, automation & security systems.',
-      images: [
-        {
-          url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
-          width: 1200,
-          height: 630,
-          alt: 'Daleon Dynamics - Web Design & Software Company Nairobi'
-        }
-      ],
-      url: 'https://daleondynamics.com',
-      locale: 'en_KE',
-      type: 'website',
-    },
-  };
+    url: 'https://daleondynamics.com',
+    siteName: 'Daleon Dynamics',
+    locale: 'en_KE',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+    description: 'High-converting websites, custom web apps, automation & security systems for Kenyan businesses.',
+    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+  },
 };
 
+const proofStats = [
+  { value: '42%', label: 'increase in policy renewals', source: 'Karen Direct Insurance' },
+  { value: '65%', label: 'reduction in admin workload', source: 'Morgan Learning Academy' },
+  { value: '12', label: 'locations running on one system', source: 'SecureGate Access Control' },
+];
+
+const differentiators = [
+  {
+    icon: Smartphone,
+    title: 'Built for the Kenyan market',
+    desc: 'Native M-Pesa (Daraja API) integration, local payment flows, and systems designed around how Kenyan businesses actually operate — not generic templates.',
+  },
+  {
+    icon: Zap,
+    title: 'Realistic turnaround',
+    desc: 'Standard websites ship in 4–8 weeks, custom applications in 12–20 weeks. You get a clear timeline before work starts, not an open-ended estimate.',
+  },
+  {
+    icon: Receipt,
+    title: 'Transparent pricing',
+    desc: 'Fixed-price packages starting from KES 60,000, published upfront. No hidden costs, no scope surprises halfway through the project.',
+  },
+  {
+    icon: Headphones,
+    title: 'Support that continues',
+    desc: 'Every project includes a support window, with monthly maintenance retainers available afterward to keep things secure, fast, and up to date.',
+  },
+];
+
+const services = [
+  {
+    icon: Globe,
+    tag: 'frontend',
+    title: 'High-Converting Websites',
+    desc: 'Beautiful, fast, and conversion-focused websites designed to attract customers and generate leads.',
+    link: '/services/high-converting-website',
+  },
+  {
+    icon: Code2,
+    tag: 'fullstack',
+    title: 'Custom Web Apps & Systems',
+    desc: 'Powerful internal tools, CRMs, and automation systems built to match your exact business processes.',
+    link: '/services/custom-web-apps',
+  },
+  {
+    icon: ShieldCheck,
+    tag: 'security',
+    title: 'Access Control Systems',
+    desc: 'Smart biometric and cloud-based security solutions for offices, estates, and institutions.',
+    link: '/services/access-control-systems',
+  },
+];
+
+const featuredProjects = [
+  {
+    title: 'Karen Direct Insurance Brokers',
+    category: 'Insurance Platform',
+    year: '2026',
+    description:
+      'Modern insurance platform with policy management, claims processing, and client portal that streamlined operations and improved customer experience.',
+    liveUrl: 'https://www.karendirectins.com/',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
+    result: 'Increased policy renewals by 42%',
+  },
+  {
+    title: 'Morgan Learning Academy',
+    category: 'Learning Management System',
+    year: '2024',
+    description:
+      'Comprehensive LMS built for a leading Kenyan academy. Features course management, student tracking, assessments, and parent portal.',
+    liveUrl: 'https://canvas-1-jxo5.onrender.com/',
+    image: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1775549982/1A9A6803_pp58u4.jpg',
+    result: 'Reduced admin workload by 65%',
+  },
+  {
+    title: 'SecureGate Access Control',
+    category: 'Security & Facilities',
+    year: '2025',
+    description:
+      'Cloud-based biometric access control system with real-time monitoring, visitor management, and staff attendance tracking.',
+    liveUrl: '#',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
+    result: 'Deployed across 12 locations',
+  },
+];
+
 const Home: React.FC = () => {
-  const featuredProjects = [
-    {
-      title: "Karen Direct Insurance Brokers",
-      category: "Insurance Platform",
-      year: "2026",
-      description: "Modern insurance platform with policy management, claims processing, and client portal that streamlined operations and improved customer experience.",
-      liveUrl: "https://www.karendirectins.com/",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-      result: "Increased policy renewals by 42%"
-    },
-    {
-      title: "Morgan Learning Academy",
-      category: "Learning Management System",
-      year: "2024",
-      description: "Comprehensive LMS built for a leading Kenyan academy. Features course management, student tracking, assessments, and parent portal.",
-      liveUrl: "https://canvas-1-jxo5.onrender.com/",
-      image: "https://res.cloudinary.com/ddei3mzex/image/upload/v1775549982/1A9A6803_pp58u4.jpg",
-      result: "Reduced admin workload by 65%"
-    },
-    {
-      title: "SecureGate Access Control",
-      category: "Security & Facilities",
-      year: "2025",
-      description: "Cloud-based biometric access control system with real-time monitoring, visitor management, and staff attendance tracking.",
-      liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-      result: "Deployed across 12 locations"
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-zinc-950 text-white overflow-hidden">
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "@id": "https://daleondynamics.com/#organization",
-                "name": "Daleon Dynamics",
-                "url": "https://daleondynamics.com",
-                "logo": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
-                "description": "Leading web design and custom software development company in Nairobi, Kenya.",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Nairobi",
-                  "addressCountry": "KE"
-                },
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+254142021359",
-                  "contactType": "customer service"
-                },
-                "areaServed": "Kenya",
-                "foundingDate": "2024"
-              },
-              {
-                "@type": "LocalBusiness",
-                "@id": "https://daleondynamics.com/#localbusiness",
-                "name": "Daleon Dynamics",
-                "image": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
-                "url": "https://daleondynamics.com",
-                "telephone": "+254142021359",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Nairobi",
-                  "addressCountry": "KE"
-                },
-                "priceRange": "$$",
-                "description": "Web design, custom software development, and biometric access control systems in Nairobi, Kenya.",
-                "areaServed": "Kenya"
-              }
-            ]
-          })
-        }}
-      />
+    <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+      {/* HERO */}
+      <section className="pt-28 pb-20 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-6">
+              <span>{'//'}</span>
+              <span>nairobi-based software company</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
+              Web Design &amp; Custom Software Company in Nairobi, Kenya
+            </h1>
+            <p className="text-lg text-[#8E8CA3] leading-relaxed mb-10 max-w-lg">
+              We build high-converting websites, powerful custom web applications, business automation
+              systems, and secure biometric access control solutions that help Kenyan businesses grow
+              faster and operate smarter.
+            </p>
 
-      {/* HERO SECTION - Brand Focused */}
-      <section className="pt-32 pb-24 bg-gradient-to-br from-blue-100 via-white to-blue-100 text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="inline-flex items-center gap-3 bg-blue-100 text-blue-700 px-6 py-2.5 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-5 h-5" /> NAIROBI • KENYA
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+              >
+                Get Your Free Quote
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+              >
+                Explore Our Services
+              </Link>
+            </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter text-gray-900 leading-none mb-6">
-            Daleon Dynamics
-          </h1>
-          
-          <p className="text-4xl md:text-5xl font-semibold text-gray-700 mb-8">
-            Web Design &amp; Custom Software Development Company Nairobi
-          </p>
+          {/* Photo signature element */}
+          <div className="relative">
+            <div className="relative rounded-xl overflow-hidden border border-[#232330] shadow-2xl shadow-black/40 aspect-[4/5] lg:aspect-[4/4.5]">
+              <Image
+                src="https://res.cloudinary.com/ddei3mzex/image/upload/v1775556815/web-application-banner_fzgldg.webp"
+                alt="Team collaborating on a software project"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] via-transparent to-[#7B5CFF]/10" />
+            </div>
 
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12">
-            We build high-converting websites, powerful custom web applications, business automation systems, 
-            and secure biometric access control solutions that help Kenyan businesses grow faster and operate smarter.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Link 
-              href="/contact" 
-              className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all active:scale-95 shadow-lg shadow-blue-200"
-            >
-              Get Your Free Quote Today
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-
-            <Link
-              href="/services"
-              className="flex items-center justify-center gap-3 border-2 border-gray-300 hover:border-gray-400 text-gray-700 px-10 py-5 rounded-2xl font-semibold text-lg transition-all"
-            >
-              Explore Our Services
-            </Link>
-          </div>
-
-          <div className="mt-16 text-sm text-gray-500 flex flex-wrap justify-center gap-x-8 gap-y-3">
-            <div>✓ High-Converting Websites</div>
-            <div>✓ Custom Web Applications</div>
-            <div>✓ Business Automation</div>
-            <div>✓ Access Control Systems</div>
+            {/* Floating proof card */}
+            <div className="absolute -bottom-6 -left-6 bg-[#0F0F14] border border-[#232330] rounded-xl p-5 shadow-2xl shadow-black/50 max-w-[220px]">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38E1C6] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#38E1C6]" />
+                </span>
+                <span className="font-mono text-[11px] text-[#8E8CA3] uppercase tracking-wider">Live result</span>
+              </div>
+              <div className="text-2xl font-bold text-[#F2F1F7]">42%</div>
+              <div className="text-xs text-[#8E8CA3]">increase in policy renewals for a Nairobi insurer</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SERVICES TEASER */}
-      <section className="py-24 bg-white text-zinc-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold tracking-tight mb-4">Our Services</h2>
-            <p className="text-xl text-gray-600">Tailored digital solutions for Kenyan businesses</p>
+      {/* PROOF STRIP */}
+      <section className="py-14 px-6 border-b border-[#232330] bg-[#0F0F14]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
+          {proofStats.map((stat) => (
+            <div key={stat.label} className="text-center sm:text-left">
+              <div className="text-4xl font-bold text-[#7B5CFF] mb-1">{stat.value}</div>
+              <div className="text-[#F2F1F7] font-medium">{stat.label}</div>
+              <div className="text-sm text-[#5C5A6E] font-mono mt-1">{stat.source}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHY DALEON DYNAMICS */}
+      <section className="py-24 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 max-w-2xl">
+            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// why-daleon-dynamics'}</div>
+            <h2 className="text-4xl font-bold tracking-tight mb-4">
+              What sets us apart in Nairobi&apos;s software market
+            </h2>
+            <p className="text-lg text-[#8E8CA3]">
+              Kenyan businesses don&apos;t need a generic template — they need a team that understands the
+              local market and builds accordingly.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <div className="group p-10 bg-zinc-50 rounded-3xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <Globe className="w-8 h-8" />
-              </div>
-              <h3 className="text-3xl font-semibold mb-4">High-Converting Websites</h3>
-              <p className="text-zinc-600 text-lg mb-8">
-                Beautiful, fast, and conversion-focused websites designed to attract customers and generate leads.
-              </p>
-              <Link href="/services/high-converting-website" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
-                Learn more <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {differentiators.map((d, i) => {
+              const Icon = d.icon;
+              return (
+                <div key={i} className="flex gap-5 p-6 rounded-xl border border-[#232330] bg-[#0F141B]">
+                  <div className="w-11 h-11 rounded-lg bg-[#7B5CFF]/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-5 h-5 text-[#38E1C6]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">{d.title}</h3>
+                    <p className="text-[#8E8CA3] text-sm leading-relaxed">{d.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-            {/* Service 2 */}
-            <div className="group p-10 bg-zinc-50 rounded-3xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <div className="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <Code2 className="w-8 h-8" />
-              </div>
-              <h3 className="text-3xl font-semibold mb-4">Custom Web Apps & Systems</h3>
-              <p className="text-zinc-600 text-lg mb-8">
-                Powerful internal tools, CRMs, and automation systems built to match your exact business processes.
-              </p>
-              <Link href="/services/custom-web-apps" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
-                Learn more <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* Service 3 */}
-            <div className="group p-10 bg-zinc-50 rounded-3xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <ShieldCheck className="w-8 h-8" />
-              </div>
-              <h3 className="text-3xl font-semibold mb-4">Access Control Systems</h3>
-              <p className="text-zinc-600 text-lg mb-8">
-                Smart biometric and cloud-based security solutions for offices, estates, and institutions.
-              </p>
-              <Link href="/services/access-control-systems" className="inline-flex items-center gap-2 text-blue-600 font-medium hover:gap-3 transition-all">
-                Learn more <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+      {/* SERVICES TEASER — alternating rows, distinct from /services grid */}
+      <section className="py-24 px-6 border-b border-[#232330]">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-16">
+            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// our-services'}</div>
+            <h2 className="text-4xl font-bold tracking-tight">Tailored digital solutions for Kenyan businesses</h2>
           </div>
 
-          <div className="text-center mt-12">
-            <Link href="/services" className="inline-flex items-center gap-3 text-blue-600 font-semibold text-lg hover:gap-4 transition-all">
+          <div className="divide-y divide-[#232330]">
+            {services.map((service, i) => {
+              const Icon = service.icon;
+              return (
+                <Link
+                  key={i}
+                  href={service.link}
+                  className="group flex flex-col sm:flex-row sm:items-center gap-6 py-8 hover:bg-[#0F141B] -mx-6 px-6 rounded-lg transition-colors"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-[#0F141B] border border-[#232330] flex items-center justify-center flex-shrink-0 group-hover:border-[#7B5CFF] transition-colors">
+                    <Icon className="w-6 h-6 text-[#38E1C6]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold mb-1">{service.title}</h3>
+                    <p className="text-[#8E8CA3]">{service.desc}</p>
+                  </div>
+                  <ArrowRight className="w-5 h-5 text-[#7B5CFF] flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="mt-8">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-3 text-[#38E1C6] font-semibold hover:gap-4 transition-all"
+            >
               View All Services <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -225,26 +294,29 @@ const Home: React.FC = () => {
       </section>
 
       {/* FEATURED PROJECTS */}
-      <section id="projects" className="py-24 bg-zinc-950">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+      <section id="projects" className="py-24 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
             <div>
-              <h2 className="text-5xl font-bold tracking-tight">Recent Work</h2>
-              <p className="text-2xl text-zinc-400 mt-3">Real results for Kenyan businesses</p>
+              <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// recent-work'}</div>
+              <h2 className="text-4xl font-bold tracking-tight">Real results for Kenyan businesses</h2>
             </div>
             <Link
               href="/projects"
-              className="mt-6 md:mt-0 text-blue-500 hover:text-blue-400 font-medium flex items-center gap-2 group"
+              className="text-[#38E1C6] hover:text-[#5EEBD4] font-medium flex items-center gap-2 group flex-shrink-0"
             >
               View all projects
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project, index) => (
-              <div key={index} className="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-blue-600/50 transition-all duration-500 hover:shadow-2xl">
-                <div className="relative h-80 overflow-hidden">
+              <div
+                key={index}
+                className="group bg-[#0F141B] rounded-xl overflow-hidden border border-[#232330] hover:border-[#7B5CFF] transition-all duration-500"
+              >
+                <div className="relative h-72 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={`${project.title} - ${project.category} project by Daleon Dynamics`}
@@ -252,34 +324,37 @@ const Home: React.FC = () => {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute top-6 right-6 bg-black/70 backdrop-blur-md px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute top-5 right-5 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono text-[#F2F1F7]">
                     {project.year}
                   </div>
                 </div>
 
                 <div className="p-8">
-                  <div className="uppercase text-blue-500 text-sm font-medium tracking-wider mb-2">
+                  <div className="font-mono uppercase text-[#7B5CFF] text-xs tracking-wider mb-2">
                     {project.category}
                   </div>
-                  <h3 className="text-2xl font-semibold mb-3 text-white">{project.title}</h3>
-                  
+                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+
                   {project.result && (
-                    <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-                      ✓ {project.result}
+                    <div className="inline-flex items-center gap-2 bg-[#38E1C6]/10 text-[#38E1C6] text-xs font-medium px-3 py-1.5 rounded-full mb-4">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> {project.result}
                     </div>
                   )}
 
-                  <p className="text-zinc-400 mb-8 leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
+                  <p className="text-[#8E8CA3] mb-6 leading-relaxed line-clamp-3 text-sm">{project.description}</p>
 
-                  {project.liveUrl !== "#" ? (
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-blue-500 hover:text-blue-400 font-semibold group-hover:gap-4 transition-all">
-                      View Live Project <ExternalLink className="w-5 h-5" />
+                  {project.liveUrl !== '#' ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-[#7B5CFF] hover:text-[#8E73FF] font-semibold text-sm group-hover:gap-3 transition-all"
+                    >
+                      View Live Project <ExternalLink className="w-4 h-4" />
                     </a>
                   ) : (
-                    <div className="inline-flex items-center gap-3 text-amber-500 font-medium">
-                      Coming Soon • In Development
+                    <div className="inline-flex items-center gap-2 font-mono text-xs text-[#8E8CA3]">
+                      coming_soon • in_development
                     </div>
                   )}
                 </div>
@@ -290,36 +365,46 @@ const Home: React.FC = () => {
       </section>
 
       {/* FINAL CTA */}
-      <section id="contact" className="bg-zinc-900 py-28 text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="mb-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-3 rounded-full">
-            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-            <span className="uppercase tracking-widest text-sm">Limited Slots Available This Quarter</span>
+      <section id="contact" className="py-28 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <div className="mb-8 inline-flex items-center gap-3 bg-[#131319] border border-[#232330] px-6 py-2.5 rounded-full">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38E1C6] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#38E1C6]" />
+            </span>
+            <span className="font-mono uppercase tracking-widest text-xs text-[#8E8CA3]">
+              Limited slots available this quarter
+            </span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
             Ready to Transform Your Digital Presence?
           </h2>
 
-          <p className="text-2xl text-gray-300 max-w-2xl mx-auto mb-12">
-            Let’s discuss how we can build technology that drives real growth for your business in Kenya.
+          <p className="text-lg text-[#8E8CA3] max-w-xl mx-auto mb-12">
+            Let&apos;s discuss how we can build technology that drives real growth for your business in Kenya.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Link href="/contact" className="group flex items-center justify-center gap-3 bg-white text-gray-900 hover:bg-gray-100 px-12 py-6 rounded-3xl font-semibold text-xl transition-all active:scale-95">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-10 py-5 rounded-xl font-semibold text-lg transition-all active:scale-95"
+            >
               Start Your Project
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-
-            <a href="https://wa.me/254142021359" target="_blank" className="flex items-center justify-center gap-3 border border-white/40 hover:border-white px-12 py-6 rounded-3xl font-semibold text-xl transition-all">
-              <MessageCircle className="w-6 h-6" />
+            <a
+              href="https://wa.me/254142021359"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-10 py-5 rounded-xl font-semibold text-lg transition-all"
+            >
+              <MessageCircle className="w-5 h-5" />
               Chat on WhatsApp
             </a>
           </div>
 
-          <p className="mt-12 text-gray-400 text-sm">
-            Nairobi, Kenya • info@daleondynamics.com
-          </p>
+          <p className="text-[#5C5A6E] text-sm font-mono">Nairobi, Kenya • daleondynamics@gmail.com</p>
         </div>
       </section>
     </main>
