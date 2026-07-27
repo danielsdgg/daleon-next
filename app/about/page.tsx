@@ -170,7 +170,7 @@ const About: React.FC = () => {
 
               <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl tracking-tight">
                 Engineering
-                <span className="block ">
+                <span className="block text-[#7B5CFF]">
                   Digital Excellence.
                 </span>
               </h1>

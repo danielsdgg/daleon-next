@@ -231,7 +231,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
         {/* Article Content */}
         <div className="max-w-4xl mx-auto px-6 -mt-10 md:-mt-14 relative z-10 pb-20">
-          <article className="bg-white rounded-3xl shadow-xl p-9 md:p-16 prose prose-zinc prose-lg max-w-none">
+          <article className="bg-white text-black rounded-3xl shadow-xl p-9 md:p-16 prose prose-zinc prose-lg max-w-none">
             <div
               dangerouslySetInnerHTML={{ __html: post.content }}
               className="prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:leading-relaxed prose-strong:font-semibold prose-ul:my-8 prose-li:my-2.5"

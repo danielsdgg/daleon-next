@@ -4,153 +4,156 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
+import NewsletterForm from './NewsletterForm';
+import { blogPosts } from '@/src/data/blog-posts';
 
 export const metadata: Metadata = {
   title: 'Blog | Web Development, Custom Software & Security Insights Kenya',
-  description: 'Expert articles on custom software development, high-converting websites, biometric access control systems, business automation, and digital growth strategies for Kenyan businesses.',
-  
+  description:
+    'Expert articles on custom software development, high-converting websites, biometric access control systems, business automation, and digital growth strategies for Kenyan businesses.',
   keywords: [
     'custom software Kenya', 'web development Kenya', 'access control systems Kenya',
     'business automation Kenya', 'high converting websites Kenya', 'software development Nairobi',
-    'biometric security Kenya', 'digital transformation Kenya', 'tech news Kenya', 'daleon dynamics blog'
+    'biometric security Kenya', 'digital transformation Kenya', 'tech news Kenya', 'daleon dynamics blog',
   ],
-
   alternates: {
     canonical: 'https://daleondynamics.com/blogs',
   },
-
   openGraph: {
     title: 'Blog - Insights on Software & Web Development in Kenya | Daleon Dynamics',
     description: 'Practical guides and industry insights for Kenyan businesses looking to grow through technology.',
-    images: ['https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200'],
+    url: 'https://daleondynamics.com/blogs',
+    siteName: 'Daleon Dynamics',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200',
+        width: 1200,
+        height: 630,
+        alt: 'Daleon Dynamics Blog - Software & Web Development Insights',
+      },
+    ],
     locale: 'en_KE',
-    type: 'website'
-  }
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Insights on Software & Web Development in Kenya | Daleon Dynamics',
+    description: 'Practical guides and industry insights for Kenyan businesses looking to grow through technology.',
+    images: ['https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200'],
+  },
 };
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "How Custom Software Development Can Transform Your Business in 2025",
-    excerpt: "Discover how tailored software solutions can automate processes, reduce costs, and give your business a competitive advantage in today's digital economy.",
-    date: "April 5, 2026",
-    category: "Custom Software",
-    slug: "custom-software-2025",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800"
-  },
-  {
-    id: 2,
-    title: "The Ultimate Guide to Building High-Converting Websites in Kenya",
-    excerpt: "Learn the key principles of modern web design, performance optimization, and conversion strategies that actually work for Kenyan businesses.",
-    date: "March 28, 2026",
-    category: "Web Development",
-    slug: "high-converting-websites-kenya",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
-  },
-  {
-    id: 3,
-    title: "Why Your Business Needs a Professional Access Control System",
-    excerpt: "Explore the benefits of modern access control systems, from biometric security to cloud-based management, and how they protect your organization.",
-    date: "March 15, 2026",
-    category: "Security",
-    slug: "access-control-systems",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
-  },
-  {
-    id: 4,
-    title: "The Cost of Poor Software vs Investing in Quality Development",
-    excerpt: "A detailed breakdown of hidden costs of using outdated or poorly built software and why investing in professional development pays off long-term.",
-    date: "February 20, 2026",
-    category: "Business Strategy",
-    slug: "cost-of-poor-software",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
-  }
-];
+const categories = ['Custom Software', 'Web Development', 'Security', 'Business Strategy'];
 
 const Blogs = () => {
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Daleon Dynamics Blog",
-    "description": "Insights on custom software, web development, and security systems in Kenya",
-    "url": "https://daleondynamics.com/blogs",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Daleon Dynamics",
-      "url": "https://daleondynamics.com"
-    }
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Blog',
+        '@id': 'https://daleondynamics.com/blogs',
+        name: 'Daleon Dynamics Blog',
+        description: 'Insights on custom software, web development, and security systems in Kenya.',
+        url: 'https://daleondynamics.com/blogs',
+        publisher: { '@type': 'Organization', '@id': 'https://daleondynamics.com/#organization' },
+        blogPost: blogPosts.map((post) => ({
+          '@type': 'BlogPosting',
+          headline: post.title,
+          description: post.excerpt,
+          image: post.image,
+          datePublished: post.dateISO,
+          url: `https://daleondynamics.com/blog/${post.slug}`,
+          author: { '@type': 'Organization', '@id': 'https://daleondynamics.com/#organization' },
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://daleondynamics.com' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://daleondynamics.com/blogs' },
+        ],
+      },
+    ],
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <div className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-zinc-950 to-blue-950 text-white py-8 lg:py-12">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full text-sm font-medium mb-8 border border-white/20">
-            KNOWLEDGE HUB
+      {/* HERO */}
+      <section className="pt-32 pb-16 px-6 border-b border-[#232330]">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-6">
+            <span>{'//'}</span>
+            <span>knowledge-hub</span>
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-8">
-            Insights &amp; Strategies<br />
-            <span className="text-blue-400">for Growing Kenyan Businesses</span>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
+            Insights &amp; Strategies
+            <br />
+            <span className="bg-gradient-to-r from-[#7B5CFF] to-[#38E1C6] bg-clip-text text-transparent">
+              for Growing Kenyan Businesses
+            </span>
           </h1>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-            Expert articles on custom software, web development in Kenya, access control systems, 
-            and practical digital growth strategies.
+          <p className="text-lg text-[#8E8CA3] max-w-2xl mx-auto mb-8 leading-relaxed">
+            Practical, no-fluff articles on custom software, high-converting websites, business automation,
+            M-Pesa integrations, and biometric access control — written for Kenyan business owners, not
+            search engines.
           </p>
+
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((cat) => (
+              <span
+                key={cat}
+                className="font-mono text-xs text-[#8E8CA3] border border-[#232330] bg-[#0F0F14] px-4 py-2 rounded-full"
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Blog Grid */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12">
+      {/* BLOG GRID */}
+      <section className="py-20 px-6 border-b border-[#232330]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
             {blogPosts.map((post) => (
-              <Link 
+              <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group bg-white border border-gray-100 hover:border-blue-200 rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl flex flex-col h-full"
+                className="group bg-[#0F141B] border border-[#232330] hover:border-[#7B5CFF] rounded-2xl overflow-hidden transition-all duration-500 flex flex-col h-full"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <Image 
-                    src={post.image} 
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <div className="p-9 flex-1 flex flex-col">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-5">
+                <div className="p-8 flex-1 flex flex-col">
+                  <div className="flex items-center gap-4 text-sm text-[#5C5A6E] mb-4">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="w-4 h-4" />
                       {post.date}
                     </div>
-                    {/* <div className="flex items-center gap-1.5">
-                      <Clock className="w-4 h-4" />
-                      {post.readTime}
-                    </div> */}
-                    <span className="ml-auto bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-medium">
+                    <span className="ml-auto font-mono text-[#7B5CFF] border border-[#232330] px-3 py-1 rounded-full text-xs">
                       {post.category}
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-gray-900 leading-tight mb-5 group-hover:text-blue-600 transition-colors line-clamp-3">
+                  <h3 className="text-xl font-semibold leading-tight mb-4 group-hover:text-[#38E1C6] transition-colors line-clamp-3">
                     {post.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed mb-8 flex-1 line-clamp-4">
+                  <p className="text-[#8E8CA3] leading-relaxed mb-6 flex-1 line-clamp-3 text-sm">
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center text-blue-600 font-semibold group-hover:gap-3 transition-all mt-auto">
+                  <div className="flex items-center text-[#7B5CFF] font-semibold text-sm group-hover:gap-3 gap-2 transition-all mt-auto">
                     Read Full Article
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
               </Link>
@@ -159,25 +162,14 @@ const Blogs = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="bg-zinc-950 py-24 text-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold tracking-tighter mb-6">Stay Updated with Industry Insights</h2>
-          <p className="text-xl text-gray-400 mb-12">Get monthly tips on software development, web technologies, and business growth strategies.</p>
-          
-          <div className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="flex-1 px-6 py-4 rounded-2xl bg-zinc-900 border border-zinc-700 focus:outline-none focus:border-blue-500 text-white placeholder:text-gray-500"
-              />
-              <button className="bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-2xl font-semibold transition-all whitespace-nowrap">
-                Subscribe Free
-              </button>
-            </div>
-            <p className="text-xs text-gray-500 mt-5">Zero spam. Unsubscribe anytime.</p>
-          </div>
+      {/* NEWSLETTER */}
+      <section className="py-24 px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Stay Updated with Industry Insights</h2>
+          <p className="text-lg text-[#8E8CA3] mb-12 max-w-xl mx-auto">
+            Get monthly tips on software development, web technologies, and business growth strategies.
+          </p>
+          <NewsletterForm />
         </div>
       </section>
     </div>

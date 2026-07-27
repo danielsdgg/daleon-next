@@ -82,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-KE" suppressHydrationWarning>
+    <html lang="en-KE" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className="antialiased bg-[#0A0A0F] text-[#F2F1F7]">
         <Navbar />
         <main>
