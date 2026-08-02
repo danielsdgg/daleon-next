@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowRight,
-  ShieldCheck,
   Globe,
   Code2,
   ExternalLink,
@@ -97,13 +96,13 @@ const services = [
     desc: 'Powerful internal tools, CRMs, and automation systems built to match your exact business processes.',
     link: '/services/custom-web-apps',
   },
-  {
-    icon: ShieldCheck,
-    tag: 'security',
-    title: 'Access Control Systems',
-    desc: 'Smart biometric and cloud-based security solutions for offices, estates, and institutions.',
-    link: '/services/access-control-systems',
-  },
+  // {
+  //   icon: ShieldCheck,
+  //   tag: 'security',
+  //   title: 'Access Control Systems',
+  //   desc: 'Smart biometric and cloud-based security solutions for offices, estates, and institutions.',
+  //   link: '/services',
+  // },
 ];
 
 const featuredProjects = [

@@ -22,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // SERVICE PAGES
     { url: `${baseUrl}/services/high-converting-website`, lastModified: SITE_LAST_UPDATED, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${baseUrl}/services/custom-web-apps`, lastModified: SITE_LAST_UPDATED, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/services/access-control-systems`, lastModified: SITE_LAST_UPDATED, changeFrequency: 'monthly', priority: 0.85 },
 
     // LEGAL PAGES
     { url: `${baseUrl}/terms`, lastModified: SITE_LAST_UPDATED, changeFrequency: 'yearly', priority: 0.5 },

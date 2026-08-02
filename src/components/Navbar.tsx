@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ChevronDown, Monitor, Code2, ShieldCheck } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, Monitor, Code2 } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const Navbar = () => {
@@ -28,11 +28,6 @@ const Navbar = () => {
           name: "Custom Web Apps",
           path: "/services/custom-web-apps",
           icon: Code2,
-        },
-        {
-          name: "Access Control Systems",
-          path: "/services/access-control-systems",
-          icon: ShieldCheck,
         },
       ],
     },

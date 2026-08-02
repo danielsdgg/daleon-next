@@ -59,7 +59,7 @@ const coreServices = [
     tag: 'security',
     title: 'Access Control Systems',
     desc: 'Biometric, cloud-based security solutions for offices, estates, and institutions.',
-    link: '/services/access-control-systems',
+    link: '/contact',
   },
 ];
 
