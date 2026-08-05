@@ -17,7 +17,7 @@ import {
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Daleon Dynamics | Web & Custom Software Company Nairobi' },
+  title: { absolute: 'Daleon Dynamics | Web & Custom Software Company' },
   description:
     'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: 'https://daleondynamics.com',
   },
   openGraph: {
-    title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
+    title: 'Daleon Dynamics - Web Design & Custom Software Company',
     description:
       'Leading digital solutions company in Nairobi, Kenya. High-converting websites, custom web apps, automation & security systems.',
     images: [
