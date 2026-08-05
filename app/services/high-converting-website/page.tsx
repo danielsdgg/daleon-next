@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Zap, Target, Globe, Users } from 'lucide-react
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'High-Converting Websites in Nairobi, Kenya',
+  title: 'High-Converting Websites | Daleon Dynamics',
   description:
     'We engineer high-converting, lightning-fast, SEO-optimized websites in Nairobi that turn visitors into loyal customers and drive measurable business growth.',
   keywords: [

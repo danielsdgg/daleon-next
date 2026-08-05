@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Zap, BarChart3, Users, Globe } from 'lucide-re
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Custom Web Apps & Software Development Nairobi | Daleon Dynamics' },
+  title: { absolute: 'Custom Web Apps | Daleon Dynamics' },
   description:
     'Expert custom web applications, business automation systems, CRMs, dashboards, and internal tools built for Kenyan businesses. Scalable, secure, and tailored solutions in Nairobi.',
   keywords: [

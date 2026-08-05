@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Code2, Globe, ShieldCheck, Terminal, Zap } fro
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Web Design & Custom Software Development in Nairobi | Daleon Dynamics',
+  title: 'Services | Daleon Dynamics',
   description:
     'Nairobi-based web design and custom software agency. High-converting websites, business automation, M-Pesa integrations, and biometric access control systems for Kenyan businesses.',
   alternates: { canonical: 'https://daleondynamics.com/services' },
