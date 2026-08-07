@@ -44,6 +44,20 @@ const ContactClient = () => {
       if (data.success) {
         setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been received.' });
         setShowSuccessToast(true);
+
+        // Best-effort: log this submission to Google Sheets and send the
+        // submitter a confirmation email. Fire-and-forget on purpose — the
+        // "message sent" experience above is already confirmed by Web3Forms,
+        // so this doesn't block or affect the UI if it's slow or fails.
+        fetch(
+          'https://script.google.com/macros/s/AKfycby3SzjjASBWBEK_4wdqCPriHNuZldeG-TOL9bKNEj5kfGgom4JIqetKmE5QZgX9gIAy/exec',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(formData),
+          }
+        ).catch(() => {});
+
         setFormData({ name: '', email: '', phone: '', service: '', message: '' });
       } else {
         setSubmitStatus({
