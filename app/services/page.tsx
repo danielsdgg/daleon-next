@@ -3,6 +3,11 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle, Code2, Globe, ShieldCheck, Terminal, Zap } from 'lucide-react';
 import type { Metadata } from 'next';
+import SectionLabel from '@/src/components/ui/SectionLabel';
+import TerminalWindow from '@/src/components/ui/TerminalWindow';
+import CodeSnippet from '@/src/components/ui/CodeSnippet';
+import Reveal from '@/src/components/ui/motion/Reveal';
+import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
   title: 'Services | Daleon Dynamics',
@@ -107,6 +112,21 @@ const pricingTiers = [
   },
 ];
 
+const signatureSnippet = [
+  { tokens: [{ text: 'const ', tone: 'keyword' as const }, { text: 'solution ', tone: 'plain' as const }, { text: '= ', tone: 'muted' as const }, { text: 'new ', tone: 'keyword' as const }, { text: 'DaleonDynamics', tone: 'ident' as const }, { text: '({', tone: 'muted' as const }] },
+  { tokens: [{ text: '  services: ', tone: 'muted' as const }, { text: '[', tone: 'ident' as const }] },
+  { tokens: [{ text: "    'web-design',", tone: 'plain' as const }] },
+  { tokens: [{ text: "    'custom-software',", tone: 'plain' as const }] },
+  { tokens: [{ text: "    'automation',", tone: 'plain' as const }] },
+  { tokens: [{ text: "    'access-control'", tone: 'plain' as const }] },
+  { tokens: [{ text: '  ', tone: 'plain' as const }, { text: ']', tone: 'ident' as const }, { text: ',', tone: 'muted' as const }] },
+  { tokens: [{ text: '  location: ', tone: 'muted' as const }, { text: "'Nairobi, KE',", tone: 'plain' as const }] },
+  { tokens: [{ text: '  status: ', tone: 'muted' as const }, { text: "'shipping'", tone: 'plain' as const }] },
+  { tokens: [{ text: '});', tone: 'muted' as const }] },
+  { tokens: [{ text: '', tone: 'plain' as const }] },
+  { tokens: [{ text: '// ready when you are', tone: 'muted' as const }] },
+];
+
 const faqs = [
   {
     q: 'How much does a professional website cost in Nairobi?',
@@ -208,156 +228,113 @@ const ServicesPage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+    <main className="min-h-screen bg-canvas text-ink">
       {/* Structured data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* HERO */}
-      <section className="pt-32 pb-24 px-6 border-b border-[#232330]">
+      <section className="pt-32 pb-24 px-6 border-b border-line">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-6">
-              <span>{'//'}</span>
-              <span>nairobi-based software company</span>
-            </div>
+          <Reveal>
+            <SectionLabel label="nairobi-based software company" className="mb-6" />
             <h1 className="font-mono text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
               Web Design &amp; Custom Software Development in Nairobi
             </h1>
-            <p className="text-lg text-[#8E8CA3] leading-relaxed mb-10 max-w-lg">
+            <p className="text-lg text-ink-muted leading-relaxed mb-10 max-w-lg">
               Software engineering for Kenyan growth — high-converting websites, custom systems, and secure
               access control, built to global standards for the local market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
               >
                 Start Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
               </Link>
               <Link
                 href="#services"
-                className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all font-mono text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+                className="inline-flex items-center justify-center gap-3 border border-line hover:border-accent hover:text-accent px-8 py-4 rounded-lg font-semibold transition-all font-mono text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
               >
                 explore_services()
               </Link>
             </div>
-          </div>
+          </Reveal>
 
-          {/* Terminal signature element */}
-          <div className="rounded-xl border border-[#232330] bg-[#0F141B] overflow-hidden shadow-2xl shadow-black/40">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#232330] bg-[#131A22]">
-              <span className="w-3 h-3 rounded-full bg-[#7B5CFF]" />
-              <span className="w-3 h-3 rounded-full bg-[#38E1C6]" />
-              <span className="w-3 h-3 rounded-full bg-[#3A4553]" />
-              <span className="ml-3 font-mono text-xs text-[#8E8CA3]">daleondynamics — zsh</span>
-            </div>
-            <pre className="font-mono text-sm leading-relaxed p-6 overflow-x-auto">
-              <code>
-                <span className="text-[#38E1C6]">const</span>{' '}
-                <span className="text-[#F2F1F7]">solution</span>{' '}
-                <span className="text-[#8E8CA3]">=</span> <span className="text-[#38E1C6]">new</span>{' '}
-                <span className="text-[#7B5CFF]">DaleonDynamics</span>
-                <span className="text-[#8E8CA3]">{'({'}</span>
-                {'\n'}
-                {'  '}
-                <span className="text-[#8E8CA3]">services:</span> <span className="text-[#7B5CFF]">[</span>
-                {'\n'}
-                {"    '"}
-                <span className="text-[#F2F1F7]">web-design</span>
-                {"',\n    '"}
-                <span className="text-[#F2F1F7]">custom-software</span>
-                {"',\n    '"}
-                <span className="text-[#F2F1F7]">automation</span>
-                {"',\n    '"}
-                <span className="text-[#F2F1F7]">access-control</span>
-                {"'\n  "}
-                <span className="text-[#7B5CFF]">]</span>
-                <span className="text-[#8E8CA3]">,</span>
-                {'\n  '}
-                <span className="text-[#8E8CA3]">location:</span> {"'"}
-                <span className="text-[#F2F1F7]">Nairobi, KE</span>
-                {"',\n  "}
-                <span className="text-[#8E8CA3]">status:</span> {"'"}
-                <span className="text-[#F2F1F7]">shipping</span>
-                {"'\n"}
-                <span className="text-[#8E8CA3]">{'});'}</span>
-                {'\n\n'}
-                <span className="text-[#5C5A6E]">{'// '}</span>
-                <span className="text-[#5C5A6E]">ready when you are</span>
-                <span className="inline-block w-2 h-4 bg-[#38E1C6] ml-1 animate-pulse align-middle" />
-              </code>
-            </pre>
-          </div>
+          <Reveal delay={0.1}>
+            <TerminalWindow>
+              <CodeSnippet lines={signatureSnippet} showCursor />
+            </TerminalWindow>
+          </Reveal>
         </div>
       </section>
 
       {/* CORE SERVICES */}
-      <section id="services" className="py-24 px-6 border-b border-[#232330]">
+      <section id="services" className="py-24 px-6 border-b border-line">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// core-services'}</div>
+          <Reveal className="mb-16">
+            <SectionLabel label="core-services" />
             <h2 className="text-4xl font-bold tracking-tight">What we build</h2>
-            <p className="text-lg text-[#8E8CA3] mt-3">Built for the Kenyan market, engineered to global standards.</p>
-          </div>
+            <p className="text-lg text-ink-muted mt-3">Built for the Kenyan market, engineered to global standards.</p>
+          </Reveal>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <Stagger className="grid lg:grid-cols-3 gap-6" step={0.08}>
             {coreServices.map((service, i) => {
               const Icon = service.icon;
               return (
                 <div
                   key={i}
-                  className="group bg-[#0F141B] border border-[#232330] rounded-xl p-8 hover:border-[#7B5CFF] transition-all"
+                  className="group bg-surface border border-line rounded-xl p-8 hover:border-primary transition-all"
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <Icon className="w-8 h-8 text-[#38E1C6]" />
-                    <span className="font-mono text-xs text-[#5C5A6E]">{service.tag}</span>
+                    <Icon className="w-8 h-8 text-accent" />
+                    <span className="font-mono text-xs text-ink-dim">{service.tag}</span>
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-[#8E8CA3] mb-8 leading-relaxed">{service.desc}</p>
+                  <p className="text-ink-muted mb-8 leading-relaxed">{service.desc}</p>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center gap-2 text-[#7B5CFF] font-mono text-sm font-medium group-hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-primary font-mono text-sm font-medium group-hover:gap-3 transition-all"
                   >
                     learn_more() <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               );
             })}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-24 px-6 border-b border-[#232330]">
+      <section id="pricing" className="py-24 px-6 border-b border-line">
         <div className="max-w-5xl mx-auto">
-          <div className="mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// pricing'}</div>
+          <Reveal className="mb-16">
+            <SectionLabel label="pricing" />
             <h2 className="text-4xl font-bold tracking-tight">Transparent pricing</h2>
-            <p className="text-lg text-[#8E8CA3] mt-3">Realistic starting points for typical projects in Kenya.</p>
-          </div>
+            <p className="text-lg text-ink-muted mt-3">Realistic starting points for typical projects in Kenya.</p>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <Stagger className="grid md:grid-cols-3 gap-6" step={0.08}>
             {pricingTiers.map((tier, i) => (
               <div
                 key={i}
-                className={`bg-[#0F141B] border rounded-xl p-8 transition-all flex flex-col ${
-                  tier.popular ? 'border-[#7B5CFF]' : 'border-[#232330] hover:border-[#38E1C6]'
+                className={`bg-surface border rounded-xl p-8 transition-all flex flex-col ${
+                  tier.popular ? 'border-primary' : 'border-line hover:border-accent'
                 }`}
               >
                 {tier.popular && (
-                  <div className="font-mono text-xs text-[#7B5CFF] mb-4">{'// most popular'}</div>
+                  <div className="font-mono text-xs text-primary mb-4">{'// most popular'}</div>
                 )}
                 <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
                 <div className="font-mono text-2xl font-bold mb-1">{tier.price}</div>
-                {tier.priceNote && <div className="text-xs text-[#5C5A6E] mb-4">{tier.priceNote}</div>}
+                {tier.priceNote && <div className="text-xs text-ink-dim mb-4">{tier.priceNote}</div>}
                 {!tier.priceNote && <div className="mb-4" />}
-                <p className="text-[#8E8CA3] text-sm mb-6">{tier.desc}</p>
+                <p className="text-ink-muted text-sm mb-6">{tier.desc}</p>
                 <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((f, idx) => (
-                    <li key={idx} className="flex gap-3 text-sm text-[#F2F1F7]/90">
-                      <CheckCircle className="w-4 h-4 text-[#38E1C6] mt-0.5 flex-shrink-0" />
+                    <li key={idx} className="flex gap-3 text-sm text-ink/90">
+                      <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -366,60 +343,62 @@ const ServicesPage: React.FC = () => {
                   href="/contact"
                   className={`block text-center py-3 rounded-lg font-semibold text-sm transition-all ${
                     tier.popular
-                      ? 'bg-[#7B5CFF] text-white hover:bg-[#8E73FF]'
-                      : 'border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6]'
+                      ? 'bg-primary text-white hover:bg-primary-hover'
+                      : 'border border-line hover:border-accent hover:text-accent'
                   }`}
                 >
                   Get Quote
                 </Link>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-6 border-b border-[#232330]">
+      <section className="py-24 px-6 border-b border-line">
         <div className="max-w-3xl mx-auto">
-          <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// faq'}</div>
-          <h2 className="text-4xl font-bold tracking-tight mb-12">Common questions</h2>
+          <Reveal>
+            <SectionLabel label="faq" />
+            <h2 className="text-4xl font-bold tracking-tight mb-12">Common questions</h2>
+          </Reveal>
 
-          <div className="space-y-4">
+          <Stagger className="space-y-4" step={0.06}>
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="bg-[#0F141B] border border-[#232330] rounded-xl p-6 group open:border-[#38E1C6]"
+                className="bg-surface border border-line rounded-xl p-6 group open:border-accent"
               >
                 <summary className="font-mono font-medium cursor-pointer flex justify-between items-start gap-4 list-none">
                   <span className="flex gap-3">
-                    <span className="text-[#7B5CFF] select-none">{'>'}</span>
+                    <span className="text-primary select-none">{'>'}</span>
                     {faq.q}
                   </span>
-                  <span className="text-[#38E1C6] group-open:rotate-45 transition flex-shrink-0">+</span>
+                  <span className="text-accent group-open:rotate-45 transition flex-shrink-0">+</span>
                 </summary>
-                <p className="mt-4 pl-6 text-[#8E8CA3] leading-relaxed">{faq.a}</p>
+                <p className="mt-4 pl-6 text-ink-muted leading-relaxed">{faq.a}</p>
               </details>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* FINAL CTA */}
       <section className="py-24 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <Zap className="w-8 h-8 text-[#7B5CFF] mx-auto mb-6" />
+        <Reveal className="max-w-2xl mx-auto">
+          <Zap className="w-8 h-8 text-primary mx-auto mb-6" />
           <h2 className="text-4xl font-bold tracking-tight mb-4">Ready to build something exceptional?</h2>
-          <p className="text-lg text-[#8E8CA3] mb-10">
+          <p className="text-lg text-ink-muted mb-10">
             Let&apos;s discuss your project and create technology that drives real growth.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
+            className="inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
           >
             <Terminal className="w-5 h-5" />
             Book a Free Discovery Call
           </Link>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

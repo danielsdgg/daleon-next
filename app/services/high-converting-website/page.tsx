@@ -1,8 +1,14 @@
 // app/services/high-converting-website/page.tsx
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Zap, Target, Globe, Users } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Target, Globe, Users, Code2 } from 'lucide-react';
 import type { Metadata } from 'next';
+import SectionLabel from '@/src/components/ui/SectionLabel';
+import TerminalWindow from '@/src/components/ui/TerminalWindow';
+import CodeSnippet from '@/src/components/ui/CodeSnippet';
+import TechStackRow from '@/src/components/ui/TechStackRow';
+import Reveal from '@/src/components/ui/motion/Reveal';
+import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
   title: 'High-Converting Websites | Daleon Dynamics',
@@ -62,6 +68,24 @@ const included = [
   'Full training and handover',
 ];
 
+const seoSnippet = [
+  { tokens: [{ text: 'export const ', tone: 'keyword' as const }, { text: 'metadata', tone: 'ident' as const }, { text: ' = {', tone: 'muted' as const }] },
+  { tokens: [{ text: '  title: ', tone: 'muted' as const }, { text: "'Your Business | City, Kenya',", tone: 'plain' as const }] },
+  { tokens: [{ text: '  description: ', tone: 'muted' as const }, { text: "'...',", tone: 'plain' as const }] },
+  { tokens: [{ text: '  openGraph: ', tone: 'muted' as const }, { text: '{ images: [...] },', tone: 'plain' as const }] },
+  { tokens: [{ text: '};', tone: 'muted' as const }] },
+  { tokens: [{ text: '', tone: 'plain' as const }] },
+  { tokens: [{ text: '// Core Web Vitals target', tone: 'muted' as const }] },
+  { tokens: [{ text: '// LCP < 1.8s · CLS < 0.1 · INP < 200ms', tone: 'muted' as const }] },
+];
+
+const techStack = [
+  { icon: Zap, label: 'Core Web Vitals' },
+  { icon: Globe, label: 'Next.js SEO' },
+  { icon: Code2, label: 'Schema.org JSON-LD' },
+  { icon: Target, label: 'GA4 + Conversion Tracking' },
+];
+
 const faqs = [
   { q: 'How long does it take to build a high-converting website?', a: 'Standard projects take 4–8 weeks. More complex sites with custom integrations take 10–14 weeks.' },
   { q: 'Do you provide SEO services?', a: 'Yes. Every website includes comprehensive on-page SEO, technical optimization, and local Kenya-focused strategies.' },
@@ -112,107 +136,126 @@ const HighConvertingWebsitePage: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+    <main className="min-h-screen bg-canvas text-ink">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}
-      <section className="pt-32 pb-24 relative overflow-hidden border-b border-[#232330]">
+      <section className="pt-32 pb-24 relative overflow-hidden border-b border-line">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:40px_40px]" />
 
         <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-8">
-            <span>{'//'}</span>
-            <span>conversion-engineering</span>
-          </div>
+          <Reveal>
+            <SectionLabel label="conversion-engineering" className="mb-8" />
 
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-8">
-            Websites That{' '}
-            <span className="text-[#7B5CFF]">
-              Actually Convert
-            </span>
-          </h1>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-8">
+              Websites That{' '}
+              <span className="text-primary">
+                Actually Convert
+              </span>
+            </h1>
 
-          <p className="text-lg md:text-xl text-[#8E8CA3] max-w-3xl mx-auto mb-12">
-            We don&apos;t build pretty websites. We engineer high-performance digital assets that attract the
-            right traffic, build trust instantly, and turn visitors into paying customers — in the Kenyan
-            market.
-          </p>
+            <p className="text-lg md:text-xl text-ink-muted max-w-3xl mx-auto mb-12">
+              We don&apos;t build pretty websites. We engineer high-performance digital assets that attract the
+              right traffic, build trust instantly, and turn visitors into paying customers — in the Kenyan
+              market.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
-            >
-              Get Your Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </Link>
-            <Link
-              href="#process"
-              className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all"
-            >
-              See Our Process
-            </Link>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+              >
+                Get Your Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              </Link>
+              <Link
+                href="#process"
+                className="inline-flex items-center justify-center gap-3 border border-line hover:border-accent hover:text-accent px-8 py-4 rounded-lg font-semibold transition-all"
+              >
+                See Our Process
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* BENEFITS */}
-      <section className="py-24 px-6 border-b border-[#232330]">
+      <section className="py-24 px-6 border-b border-line">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// why-us'}</div>
+          <Reveal className="mb-16">
+            <SectionLabel label="why-us" />
             <h2 className="text-4xl font-bold tracking-tight">Why Our Websites Perform Better</h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" step={0.08}>
             {benefits.map((item, i) => {
               const Icon = item.icon;
               return (
                 <div
                   key={i}
-                  className="bg-[#0F141B] p-8 rounded-xl border border-[#232330] hover:border-[#7B5CFF] transition-all group"
+                  className="bg-surface p-8 rounded-xl border border-line hover:border-primary transition-all group"
                 >
-                  <Icon className="w-8 h-8 text-[#38E1C6] mb-6 group-hover:scale-110 transition" />
+                  <Icon className="w-8 h-8 text-accent mb-6 group-hover:scale-110 transition" />
                   <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                  <p className="text-[#8E8CA3] text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-ink-muted text-sm leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
-          </div>
+          </Stagger>
+        </div>
+      </section>
+
+      {/* HOW WE OPTIMIZE */}
+      <section className="py-24 px-6 border-b border-line">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <Reveal>
+            <SectionLabel label="how-we-optimize" />
+            <h2 className="text-4xl font-bold tracking-tight mb-4">SEO built into the code, not bolted on after</h2>
+            <p className="text-lg text-ink-muted leading-relaxed mb-8">
+              Every page ships with structured metadata and is measured against Core Web Vitals targets
+              before launch — the same technical foundation Google actually ranks on.
+            </p>
+            <TechStackRow items={techStack} />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <TerminalWindow title="app/page.tsx">
+              <CodeSnippet lines={seoSnippet} />
+            </TerminalWindow>
+          </Reveal>
         </div>
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="py-24 px-6 border-b border-[#232330]">
+      <section id="process" className="py-24 px-6 border-b border-line">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// our-process'}</div>
+          <Reveal className="mb-16">
+            <SectionLabel label="our-process" />
             <h2 className="text-4xl font-bold tracking-tight">Our Development Process</h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          </Reveal>
+          <Stagger className="grid md:grid-cols-4 gap-8" step={0.08}>
             {process.map((step, i) => (
               <div key={i}>
-                <div className="w-14 h-14 bg-[#0F141B] border border-[#232330] text-[#7B5CFF] rounded-xl flex items-center justify-center text-xl font-mono font-bold mb-6">
+                <div className="w-14 h-14 bg-surface border border-line text-primary rounded-xl flex items-center justify-center text-xl font-mono font-bold mb-6">
                   {step.num}
                 </div>
                 <h3 className="font-semibold text-lg mb-3">{step.title}</h3>
-                <p className="text-[#8E8CA3] text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-ink-muted text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="py-24 px-6 border-b border-[#232330]">
+      <section className="py-24 px-6 border-b border-line">
         <div className="max-w-5xl mx-auto">
-          <div className="mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// whats-included'}</div>
+          <Reveal className="mb-16">
+            <SectionLabel label="whats-included" />
             <h2 className="text-4xl font-bold tracking-tight">What&apos;s Included</h2>
-          </div>
+          </Reveal>
           <div className="grid md:grid-cols-2 gap-5">
             {included.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 text-[#F2F1F7]">
-                <CheckCircle className="w-5 h-5 text-[#38E1C6] mt-0.5 flex-shrink-0" />
+              <div key={i} className="flex items-start gap-3 text-ink">
+                <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <span>{item}</span>
               </div>
             ))}
@@ -221,43 +264,45 @@ const HighConvertingWebsitePage: React.FC = () => {
       </section>
 
       {/* PRICING */}
-      <section className="py-24 px-6 border-b border-[#232330] text-center">
-        <div className="max-w-2xl mx-auto">
-          <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// pricing'}</div>
+      <section className="py-24 px-6 border-b border-line text-center">
+        <Reveal className="max-w-2xl mx-auto">
+          <SectionLabel label="pricing" />
           <h2 className="text-4xl font-bold tracking-tight mb-4">Transparent Pricing</h2>
-          <p className="font-mono text-3xl font-bold text-[#38E1C6] mb-4">Starting from KES 60,000</p>
-          <p className="text-[#8E8CA3] mb-10 max-w-xl mx-auto">
+          <p className="font-mono text-3xl font-bold text-accent mb-4">Starting from KES 60,000</p>
+          <p className="text-ink-muted mb-10 max-w-xl mx-auto">
             This is the starting price for a professional high-converting business website. Final pricing
             depends on features, pages, and integrations.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
+            className="inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
           >
             Get Your Personalized Quote
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* FAQ */}
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
-          <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// faq'}</div>
-          <h2 className="text-4xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <Reveal>
+            <SectionLabel label="faq" />
+            <h2 className="text-4xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          </Reveal>
+          <Stagger className="space-y-4" step={0.06}>
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="bg-[#0F141B] border border-[#232330] rounded-xl p-6 group open:border-[#38E1C6]"
+                className="bg-surface border border-line rounded-xl p-6 group open:border-accent"
               >
                 <summary className="font-medium text-lg cursor-pointer flex justify-between items-start gap-4 list-none">
                   {faq.q}
-                  <span className="text-[#38E1C6] group-open:rotate-45 transition flex-shrink-0">+</span>
+                  <span className="text-accent group-open:rotate-45 transition flex-shrink-0">+</span>
                 </summary>
-                <p className="mt-4 text-[#8E8CA3] leading-relaxed">{faq.a}</p>
+                <p className="mt-4 text-ink-muted leading-relaxed">{faq.a}</p>
               </details>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
     </main>

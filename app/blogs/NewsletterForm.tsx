@@ -43,7 +43,7 @@ const NewsletterForm = () => {
   return (
     <div className="max-w-md mx-auto">
       {status?.type === 'success' ? (
-        <div className="flex items-center justify-center gap-3 text-[#38E1C6] bg-[#38E1C6]/10 border border-[#38E1C6]/30 rounded-lg py-4 px-6">
+        <div className="flex items-center justify-center gap-3 text-accent bg-accent/10 border border-accent/30 rounded-lg py-4 px-6">
           <CheckCircle className="w-5 h-5 flex-shrink-0" />
           <span className="text-sm font-medium">{status.message}</span>
         </div>
@@ -55,12 +55,12 @@ const NewsletterForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email address"
-            className="flex-1 px-5 py-3.5 rounded-lg bg-[#0F141B] border border-[#232330] focus:outline-none focus:border-[#7B5CFF] focus:ring-4 focus:ring-[#7B5CFF]/15 text-[#F2F1F7] placeholder:text-[#5C5A6E] transition-all"
+            className="flex-1 px-5 py-3.5 rounded-lg bg-surface border border-line focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15 text-ink placeholder:text-ink-dim transition-all"
           />
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#7B5CFF] hover:bg-[#8E73FF] disabled:bg-[#7B5CFF]/40 px-8 py-3.5 rounded-lg font-semibold text-white transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+            className="bg-primary hover:bg-primary-hover disabled:bg-primary/40 px-8 py-3.5 rounded-lg font-semibold text-white transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           >
             {isSubmitting ? 'Subscribing...' : 'Subscribe Free'}
           </button>
@@ -71,7 +71,7 @@ const NewsletterForm = () => {
         <p className="text-red-400 text-sm mt-3 text-center">{status.message}</p>
       )}
 
-      <p className="text-xs text-[#5C5A6E] mt-5">Zero spam. Unsubscribe anytime.</p>
+      <p className="text-xs text-ink-dim mt-5">Zero spam. Unsubscribe anytime.</p>
     </div>
   );
 };

@@ -7,6 +7,10 @@ import {
   ShieldCheck, Zap, Star,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import SectionLabel from '@/src/components/ui/SectionLabel';
+import TerminalWindow from '@/src/components/ui/TerminalWindow';
+import Reveal from '@/src/components/ui/motion/Reveal';
+import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
   title: { absolute: 'About Daleon Dynamics | Web Design & Software Company' },
@@ -147,13 +151,13 @@ const About: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+    <main className="min-h-screen bg-canvas text-ink">
       {/* Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-[#232330]">
+      <section className="relative overflow-hidden border-b border-line">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(123,92,255,0.20),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,225,198,0.18),transparent_35%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:70px_70px]" />
@@ -162,20 +166,20 @@ const About: React.FC = () => {
         <div className="relative mx-auto max-w-7xl px-6 py-28">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* LEFT */}
-            <div>
-              <span className="inline-flex items-center gap-3 rounded-full border border-[#38E1C6]/30 bg-[#38E1C6]/10 px-5 py-2 text-sm font-semibold tracking-wide text-[#38E1C6]">
+            <Reveal>
+              <span className="inline-flex items-center gap-3 rounded-full border border-accent/30 bg-accent/10 px-5 py-2 text-sm font-semibold tracking-wide text-accent">
                 <Star className="h-4 w-4" />
                 SOFTWARE COMPANY • NAIROBI, KENYA
               </span>
 
               <h1 className="mt-8 text-4xl font-bold leading-tight md:text-6xl tracking-tight">
                 Engineering
-                <span className="block text-[#7B5CFF]">
+                <span className="block text-primary">
                   Digital Excellence.
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-lg leading-8 text-[#8E8CA3]">
+              <p className="mt-8 max-w-xl text-lg leading-8 text-ink-muted">
                 Daleon Dynamics develops modern websites, custom software, enterprise systems, automation
                 platforms, and digital experiences that help ambitious Kenyan businesses innovate, streamline
                 operations, and scale with confidence.
@@ -184,13 +188,13 @@ const About: React.FC = () => {
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/services"
-                  className="rounded-xl bg-[#7B5CFF] hover:bg-[#8E73FF] px-8 py-4 font-semibold text-white transition"
+                  className="rounded-xl bg-primary hover:bg-primary-hover px-8 py-4 font-semibold text-white transition"
                 >
                   Explore Our Services
                 </Link>
                 <Link
                   href="/projects"
-                  className="rounded-xl border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 font-semibold transition"
+                  className="rounded-xl border border-line hover:border-accent hover:text-accent px-8 py-4 font-semibold transition"
                 >
                   View Our Projects
                 </Link>
@@ -199,22 +203,22 @@ const About: React.FC = () => {
               <div className="mt-16 flex flex-wrap gap-10">
                 <div>
                   <h3 className="text-3xl font-bold">Web</h3>
-                  <p className="text-[#8E8CA3]">Modern Business Websites</p>
+                  <p className="text-ink-muted">Modern Business Websites</p>
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold">Apps</h3>
-                  <p className="text-[#8E8CA3]">Custom Software Solutions</p>
+                  <p className="text-ink-muted">Custom Software Solutions</p>
                 </div>
                 <div>
                   <h3 className="text-3xl font-bold">Cloud</h3>
-                  <p className="text-[#8E8CA3]">Scalable Digital Platforms</p>
+                  <p className="text-ink-muted">Scalable Digital Platforms</p>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* RIGHT */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl border border-[#232330] bg-[#0F141B] h-[560px] lg:h-[620px]">
+            <Reveal delay={0.1} className="relative">
+              <div className="relative overflow-hidden rounded-3xl border border-line bg-surface h-[560px] lg:h-[620px]">
                 <Image
                   src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
                   alt="Software developer at Daleon Dynamics"
@@ -226,44 +230,45 @@ const About: React.FC = () => {
               </div>
 
               {/* Floating Card */}
-              <div className="absolute -left-6 -bottom-8 lg:-left-10 lg:bottom-10 rounded-2xl border border-[#232330] bg-[#0F0F14] p-6 shadow-2xl shadow-black/50 max-w-xs">
-                <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#38E1C6]">
-                  {'// our-mission'}
-                </div>
+              <TerminalWindow
+                title="mission.md"
+                className="absolute -left-6 -bottom-8 lg:-left-10 lg:bottom-10 max-w-xs"
+                contentClassName="p-6"
+              >
                 <h3 className="text-xl font-bold leading-snug">
                   Building technology that creates impact.
                 </h3>
-                <p className="mt-3 text-sm text-[#8E8CA3]">
+                <p className="mt-3 text-sm text-ink-muted">
                   We combine strategy, design, and engineering to build software that empowers businesses to
                   grow faster and operate smarter.
                 </p>
-              </div>
-            </div>
+              </TerminalWindow>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* MISSION STATEMENT */}
-      <section className="py-16 border-b border-[#232330]">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-xl leading-relaxed text-[#8E8CA3]">
+      <section className="py-16 border-b border-line">
+        <Reveal className="max-w-4xl mx-auto px-6">
+          <p className="text-xl leading-relaxed text-ink-muted">
             At Daleon Dynamics, we believe Kenyan businesses deserve world-class digital tools — built locally
             with deep understanding of the Kenyan market. We don&apos;t just code; we solve problems and create
             systems that help businesses grow, automate, and compete effectively.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* OUR STORY */}
-      <section className="py-24 border-b border-[#232330]">
+      <section className="py-24 border-b border-line">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5">
-              <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// our-story'}</div>
+            <Reveal className="lg:col-span-5">
+              <SectionLabel label="our-story" />
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Our Story</h2>
-              <div className="h-1 w-20 bg-[#7B5CFF] rounded" />
-            </div>
-            <div className="lg:col-span-7 space-y-6 text-lg text-[#8E8CA3] leading-relaxed">
+              <div className="h-1 w-20 bg-primary rounded" />
+            </Reveal>
+            <Reveal delay={0.1} className="lg:col-span-7 space-y-6 text-lg text-ink-muted leading-relaxed">
               <p>
                 Founded in 2024 in Nairobi, Daleon Dynamics was born from the frustration of seeing many Kenyan
                 businesses struggle with generic templates, slow websites, and poorly built software that
@@ -274,98 +279,100 @@ const About: React.FC = () => {
                 are fast, secure, scalable, and tailored to the realities of doing business in Kenya — including
                 seamless M-Pesa integration, regulatory compliance, and mobile-first experiences.
               </p>
-              <p className="font-medium text-[#F2F1F7]">
+              <p className="font-medium text-ink">
                 Today, we partner with ambitious small businesses, growing enterprises, and organizations across
                 Kenya to build technology that doesn&apos;t just look good — it performs exceptionally well.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* OUR VALUES */}
-      <section className="py-24 border-b border-[#232330]">
+      <section className="py-24 border-b border-line">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// core-values'}</div>
+          <Reveal className="text-center mb-16">
+            <SectionLabel label="core-values" />
             <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
-            <p className="text-lg text-[#8E8CA3]">The principles that guide every project we deliver</p>
-          </div>
+            <p className="text-lg text-ink-muted">The principles that guide every project we deliver</p>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <Stagger className="grid md:grid-cols-2 gap-6" step={0.08}>
             {values.map((value, i) => (
-              <div key={i} className="flex gap-6 bg-[#0F141B] border border-[#232330] p-8 rounded-2xl">
-                <div className="text-[#38E1C6] mt-1 flex-shrink-0">{value.icon}</div>
+              <div key={i} className="flex gap-6 bg-surface border border-line p-8 rounded-2xl">
+                <div className="text-accent mt-1 flex-shrink-0">{value.icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                  <p className="text-[#8E8CA3]">{value.desc}</p>
+                  <p className="text-ink-muted">{value.desc}</p>
                 </div>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 border-b border-[#232330]">
+      <section className="py-24 border-b border-line">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// why-choose-us'}</div>
+          <Reveal className="text-center mb-16">
+            <SectionLabel label="why-choose-us" />
             <h2 className="text-4xl font-bold">Why Kenyan Businesses Trust Daleon Dynamics</h2>
-          </div>
+          </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <Stagger className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto" step={0.08}>
             {whyChooseUs.map((item, i) => (
               <div key={i} className="flex gap-6">
-                <div className="text-[#38E1C6] mt-1 flex-shrink-0">{item.icon}</div>
+                <div className="text-accent mt-1 flex-shrink-0">{item.icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                  <p className="text-[#8E8CA3]">{item.desc}</p>
+                  <p className="text-ink-muted">{item.desc}</p>
                 </div>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-b border-[#232330]">
+      <section className="py-24 border-b border-line">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// faq'}</div>
-          <h2 className="text-4xl font-bold mb-12">Frequently Asked Questions</h2>
+          <Reveal>
+            <SectionLabel label="faq" />
+            <h2 className="text-4xl font-bold mb-12">Frequently Asked Questions</h2>
+          </Reveal>
 
-          <div className="space-y-4">
+          <Stagger className="space-y-4" step={0.06}>
             {faqs.map((faq, i) => (
               <details
                 key={i}
-                className="bg-[#0F141B] border border-[#232330] rounded-xl p-6 group open:border-[#38E1C6]"
+                className="bg-surface border border-line rounded-xl p-6 group open:border-accent"
               >
                 <summary className="font-medium text-lg cursor-pointer flex justify-between items-start gap-4 list-none">
                   {faq.q}
-                  <span className="text-[#38E1C6] group-open:rotate-45 transition flex-shrink-0">+</span>
+                  <span className="text-accent group-open:rotate-45 transition flex-shrink-0">+</span>
                 </summary>
-                <p className="mt-4 text-[#8E8CA3] leading-relaxed">{faq.a}</p>
+                <p className="mt-4 text-ink-muted leading-relaxed">{faq.a}</p>
               </details>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* FINAL CTA */}
       <section className="py-24 text-center">
-        <div className="max-w-4xl mx-auto px-6">
+        <Reveal className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Let&apos;s Build Something Great Together</h2>
-          <p className="text-lg text-[#8E8CA3] mb-10 max-w-2xl mx-auto">
+          <p className="text-lg text-ink-muted mb-10 max-w-2xl mx-auto">
             Whether you need a high-converting website, a custom system, or a security solution — we&apos;re
             ready to help your business grow.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-10 py-5 rounded-xl text-lg font-semibold transition"
+            className="inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-10 py-5 rounded-xl text-lg font-semibold transition"
           >
             Start a Conversation
           </Link>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

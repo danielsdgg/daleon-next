@@ -3,6 +3,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { AnimatePresence, m } from 'motion/react';
+import SectionLabel from '@/src/components/ui/SectionLabel';
+import Reveal from '@/src/components/ui/motion/Reveal';
 
 const ContactClient = () => {
   const [formData, setFormData] = useState({
@@ -83,39 +86,36 @@ const ContactClient = () => {
   }, [showSuccessToast]);
 
   const inputClasses =
-    'w-full px-5 py-3.5 text-base bg-[#0A0A0F] border border-[#232330] rounded-lg text-[#F2F1F7] focus:outline-none focus:border-[#7B5CFF] focus:ring-4 focus:ring-[#7B5CFF]/15 transition-all placeholder:text-[#5C5A6E]';
+    'w-full px-5 py-3.5 text-base bg-canvas border border-line rounded-lg text-ink focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15 transition-all placeholder:text-ink-dim';
 
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+    <div className="min-h-screen bg-canvas text-ink">
       {/* Compact page header — no oversized hero */}
       <section className="pt-32 pb-4 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-4">
-            <span>{'//'}</span>
-            <span>get-in-touch</span>
-          </div>
+        <Reveal className="max-w-5xl mx-auto text-center">
+          <SectionLabel label="get-in-touch" />
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Let&apos;s Build Something Great Together
           </h1>
-          <p className="text-lg text-[#8E8CA3] max-w-2xl mx-auto">
+          <p className="text-lg text-ink-muted max-w-2xl mx-auto">
             Your vision deserves exceptional execution. Tell us about your project — we personally review
             every inquiry.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20 grid lg:grid-cols-5 gap-12 lg:gap-16">
         {/* Contact Form */}
-        <div className="lg:col-span-3 bg-[#0F141B] border border-[#232330] rounded-2xl shadow-2xl shadow-black/30 p-8 lg:p-12">
+        <div className="lg:col-span-3 bg-surface border border-line rounded-2xl shadow-2xl shadow-black/30 p-8 lg:p-12">
           <h2 className="text-3xl font-bold tracking-tight mb-2">Start Your Project</h2>
-          <p className="text-[#8E8CA3] mb-10">We typically respond within 24 hours.</p>
+          <p className="text-ink-muted mb-10">We typically respond within 24 hours.</p>
 
           <form onSubmit={handleSubmit} className="space-y-7">
             <input type="hidden" name="from_name" value="Daleon Dynamics Website" />
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Full Name *</label>
+                <label className="block text-sm font-semibold text-ink-muted mb-2">Full Name *</label>
                 <input
                   type="text"
                   name="name"
@@ -127,7 +127,7 @@ const ContactClient = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Phone Number *</label>
+                <label className="block text-sm font-semibold text-ink-muted mb-2">Phone Number *</label>
                 <input
                   type="tel"
                   name="phone"
@@ -142,7 +142,7 @@ const ContactClient = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Email Address *</label>
+                <label className="block text-sm font-semibold text-ink-muted mb-2">Email Address *</label>
                 <input
                   type="email"
                   name="email"
@@ -154,7 +154,7 @@ const ContactClient = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Interested Service</label>
+                <label className="block text-sm font-semibold text-ink-muted mb-2">Interested Service</label>
                 <select
                   name="service"
                   value={formData.service}
@@ -171,7 +171,7 @@ const ContactClient = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">
+              <label className="block text-sm font-semibold text-ink-muted mb-2">
                 Project Details / Requirements *
               </label>
               <textarea
@@ -188,7 +188,7 @@ const ContactClient = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#7B5CFF] hover:bg-[#8E73FF] disabled:bg-[#7B5CFF]/40 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-lg shadow-[#7B5CFF]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F141B]"
+              className="w-full bg-primary hover:bg-primary-hover disabled:bg-primary/40 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-lg shadow-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
             >
               {isSubmitting ? (
                 <>Sending Your Message...</>
@@ -206,7 +206,7 @@ const ContactClient = () => {
               </div>
             )}
 
-            <p className="text-center text-sm text-[#5C5A6E]">
+            <p className="text-center text-sm text-ink-dim">
               We respect your time. Every inquiry is personally reviewed.
             </p>
           </form>
@@ -219,14 +219,14 @@ const ContactClient = () => {
 
             <div className="space-y-8">
               <div className="flex gap-5">
-                <div className="w-12 h-12 bg-[#7B5CFF]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/10 text-accent rounded-xl flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-medium text-[#F2F1F7] mb-1">Email</p>
+                  <p className="font-medium text-ink mb-1">Email</p>
                   <a
                     href="mailto:daleondynamics@gmail.com"
-                    className="text-[#7B5CFF] hover:text-[#8E73FF] transition-colors"
+                    className="text-primary hover:text-primary-hover transition-colors"
                   >
                     daleondynamics@gmail.com
                   </a>
@@ -234,16 +234,16 @@ const ContactClient = () => {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-12 h-12 bg-[#7B5CFF]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/10 text-accent rounded-xl flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-medium text-[#F2F1F7] mb-1">Phone / WhatsApp</p>
+                  <p className="font-medium text-ink mb-1">Phone / WhatsApp</p>
                   <a
                     href="https://wa.me/254142021359"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#7B5CFF] hover:text-[#8E73FF] transition-colors"
+                    className="text-primary hover:text-primary-hover transition-colors"
                   >
                     +254 142 021 359
                   </a>
@@ -251,40 +251,49 @@ const ContactClient = () => {
               </div>
 
               <div className="flex gap-5">
-                <div className="w-12 h-12 bg-[#7B5CFF]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/10 text-accent rounded-xl flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-medium text-[#F2F1F7] mb-1">Based In</p>
-                  <p className="text-[#8E8CA3] leading-relaxed">Nairobi, Kenya</p>
+                  <p className="font-medium text-ink mb-1">Based In</p>
+                  <p className="text-ink-muted leading-relaxed">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-[#0F141B] border border-[#232330] rounded-2xl p-8">
-            <p className="italic text-lg leading-relaxed text-[#8E8CA3]">
+          <div className="bg-surface border border-line rounded-2xl p-8">
+            <p className="italic text-lg leading-relaxed text-ink-muted">
               &ldquo;We personally review every inquiry. No bots. No generic responses.&rdquo;
             </p>
-            <p className="mt-4 text-[#5C5A6E] font-medium text-sm">— The Daleon Dynamics Team</p>
+            <p className="mt-4 text-ink-dim font-medium text-sm">— The Daleon Dynamics Team</p>
           </div>
         </div>
       </div>
 
       {/* Success Toast */}
-      {showSuccessToast && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none px-6">
-          <div className="bg-[#0F0F14] border border-[#38E1C6]/40 text-[#F2F1F7] px-8 py-5 rounded-2xl shadow-2xl shadow-black/50 flex items-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-500">
-            <div className="w-10 h-10 bg-[#38E1C6]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
-              <CheckCircle className="w-6 h-6" />
+      <AnimatePresence>
+        {showSuccessToast && (
+          <m.div
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 32 }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none px-6"
+          >
+            <div className="bg-surface-alt border border-accent/40 text-ink px-8 py-5 rounded-2xl shadow-2xl shadow-black/50 flex items-center gap-4">
+              <div className="w-10 h-10 bg-accent/10 text-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                <CheckCircle className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="text-lg font-semibold tracking-tight">Message Sent Successfully!</p>
+                <p className="text-ink-muted mt-0.5 text-sm">We&apos;ll get back to you within 24 hours.</p>
+                <p className="font-mono text-xs text-accent mt-1.5">message.send() {'->'} 200 OK</p>
+              </div>
             </div>
-            <div>
-              <p className="text-lg font-semibold tracking-tight">Message Sent Successfully!</p>
-              <p className="text-[#8E8CA3] mt-0.5 text-sm">We&apos;ll get back to you within 24 hours.</p>
-            </div>
-          </div>
-        </div>
-      )}
+          </m.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

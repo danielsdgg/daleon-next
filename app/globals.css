@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./theme.css";
 
 /* ====================== CUSTOM ANIMATIONS ====================== */
 
@@ -43,24 +44,10 @@
     scroll-behavior: smooth;
   }
 
-  body {
-    background-color: rgb(255 255 255);
-    color: rgb(17 24 39);
-  }
-
-  .dark body {
-    background-color: rgb(3 7 18);
-    color: rgb(243 244 246);
-  }
-
   /* Focus styles */
   :focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.5);
-  }
-
-  .dark :focus-visible {
-    box-shadow: 0 0 0 3px rgb(147 197 253 / 0.5);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 }
 
@@ -69,4 +56,16 @@
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
+}
+
+/* Respect OS-level reduced-motion preference for all CSS animations/transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

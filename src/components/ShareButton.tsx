@@ -29,7 +29,7 @@ export default function ShareButton({ title }: ShareButtonProps) {
   return (
     <button
       onClick={handleShare}
-      className="inline-flex items-center gap-3 px-7 py-3.5 bg-zinc-900 hover:bg-zinc-800 active:bg-zinc-950 text-white rounded-2xl font-medium transition-all duration-200"
+      className="inline-flex items-center gap-3 px-7 py-3.5 bg-primary hover:bg-primary-hover active:scale-95 text-white rounded-2xl font-medium transition-all duration-200"
     >
       <Share2 className="w-5 h-5" />
       Share this Article

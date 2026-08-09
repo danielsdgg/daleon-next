@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import "./globals.css";
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
+import MotionProvider from '@/src/components/providers/MotionProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://daleondynamics.com'),
@@ -83,75 +84,77 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-KE" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className="antialiased bg-[#0A0A0F] text-[#F2F1F7]">
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+      <body className="antialiased font-sans bg-canvas text-ink">
+        <MotionProvider>
+          <Navbar />
+          <main>
+            {children}
+          </main>
+          <Footer />
 
-        {/* Structured Data (Schema.org) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://daleondynamics.com/#organization",
-                  "name": "Daleon Dynamics",
-                  "url": "https://daleondynamics.com",
-                  "logo": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
-                  "description": "Leading web design and custom software development company in Nairobi, Kenya.",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Nairobi",
-                    "addressCountry": "KE"
+          {/* Structured Data (Schema.org) */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@graph": [
+                  {
+                    "@type": "Organization",
+                    "@id": "https://daleondynamics.com/#organization",
+                    "name": "Daleon Dynamics",
+                    "url": "https://daleondynamics.com",
+                    "logo": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+                    "description": "Leading web design and custom software development company in Nairobi, Kenya.",
+                    "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Nairobi",
+                      "addressCountry": "KE"
+                    },
+                    "contactPoint": {
+                      "@type": "ContactPoint",
+                      "telephone": "+254142021359",
+                      "contactType": "customer service"
+                    },
+                    "areaServed": "Kenya",
+                    "sameAs": [
+                      "https://www.facebook.com/daleondynamics",
+                      "https://x.com/daleondynamics",
+                      "https://linkedin.com/company/daleon-dynamics",
+                      "https://instagram.com/daleondynamics"
+                    ]
                   },
-                  "contactPoint": {
-                    "@type": "ContactPoint",
-                    "telephone": "+254142021359",
-                    "contactType": "customer service"
-                  },
-                  "areaServed": "Kenya",
-                  "sameAs": [
-                    "https://www.facebook.com/daleondynamics",
-                    "https://x.com/daleondynamics",
-                    "https://linkedin.com/company/daleon-dynamics",
-                    "https://instagram.com/daleondynamics"
-                  ]
-                },
-                {
-                  "@type": "WebSite",
-                  "@id": "https://daleondynamics.com/#website",
-                  "url": "https://daleondynamics.com/",
-                  "name": "Daleon Dynamics"
-                }
-              ]
-            })
-          }}
-        />
+                  {
+                    "@type": "WebSite",
+                    "@id": "https://daleondynamics.com/#website",
+                    "url": "https://daleondynamics.com/",
+                    "name": "Daleon Dynamics"
+                  }
+                ]
+              })
+            }}
+          />
 
-        {/* Floating WhatsApp Button */}
-        <a
-          href="https://wa.me/254142021359"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BD5A] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-black/50 transition-all hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
-          aria-label="Chat with us on WhatsApp"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            fill="currentColor"
-            viewBox="0 0 24 24"
+          {/* Floating WhatsApp Button */}
+          <a
+            href="https://wa.me/254142021359"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BD5A] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-black/50 transition-all hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+            aria-label="Chat with us on WhatsApp"
           >
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.485-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.65 1.43 5.14L2 22l4.86-1.43C8.35 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.36-.48-4.72-1.31L4 20l1.31-3.28C4.48 15.36 4 13.74 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
-          </svg>
-        </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.485-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.65 1.43 5.14L2 22l4.86-1.43C8.35 21.475 10.11 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.74 0-3.36-.48-4.72-1.31L4 20l1.31-3.28C4.48 15.36 4 13.74 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
+            </svg>
+          </a>
+        </MotionProvider>
       </body>
     </html>
   );

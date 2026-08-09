@@ -6,6 +6,9 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import NewsletterForm from './NewsletterForm';
 import { blogPosts } from '@/src/data/blog-posts';
+import SectionLabel from '@/src/components/ui/SectionLabel';
+import Reveal from '@/src/components/ui/motion/Reveal';
+import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
   title: 'Blog | Web Development, Custom Software & Security Insights Kenya',
@@ -77,24 +80,21 @@ const Blogs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+    <div className="min-h-screen bg-canvas text-ink">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}
-      <section className="pt-32 pb-16 px-6 border-b border-[#232330]">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-6">
-            <span>{'//'}</span>
-            <span>knowledge-hub</span>
-          </div>
+      <section className="pt-32 pb-16 px-6 border-b border-line">
+        <Reveal className="max-w-4xl mx-auto text-center">
+          <SectionLabel label="knowledge-hub" />
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
             Insights &amp; Strategies
             <br />
-            <span className="bg-gradient-to-r from-[#7B5CFF] to-[#38E1C6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               for Growing Kenyan Businesses
             </span>
           </h1>
-          <p className="text-lg text-[#8E8CA3] max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg text-ink-muted max-w-2xl mx-auto mb-8 leading-relaxed">
             Practical, no-fluff articles on custom software, high-converting websites, business automation,
             M-Pesa integrations, and biometric access control — written for Kenyan business owners, not
             search engines.
@@ -104,24 +104,24 @@ const Blogs = () => {
             {categories.map((cat) => (
               <span
                 key={cat}
-                className="font-mono text-xs text-[#8E8CA3] border border-[#232330] bg-[#0F0F14] px-4 py-2 rounded-full"
+                className="font-mono text-xs text-ink-muted border border-line bg-surface-alt px-4 py-2 rounded-full"
               >
                 {cat}
               </span>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* BLOG GRID */}
-      <section className="py-20 px-6 border-b border-[#232330]">
+      <section className="py-20 px-6 border-b border-line">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
+          <Stagger className="grid md:grid-cols-2 gap-8" step={0.08}>
             {blogPosts.map((post) => (
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group bg-[#0F141B] border border-[#232330] hover:border-[#7B5CFF] rounded-2xl overflow-hidden transition-all duration-500 flex flex-col h-full"
+                className="group bg-surface border border-line hover:border-primary rounded-2xl overflow-hidden transition-all duration-500 flex flex-col h-full"
               >
                 <div className="relative h-56 overflow-hidden">
                   <Image
@@ -133,44 +133,44 @@ const Blogs = () => {
                   />
                 </div>
                 <div className="p-8 flex-1 flex flex-col">
-                  <div className="flex items-center gap-4 text-sm text-[#5C5A6E] mb-4">
+                  <div className="flex items-center gap-4 text-sm text-ink-dim mb-4">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="w-4 h-4" />
                       {post.date}
                     </div>
-                    <span className="ml-auto font-mono text-[#7B5CFF] border border-[#232330] px-3 py-1 rounded-full text-xs">
+                    <span className="ml-auto font-mono text-primary border border-line px-3 py-1 rounded-full text-xs">
                       {post.category}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-semibold leading-tight mb-4 group-hover:text-[#38E1C6] transition-colors line-clamp-3">
+                  <h3 className="text-xl font-semibold leading-tight mb-4 group-hover:text-accent transition-colors line-clamp-3">
                     {post.title}
                   </h3>
 
-                  <p className="text-[#8E8CA3] leading-relaxed mb-6 flex-1 line-clamp-3 text-sm">
+                  <p className="text-ink-muted leading-relaxed mb-6 flex-1 line-clamp-3 text-sm">
                     {post.excerpt}
                   </p>
 
-                  <div className="flex items-center text-[#7B5CFF] font-semibold text-sm group-hover:gap-3 gap-2 transition-all mt-auto">
+                  <div className="flex items-center text-primary font-semibold text-sm group-hover:gap-3 gap-2 transition-all mt-auto">
                     Read Full Article
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
               </Link>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* NEWSLETTER */}
       <section className="py-24 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
+        <Reveal className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight mb-4">Stay Updated with Industry Insights</h2>
-          <p className="text-lg text-[#8E8CA3] mb-12 max-w-xl mx-auto">
+          <p className="text-lg text-ink-muted mb-12 max-w-xl mx-auto">
             Get monthly tips on software development, web technologies, and business growth strategies.
           </p>
           <NewsletterForm />
-        </div>
+        </Reveal>
       </section>
     </div>
   );
