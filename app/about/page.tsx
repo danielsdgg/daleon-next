@@ -216,7 +216,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="relative overflow-hidden rounded-3xl border border-[#232330] bg-[#0F141B] h-[560px] lg:h-[620px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+                  src="https://res.cloudinary.com/ddei3mzex/image/upload/v1775556815/web-application-banner_fzgldg.webp"
                   alt="Software developer at Daleon Dynamics"
                   fill
                   className="object-cover"

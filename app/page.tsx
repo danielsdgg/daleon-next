@@ -179,7 +179,7 @@ const Home: React.FC = () => {
           <div className="relative">
             <div className="relative rounded-xl overflow-hidden border border-[#232330] shadow-2xl shadow-black/40 aspect-[4/5] lg:aspect-[4/4.5]">
               <Image
-                src="https://res.cloudinary.com/ddei3mzex/image/upload/v1775556815/web-application-banner_fzgldg.webp"
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
                 alt="Team collaborating on a software project"
                 fill
                 className="object-cover"
