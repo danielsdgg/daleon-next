@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
 };
 
-const categories = ['Custom Software', 'Web Development', 'Security', 'Business Strategy'];
+const categories = ['Custom Software', 'Web Development', 'Business Strategy', 'M-Pesa & Payments'];
 
 const Blogs = () => {
   const jsonLd = {

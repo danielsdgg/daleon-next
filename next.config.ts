@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         destination: "/services/high-converting-website",
         permanent: true,
       },
+      {
+        source: "/blog/access-control-systems",
+        destination: "/blogs",
+        permanent: true,
+      },
     ];
   },
 
