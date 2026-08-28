@@ -10,7 +10,7 @@ import Reveal from '@/src/components/ui/motion/Reveal';
 import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
-  title: 'Services | Daleon Dynamics',
+  title: { absolute: 'Websites & Software Development | Daleon Dynamics' },
   description:
     'Nairobi-based web design and custom software agency. High-converting websites, business automation, M-Pesa integrations, and biometric access control systems for Kenyan businesses.',
   alternates: { canonical: 'https://daleondynamics.com/services' },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
   openGraph: {
-    title: 'Web Design & Custom Software Development in Nairobi',
+    title: { absolute: 'Web Design & Custom Software Development in Nairobi' },
     description:
       'End-to-end digital solutions for Kenyan businesses — websites, custom software, automation, and access control.',
     url: 'https://daleondynamics.com/services',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design & Custom Software Development in Nairobi',
+    title: { absolute: 'Web Design & Custom Software Development in Nairobi' },
     description: 'High-converting websites, custom software, and business automation for Kenyan businesses.',
     images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
   },

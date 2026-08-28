@@ -1,17 +1,17 @@
 // app/projects/page.tsx
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink, ArrowRight } from 'lucide-react';
-import type { Metadata } from 'next';
 import SectionLabel from '@/src/components/ui/SectionLabel';
 import Reveal from '@/src/components/ui/motion/Reveal';
 import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Projects | Web Design & Software Portfolio Kenya | Daleon Dynamics' },
+  title: { absolute: 'Projects | Web & Software Portfolio' },
   description:
-    'Explore our portfolio of successful projects including insurance platforms, learning management systems, access control solutions, and ecommerce websites built for Kenyan businesses.',
+    'Explore our portfolio of successful projects including insurance platforms, learning management systems, access control solutions, real estate platforms, and ecommerce websites built for Kenyan businesses.',
   keywords: [
     'web development projects kenya',
     'custom software projects nairobi',
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'access control systems projects',
     'insurance software kenya',
     'learning management system kenya',
+    'real estate platform kenya',
     'software development portfolio kenya',
     'daleon dynamics projects',
   ],
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Projects - Real Results Delivered | Daleon Dynamics',
     description:
-      'See how we deliver high-impact digital solutions for Kenyan businesses — from insurance platforms to secure access control systems.',
+      'See how we deliver high-impact digital solutions for Kenyan businesses — from insurance platforms to real estate and secure access control systems.',
     url: 'https://daleondynamics.com/projects',
     siteName: 'Daleon Dynamics',
     images: [
@@ -47,12 +48,12 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Projects - Real Results Delivered | Daleon Dynamics',
-    description: 'Insurance platforms, learning management systems, access control, and ecommerce — built for Kenyan businesses.',
+    description: 'Insurance, education, security, e-commerce, and real estate platforms — built for Kenyan businesses.',
     images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
   },
 };
 
-const categories = ['Insurance', 'Education Technology', 'Security & Access Control', 'E-commerce'];
+const categories = ['Insurance', 'Education Technology', 'Security & Access Control', 'E-commerce', 'Real Estate'];
 
 const projects = [
   {
@@ -95,9 +96,19 @@ const projects = [
     liveUrl: 'https://herocloth.vercel.app',
     image: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1729598578/videoediting2_itg2qh.jpg',
   },
+  {
+    title: 'My Genesis Fortune',
+    category: 'Real Estate',
+    year: '2026',
+    description:
+      'AI-powered real estate platform connecting buyers, tenants, landlords, and agents — helping people find, buy, rent, and manage property across Kenya.',
+    result: null,
+    liveUrl: 'https://mygenesisfortune.com',
+    image: 'https://images.unsplash.com/photo-1758448756207-54505680d130?w=800',
+  },
 ];
 
-const Projects = () => {
+export default function ProjectsPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -146,6 +157,16 @@ const Projects = () => {
             description: 'Ecommerce platform with product browsing, secure checkout, M-Pesa integration, and order management.',
             url: 'https://herocloth.vercel.app',
             datePublished: '2025',
+            author: { '@type': 'Organization', name: 'Daleon Dynamics' },
+          },
+          {
+            '@type': 'CreativeWork',
+            position: 5,
+            name: 'My Genesis Fortune',
+            description:
+              'AI-powered real estate platform connecting buyers, tenants, landlords, and agents to find, buy, rent, and manage property in Kenya.',
+            url: 'https://mygenesisfortune.com',
+            datePublished: '2026',
             author: { '@type': 'Organization', name: 'Daleon Dynamics' },
           },
         ],
@@ -285,6 +306,4 @@ const Projects = () => {
       </section>
     </div>
   );
-};
-
-export default Projects;
+}

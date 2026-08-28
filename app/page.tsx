@@ -26,7 +26,7 @@ import Reveal from '@/src/components/ui/motion/Reveal';
 import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Daleon Dynamics | Web & Custom Software Company' },
+  title: { absolute: 'Daleon Dynamics | Web & Software Company' },
   description:
     'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
   keywords: [
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
           <Reveal delay={0.1} className="relative">
             <div className="relative rounded-xl overflow-hidden border border-line shadow-2xl shadow-black/40 aspect-[4/5] lg:aspect-[4/4.5]">
               <Image
-                src="https://res.cloudinary.com/ddei3mzex/image/upload/v1775556815/web-application-banner_fzgldg.webp"
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
                 alt="Team collaborating on a software project"
                 fill
                 className="object-cover"

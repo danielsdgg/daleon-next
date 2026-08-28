@@ -220,7 +220,7 @@ const About: React.FC = () => {
             <Reveal delay={0.1} className="relative">
               <div className="relative overflow-hidden rounded-3xl border border-line bg-surface h-[560px] lg:h-[620px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+                  src="https://res.cloudinary.com/ddei3mzex/image/upload/v1775556815/web-application-banner_fzgldg.webp"
                   alt="Software developer at Daleon Dynamics"
                   fill
                   className="object-cover"

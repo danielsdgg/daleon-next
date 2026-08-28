@@ -11,7 +11,7 @@ import Reveal from '@/src/components/ui/motion/Reveal';
 import Stagger from '@/src/components/ui/motion/Stagger';
 
 export const metadata: Metadata = {
-  title: 'High-Converting Websites | Daleon Dynamics',
+  title: { absolute: 'High-Converting Websites Nairobi | Daleon Dynamics' },
   description:
     'We engineer high-converting, lightning-fast, SEO-optimized websites in Nairobi that turn visitors into loyal customers and drive measurable business growth.',
   keywords: [
