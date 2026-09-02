@@ -14,8 +14,9 @@ export const metadata: Metadata = {
   description: 'Leading web design and custom software development company in Nairobi, Kenya. We build high-converting websites, powerful custom applications, automation systems, and secure biometric access control solutions.',
 
   keywords: [
-    'web design nairobi', 'website development nairobi', 'custom software development nairobi',
-    'web application development kenya', 'high converting websites nairobi',
+    'web design nairobi', 'creating websites nairobi', 'software companies nairobi',
+    'company that creates websites','website development nairobi', 'custom software development nairobi',
+    'web application development kenya', 'high converting websites nairobi', 'seo services nairobi',
     'business automation kenya', 'access control systems nairobi', 'biometric access control kenya',
     'software company nairobi', 'ecommerce website kenya', 'daleon dynamics', 'm-pesa integration kenya'
   ],
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics - Web Design & Custom Software Nairobi',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daleon Dynamics - Web Design & Custom Software Nairobi',
     description: 'High-performance websites and custom systems for Kenyan businesses.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 
   robots: {
@@ -102,7 +103,7 @@ export default function RootLayout({
                   "@id": "https://daleondynamics.com/#organization",
                   "name": "Daleon Dynamics",
                   "url": "https://daleondynamics.com",
-                  "logo": "https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png",
+                  "logo": "/icon.png",
                   "description": "Leading web design and custom software development company in Nairobi, Kenya.",
                   "address": {
                     "@type": "PostalAddress",

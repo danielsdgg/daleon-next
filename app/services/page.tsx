@@ -7,7 +7,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: { absolute: 'Websites & Software Development | Daleon Dynamics' },
   description:
-    'Nairobi-based web design and custom software agency. High-converting websites, business automation, M-Pesa integrations, and biometric access control systems for Kenyan businesses.',
+    'Nairobi-based web & custom software agency. High-converting websites, business automation, M-Pesa integrations for Kenyan businesses.',
+  keywords: [
+    'web design nairobi', 'creating websites nairobi', 'software companies nairobi',
+    'where can i get a website in kenya', 'website development nairobi', 'custom software development nairobi',
+    'converting websites','web servces nairobi', 'web application development kenya', 'high converting websites nairobi',
+    'websites and business softwares nairobi', 'daleon dynamics', 'software consultancy', 'UI/UX design websites nairobi',
+    'websites that convert nairobi', 'custom we applications for businesses'
+  ],
   alternates: { canonical: 'https://daleondynamics.com/services' },
   robots: {
     index: true,
@@ -22,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics — Web Design & Custom Software Nairobi',
@@ -35,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: { absolute: 'Web Design & Custom Software Development in Nairobi' },
     description: 'High-converting websites, custom software, and business automation for Kenyan businesses.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 
@@ -141,7 +148,7 @@ const ServicesPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'Daleon Dynamics',
-    image: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+    image: '/icon.png',
     '@id': 'https://daleondynamics.com/services',
     url: 'https://daleondynamics.com/services',
     telephone: '+254142021359',
