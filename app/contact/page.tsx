@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Contact Daleon Dynamics Nairobi',
@@ -35,13 +35,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Get a Free Quote - Web Design & Custom Software Nairobi',
     description: 'Ready to transform your business? Contact Daleon Dynamics in Nairobi today.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 
-// Structured Data (Server-side)
-// No standalone LocalBusiness/Organization here — that entity already lives once,
-// globally, in the root layout. This page just points to it by @id.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [

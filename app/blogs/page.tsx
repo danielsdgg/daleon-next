@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     'Expert articles on custom software development, high-converting websites, biometric access control systems, business automation, and digital growth strategies for Kenyan businesses.',
   keywords: [
     'custom software Kenya', 'web development Kenya', 'access control systems Kenya',
+    'where can i get a website in kenya', 'software development Nairobi', 'business automation Kenya',
+    'website for my business Kenya', 'high converting websites Kenya', 'biometric security Kenya',
+    'digital transformation Kenya', 'tech news Kenya', 'daleon dynamics blog', 'web design Nairobi',
+    'software company Nairobi', 'm-pesa integration Kenya', 'seo services Nairobi', 'crm development Kenya',
     'business automation Kenya', 'high converting websites Kenya', 'software development Nairobi',
     'biometric security Kenya', 'digital transformation Kenya', 'tech news Kenya', 'daleon dynamics blog',
   ],

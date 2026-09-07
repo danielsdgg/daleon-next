@@ -77,7 +77,7 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
           '@id': 'https://daleondynamics.com/#organization',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+            url: '/icon.png',
           },
         },
       },

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Custom Web Applications Nairobi - Daleon Dynamics',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Custom Web Apps & Business Systems | Nairobi Software Development',
     description: 'Tailored web applications, automation tools, CRMs and internal systems for Kenyan businesses.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 

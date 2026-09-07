@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     'high converting websites nairobi', 'web design nairobi', 'professional website design kenya',
     'seo optimized websites nairobi', 'conversion rate optimization kenya', 'landing page design nairobi',
     'fast loading websites kenya', 'ecommerce website nairobi', 'business website design nairobi',
+    'custom web design kenya', 'responsive website design nairobi', 'website development nairobi',
+    'website redesign nairobi', 'website optimization kenya', 'website conversion strategies nairobi',
+    'website user experience nairobi', 'website analytics kenya', 'website performance optimization nairobi',
+    'website lead generation nairobi', 'website call to action design kenya', 'website trust signals nairobi',
+    'website landing page optimization kenya', 'website mobile optimization nairobi', 'website content strategy kenya',
+    'website design for small businesses nairobi', 'website design for startups kenya', 'website design for enterprises nairobi',
   ],
   alternates: { canonical: 'https://daleondynamics.com/services/high-converting-website' },
   openGraph: {
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
       },
@@ -39,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'High-Converting Websites Nairobi | Daleon Dynamics',
     description: 'Premium websites engineered to generate leads and grow your business in Kenya.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 

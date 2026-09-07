@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics Projects Portfolio',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Projects - Real Results Delivered | Daleon Dynamics',
     description: 'Insurance, education, security, e-commerce, and real estate platforms — built for Kenyan businesses.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 

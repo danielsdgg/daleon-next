@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'custom software development nairobi', 'website design company kenya', 'access control systems kenya',
     'business automation kenya', 'software company nairobi', 'custom web apps kenya',
     'web design nairobi', 'crm development nairobi', 'm-pesa integration kenya',
+    'high converting websites nairobi', 'seo services nairobi', 'biometric access control kenya',
   ],
   alternates: {
     canonical: 'https://daleondynamics.com/about',
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'Daleon Dynamics',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics - About Us',
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Daleon Dynamics - Custom Software Development Kenya',
     description: 'Nairobi-based software company building custom digital solutions for Kenyan businesses.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 

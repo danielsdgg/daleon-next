@@ -28,10 +28,13 @@ import Stagger from '@/src/components/ui/motion/Stagger';
 export const metadata: Metadata = {
   title: { absolute: 'Daleon Dynamics | Web & Software Company' },
   description:
-    'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, powerful web applications, business automation systems, and biometric access control solutions.',
+    'Daleon Dynamics is a leading web design and custom software development company based in Nairobi, Kenya. We build high-converting websites, web applications & much more.',
   keywords: [
     'daleon dynamics', 'web design nairobi', 'custom software development nairobi',
-    'website development kenya', 'software company nairobi', 'high converting websites nairobi',
+    'company that creates websites','website development nairobi', 'custom software development nairobi',
+    'web application development kenya', 'high converting websites nairobi', 'seo services nairobi',
+    'business automation kenya', 'access control systems nairobi', 'biometric access control kenya',
+    'software company nairobi', 'ecommerce website kenya', 'daleon dynamics', 'm-pesa integration kenya'
   ],
   alternates: {
     canonical: 'https://daleondynamics.com',
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
       'Leading digital solutions company in Nairobi, Kenya. High-converting websites, custom web apps, automation & security systems.',
     images: [
       {
-        url: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'Daleon Dynamics - Web Design & Software Company Nairobi',
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daleon Dynamics - Web Design & Custom Software Company Nairobi',
     description: 'High-converting websites, custom web apps, automation & security systems for Kenyan businesses.',
-    images: ['https://res.cloudinary.com/ddei3mzex/image/upload/v1777973406/logo_ztwhc2.png'],
+    images: ['/icon.png'],
   },
 };
 
