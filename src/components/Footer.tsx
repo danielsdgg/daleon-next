@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import StatusPill from '@/src/components/ui/StatusPill';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -17,9 +18,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#0A0A0F] text-[#8E8CA3] relative overflow-hidden">
+    <footer className="bg-canvas text-ink-muted relative overflow-hidden">
       {/* Subtle top glow */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B5CFF]/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Top row: brand, links, socials */}
@@ -35,8 +36,8 @@ const Footer: React.FC = () => {
                 className="w-6 h-6 object-contain"
               />
             </div>
-            <span className="font-semibold text-lg tracking-tight text-[#F2F1F7]">
-              Daleon<span className="text-[#7B5CFF]">Dynamics</span>
+            <span className="font-semibold text-lg tracking-tight text-ink">
+              Daleon<span className="text-primary">Dynamics</span>
             </span>
           </Link>
 
@@ -46,7 +47,7 @@ const Footer: React.FC = () => {
               <Link
                 key={link.path}
                 href={link.path}
-                className="text-[#8E8CA3] hover:text-[#38E1C6] transition-colors"
+                className="text-ink-muted hover:text-accent transition-colors"
               >
                 {link.name}
               </Link>
@@ -71,21 +72,15 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom row: status, copyright, legal */}
-        <div className="mt-8 pt-6 border-t border-[#232330] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#5C5A6E]">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#38E1C6] opacity-75" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#38E1C6]" />
-            </span>
-            <span>Nairobi, Kenya · accepting new projects</span>
-          </div>
+        <div className="mt-8 pt-6 border-t border-line flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink-dim">
+          <StatusPill label="Nairobi, Kenya · accepting new projects" tone="live" />
 
           <p>© {currentYear} Daleon Dynamics. All rights reserved.</p>
 
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-[#8E8CA3] transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-[#8E8CA3] transition-colors">Terms</Link>
-            <a href="mailto:daleondynamics@gmail.com" className="hover:text-[#8E8CA3] transition-colors">
+            <Link href="/privacy" className="hover:text-ink-muted transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-ink-muted transition-colors">Terms</Link>
+            <a href="mailto:daleondynamics@gmail.com" className="hover:text-ink-muted transition-colors">
               daleondynamics@gmail.com
             </a>
           </div>

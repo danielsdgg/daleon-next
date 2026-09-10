@@ -108,11 +108,18 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="min-h-screen bg-[#0A0A0F]">
-        {/* Hero */}
-        <div className="relative h-[420px] md:h-[500px] overflow-hidden">
-          <Image src={post.image} alt={post.title} fill className="object-cover" priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#0A0A0F]" />
+      <div className="min-h-screen bg-canvas">
+        {/* Hero Section */}
+        <div className="relative h-[460px] md:h-[550px] overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-canvas" />
 
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-4xl mx-auto px-6 w-full">
@@ -124,8 +131,8 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 Back to All Articles
               </Link>
 
-              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-[#F2F1F7]/90 mb-6">
-                <span className="font-mono bg-[#7B5CFF] px-4 py-1.5 rounded-full text-xs font-semibold text-white">
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/90 mb-6">
+                <span className="font-mono bg-primary px-5 py-1.5 rounded-full text-xs font-semibold">
                   {post.category}
                 </span>
                 <div className="flex items-center gap-1.5">
@@ -151,10 +158,10 @@ const BlogPost = async ({ params }: { params: Promise<{ slug: string }> }) => {
         <div className="max-w-4xl mx-auto px-6 pb-24 flex flex-col sm:flex-row items-center justify-between gap-8">
           <Link
             href="/blogs"
-            className="inline-flex items-center gap-3 text-[#7B5CFF] hover:text-[#8E73FF] font-semibold group"
+            className="inline-flex items-center gap-3 text-primary hover:text-primary-hover font-semibold group"
           >
-            <div className="w-10 h-10 rounded-full border border-[#232330] flex items-center justify-center group-hover:border-[#7B5CFF] transition-colors">
-              <ArrowLeft className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-full border border-line flex items-center justify-center group-hover:border-primary transition-colors">
+              <ArrowLeft className="w-5 h-5" />
             </div>
             Browse All Articles
           </Link>

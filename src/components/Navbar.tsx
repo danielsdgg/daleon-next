@@ -40,7 +40,7 @@ const Navbar = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#0A0A0F]/95 backdrop-blur-2xl border-b border-[#232330] transition-colors">
+    <nav className="sticky top-0 z-50 bg-canvas/95 backdrop-blur-2xl border-b border-line transition-colors">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -56,10 +56,10 @@ const Navbar = () => {
               />
             </div>
             <div className="-space-y-1">
-              <span className="text-2xl font-bold tracking-tighter text-[#F2F1F7]">
-                Daleon<span className="text-[#7B5CFF]">Dynamics</span>
+              <span className="text-2xl font-bold tracking-tighter text-ink">
+                Daleon<span className="text-primary">Dynamics</span>
               </span>
-              <p className="text-[10px] font-mono tracking-[3px] text-[#8E8CA3]">NAIROBI • KENYA</p>
+              <p className="text-[10px] font-mono tracking-[3px] text-ink-muted">NAIROBI • KENYA</p>
             </div>
           </Link>
 
@@ -75,8 +75,8 @@ const Navbar = () => {
                 >
                   <button
                     className={cn(
-                      "flex items-center gap-1.5 text-sm font-semibold tracking-tight py-1.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B5CFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F] rounded",
-                      isActive(link.path) ? "text-[#F2F1F7]" : "text-[#8E8CA3] hover:text-[#F2F1F7]"
+                      "flex items-center gap-1.5 text-sm font-semibold tracking-tight py-1.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas rounded",
+                      isActive(link.path) ? "text-ink" : "text-ink-muted hover:text-ink"
                     )}
                   >
                     {link.name}
@@ -85,7 +85,7 @@ const Navbar = () => {
 
                   {/* Desktop Dropdown */}
                   <div className="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0">
-                    <div className="bg-[#131319] rounded-2xl shadow-2xl shadow-black/40 border border-[#232330] w-72 py-2 overflow-hidden">
+                    <div className="bg-surface-alt rounded-2xl shadow-2xl shadow-black/40 border border-line w-72 py-2 overflow-hidden">
                       {link.dropdown.map((sub) => {
                         const Icon = sub.icon;
                         return (
@@ -94,20 +94,20 @@ const Navbar = () => {
                             href={sub.path}
                             className="flex items-center gap-4 px-6 py-4 hover:bg-[#1A1A22] transition-all group/item"
                           >
-                            <div className="w-9 h-9 rounded-xl bg-[#7B5CFF]/10 flex items-center justify-center text-[#7B5CFF] group-hover/item:bg-[#7B5CFF]/20 transition-colors">
+                            <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover/item:bg-primary/20 transition-colors">
                               <Icon className="w-5 h-5" />
                             </div>
-                            <span className="font-semibold text-[#F2F1F7] group-hover/item:text-[#38E1C6] transition-colors">
+                            <span className="font-semibold text-ink group-hover/item:text-accent transition-colors">
                               {sub.name}
                             </span>
                           </Link>
                         );
                       })}
 
-                      <div className="border-t border-[#232330] mt-2 pt-2 px-6 py-4">
+                      <div className="border-t border-line mt-2 pt-2 px-6 py-4">
                         <Link
                           href="/services"
-                          className="flex items-center justify-center gap-2 text-sm font-semibold text-[#38E1C6] hover:text-[#5EEBD4] transition-colors"
+                          className="flex items-center justify-center gap-2 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
                         >
                           Explore All Services
                           <ArrowRight className="w-4 h-4" />
@@ -121,14 +121,14 @@ const Navbar = () => {
                   key={link.path}
                   href={link.path}
                   className={cn(
-                    "relative text-sm font-semibold tracking-tight py-1.5 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B5CFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F] rounded",
-                    isActive(link.path) ? "text-[#F2F1F7]" : "text-[#8E8CA3] hover:text-[#F2F1F7]"
+                    "relative text-sm font-semibold tracking-tight py-1.5 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas rounded",
+                    isActive(link.path) ? "text-ink" : "text-ink-muted hover:text-ink"
                   )}
                 >
                   {link.name}
                   <span
                     className={cn(
-                      "absolute left-0 -bottom-1 h-0.5 bg-[#7B5CFF] rounded-full transition-all duration-300",
+                      "absolute left-0 -bottom-1 h-0.5 bg-primary rounded-full transition-all duration-300",
                       isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"
                     )}
                   />
@@ -141,7 +141,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] active:scale-[0.97] text-white px-8 py-3.5 rounded-xl text-sm font-semibold tracking-tight shadow-lg shadow-[#7B5CFF]/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+              className="group inline-flex items-center gap-3 bg-primary hover:bg-primary-hover active:scale-[0.97] text-white px-8 py-3.5 rounded-xl text-sm font-semibold tracking-tight shadow-lg shadow-primary/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
             >
               <span>Get Free Quote</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -151,7 +151,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 text-[#8E8CA3] hover:text-[#F2F1F7] transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B5CFF] rounded-lg"
+            className="md:hidden p-3 text-ink-muted hover:text-ink transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -163,7 +163,7 @@ const Navbar = () => {
       {/* MOBILE MENU */}
       <div
         className={cn(
-          "md:hidden bg-[#0A0A0F] border-t border-[#232330] transition-all duration-300 overflow-hidden",
+          "md:hidden bg-canvas border-t border-line transition-all duration-300 overflow-hidden",
           isOpen ? "max-h-[750px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
@@ -173,7 +173,7 @@ const Navbar = () => {
               <div key={link.path} className="space-y-5">
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
-                  className="flex items-center justify-between w-full text-[#F2F1F7] py-2"
+                  className="flex items-center justify-between w-full text-ink py-2"
                   aria-expanded={servicesOpen}
                 >
                   {link.name}
@@ -181,7 +181,7 @@ const Navbar = () => {
                 </button>
 
                 {servicesOpen && (
-                  <div className="ml-6 space-y-6 border-l border-[#232330] pl-6">
+                  <div className="ml-6 space-y-6 border-l border-line pl-6">
                     {link.dropdown.map((sub) => {
                       const Icon = sub.icon;
                       return (
@@ -192,7 +192,7 @@ const Navbar = () => {
                             setIsOpen(false);
                             setServicesOpen(false);
                           }}
-                          className="flex items-center gap-3 text-[#8E8CA3] hover:text-[#38E1C6] active:text-[#5EEBD4]"
+                          className="flex items-center gap-3 text-ink-muted hover:text-accent active:text-accent-hover"
                         >
                           <Icon className="w-5 h-5" />
                           {sub.name}
@@ -206,7 +206,7 @@ const Navbar = () => {
                         setIsOpen(false);
                         setServicesOpen(false);
                       }}
-                      className="flex items-center gap-3 text-[#7B5CFF] hover:text-[#8E73FF] font-semibold pt-4 border-t border-[#232330]"
+                      className="flex items-center gap-3 text-primary hover:text-primary-hover font-semibold pt-4 border-t border-line"
                     >
                       Explore All Services
                       <ArrowRight className="w-4 h-4" />
@@ -221,7 +221,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={cn(
                   "py-2 block transition-colors",
-                  isActive(link.path) ? "text-[#7B5CFF]" : "text-[#F2F1F7] hover:text-[#7B5CFF]"
+                  isActive(link.path) ? "text-primary" : "text-ink hover:text-primary"
                 )}
               >
                 {link.name}
@@ -230,11 +230,11 @@ const Navbar = () => {
           )}
 
           {/* Mobile CTA */}
-          <div className="pt-8 border-t border-[#232330]">
+          <div className="pt-8 border-t border-line">
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-[#7B5CFF] text-white py-4 rounded-xl font-semibold text-base active:scale-[0.97] shadow-lg shadow-[#7B5CFF]/30 transition-all"
+              className="block w-full text-center bg-primary text-white py-4 rounded-xl font-semibold text-base active:scale-[0.97] shadow-lg shadow-primary/30 transition-all"
             >
               Get Your Free Quote
             </Link>

@@ -1,0 +1,17 @@
+@theme {
+  --color-canvas: #0a0a0f;
+  --color-surface: #0f141b;
+  --color-surface-alt: #131319;
+  --color-line: #232330;
+  --color-ink: #f2f1f7;
+  --color-ink-muted: #8e8ca3;
+  --color-ink-dim: #5c5a6e;
+
+  --color-primary: #7b5cff;
+  --color-primary-hover: #8e73ff;
+  --color-accent: #38e1c6;
+  --color-accent-hover: #5eebd4;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
