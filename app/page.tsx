@@ -116,7 +116,7 @@ const featuredProjects = [
     description:
       'Modern insurance platform with policy management, claims processing, and client portal that streamlined operations and improved customer experience.',
     liveUrl: 'https://www.karendirectins.com/',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
+    image: '/karendirect.png',
     result: 'Increased policy renewals by 42%',
   },
   {
@@ -126,7 +126,7 @@ const featuredProjects = [
     description:
       'Comprehensive LMS built for a leading Kenyan academy. Features course management, student tracking, assessments, and parent portal.',
     liveUrl: 'https://canvas-1-jxo5.onrender.com/',
-    image: 'https://res.cloudinary.com/ddei3mzex/image/upload/v1775549982/1A9A6803_pp58u4.jpg',
+    image: '/morgan.webp',
     result: 'Reduced admin workload by 65%',
   },
   {
@@ -136,7 +136,7 @@ const featuredProjects = [
     description:
       'Cloud-based biometric access control system with real-time monitoring, visitor management, and staff attendance tracking.',
     liveUrl: '#',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
+    image: '/secure.webp',
     result: 'Deployed across 12 locations',
   },
 ];
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
           <div className="relative">
             <div className="relative rounded-xl overflow-hidden border border-[#232330] shadow-2xl shadow-black/40 aspect-[4/5] lg:aspect-[4/4.5]">
               <Image
-                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+                src="/code-DD.avif"
                 alt="Team collaborating on a software project"
                 fill
                 className="object-cover"

@@ -1,28 +1,36 @@
-// app/services/high-converting-website/page.tsx
+// app.services/high-converting-website/page.tsx
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Zap, Target, Globe, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  CheckCircle,
+  Zap,
+  Target,
+  Globe,
+  Users,
+  Gauge,
+  Search,
+  Accessibility,
+  ShieldCheck,
+  Server,
+  Clock,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: { absolute: 'High-Converting Websites Nairobi | Daleon Dynamics' },
+  title: 'High-Converting Websites in Nairobi, Kenya',
   description:
-    'We engineer high-converting, lightning-fast, SEO-optimized websites in Nairobi that turn visitors into loyal customers and drive measurable business growth.',
+    'What is a high-converting website? A static, SEO-first site engineered in Next.js to turn visitors into customers — no traditional server, blazing-fast load times, and built for how Google actually ranks new sites in Kenya.',
   keywords: [
     'high converting websites nairobi', 'web design nairobi', 'professional website design kenya',
     'seo optimized websites nairobi', 'conversion rate optimization kenya', 'landing page design nairobi',
-    'fast loading websites kenya', 'ecommerce website nairobi', 'business website design nairobi',
-    'custom web design kenya', 'responsive website design nairobi', 'website development nairobi',
-    'website redesign nairobi', 'website optimization kenya', 'website conversion strategies nairobi',
-    'website user experience nairobi', 'website analytics kenya', 'website performance optimization nairobi',
-    'website lead generation nairobi', 'website call to action design kenya', 'website trust signals nairobi',
-    'website landing page optimization kenya', 'website mobile optimization nairobi', 'website content strategy kenya',
-    'website design for small businesses nairobi', 'website design for startups kenya', 'website design for enterprises nairobi',
+    'static website nextjs kenya', 'fast loading websites kenya', 'ecommerce website nairobi',
+    'business website design nairobi', 'what is a high converting website',
   ],
   alternates: { canonical: 'https://daleondynamics.com/services/high-converting-website' },
   openGraph: {
     title: 'High-Converting Websites Nairobi | Daleon Dynamics',
-    description: 'Premium websites engineered to generate leads and grow your business in Kenya.',
+    description: 'Static, SEO-first websites engineered to convert visitors into customers in the Kenyan market.',
     url: 'https://daleondynamics.com/services/high-converting-website',
     siteName: 'Daleon Dynamics',
     images: [
@@ -38,28 +46,42 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'High-Converting Websites Nairobi | Daleon Dynamics',
-    description: 'Premium websites engineered to generate leads and grow your business in Kenya.',
+    description: 'Static, SEO-first websites engineered to convert visitors into customers in the Kenyan market.',
     images: ['/icon.png'],
   },
 };
 
+const scores = [
+  { label: 'Performance', value: 98, icon: Gauge },
+  { label: 'SEO', value: 100, icon: Search },
+  { label: 'Accessibility', value: 96, icon: Accessibility },
+  { label: 'Best Practices', value: 100, icon: ShieldCheck },
+];
+
 const benefits = [
   { icon: Target, title: 'Conversion Focused', desc: 'Strategic layouts, strong CTAs, and trust elements proven to increase sales.' },
-  { icon: Zap, title: 'Blazing Fast', desc: 'Next.js powered websites with excellent Core Web Vitals and top Google rankings.' },
+  { icon: Zap, title: 'Blazing Fast', desc: 'Next.js powered, statically generated pages with excellent Core Web Vitals.' },
   { icon: Globe, title: 'Local SEO Mastery', desc: 'Optimized for Nairobi and Kenya searches — local schema, speed, and content strategy.' },
   { icon: Users, title: 'Mobile-First', desc: 'Built for the Kenyan reality — fast on 3G/4G and budget smartphones.' },
+];
+
+const seoTimeline = [
+  { stage: 'Week 1–2', title: 'Indexing Begins', desc: 'Google discovers and crawls your new site for the first time.' },
+  { stage: 'Month 1–3', title: 'Evaluation', desc: "Google evaluates your site's quality, relevance, and trust signals before ranking it with confidence." },
+  { stage: 'Month 3–6', title: 'Climbing', desc: 'Rankings typically start moving upward for your target keywords as trust builds.' },
+  { stage: 'Ongoing', title: 'Compounding', desc: 'Consistent content, real backlinks, and site health keep building authority over time.' },
 ];
 
 const process = [
   { num: '01', title: 'Discovery & Strategy', desc: 'Business goals, customer research, competitor analysis, and conversion mapping.' },
   { num: '02', title: 'Design & Prototyping', desc: 'User-centered wireframes and high-fidelity designs focused on conversion paths.' },
-  { num: '03', title: 'Development & Optimization', desc: 'Clean, fast code with SEO, performance, and M-Pesa integration built-in.' },
+  { num: '03', title: 'Development & Optimization', desc: 'Clean, statically generated code with SEO, performance, and M-Pesa integration built-in.' },
   { num: '04', title: 'Launch, Analytics & Growth', desc: 'Rigorous testing, launch, training, and continuous performance optimization.' },
 ];
 
 const included = [
   'Modern, conversion-focused design',
-  'Lightning-fast Next.js performance',
+  'Statically generated Next.js performance',
   'Mobile-first & fully responsive',
   'Advanced technical + on-page SEO',
   'Lead capture forms & strong CTAs',
@@ -73,6 +95,8 @@ const faqs = [
   { q: 'Do you provide SEO services?', a: 'Yes. Every website includes comprehensive on-page SEO, technical optimization, and local Kenya-focused strategies.' },
   { q: 'Will my site be mobile-friendly?', a: 'Yes — we build mobile-first. Most Kenyans browse on mobile, so we optimize for excellent performance on all devices.' },
   { q: 'Do you offer ongoing maintenance?', a: 'Yes. We provide monthly support retainers to keep your website secure, fast, and up-to-date.' },
+  { q: 'Why is my site static instead of having a traditional server?', a: "A static site is pre-built into plain HTML and served instantly from edge locations worldwide, with no server processing each request. That means faster load times, better reliability, and content that's immediately readable by Google — which directly helps both conversions and SEO." },
+  { q: 'How soon will my website rank on Google?', a: "Honestly — not overnight. Expect indexing within the first couple of weeks, early evaluation over the following months, and meaningful ranking movement typically from month 3 onward. Anyone promising page-one rankings in days isn't being straight with you." },
 ];
 
 const HighConvertingWebsitePage: React.FC = () => {
@@ -85,7 +109,7 @@ const HighConvertingWebsitePage: React.FC = () => {
         name: 'High-Converting Websites Development Nairobi',
         provider: { '@type': 'Organization', '@id': 'https://daleondynamics.com/#organization' },
         areaServed: { '@type': 'Country', name: 'Kenya' },
-        description: 'Professional, SEO-optimized, high-converting websites built for Kenyan businesses.',
+        description: 'Static, SEO-first, high-converting websites built for Kenyan businesses using Next.js.',
         offers: {
           '@type': 'Offer',
           price: '60000',
@@ -121,43 +145,164 @@ const HighConvertingWebsitePage: React.FC = () => {
     <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* HERO */}
-      <section className="pt-32 pb-24 relative overflow-hidden border-b border-[#232330]">
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:40px_40px]" />
+      {/* HERO — Lighthouse-style score panel */}
+      <section className="pt-32 pb-24 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-8">
+              <span>{'//'}</span>
+              <span>conversion-engineering</span>
+            </div>
 
-        <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-8">
-            <span>{'//'}</span>
-            <span>conversion-engineering</span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
+              High-Converting Websites in Nairobi —{' '}
+              <span className="bg-gradient-to-r from-[#7B5CFF] to-[#38E1C6] bg-clip-text text-transparent">
+                Engineered to Actually Convert
+              </span>
+            </h1>
+
+            <p className="text-lg text-[#8E8CA3] max-w-xl mb-10 leading-relaxed">
+              We don&apos;t build pretty websites. We engineer static, high-performance digital assets that
+              attract the right traffic, build trust instantly, and turn visitors into paying customers — in
+              the Kenyan market.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
+              >
+                Get Your Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              </Link>
+              <Link
+                href="#process"
+                className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all"
+              >
+                See Our Process
+              </Link>
+            </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-8">
-            Websites That{' '}
-            <span className="text-[#7B5CFF]">
-              Actually Convert
-            </span>
-          </h1>
+          {/* Score panel */}
+          <div className="rounded-2xl border border-[#232330] bg-[#0F141B] overflow-hidden shadow-2xl shadow-black/40">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#232330] bg-[#131A22]">
+              <span className="font-mono text-xs text-[#8E8CA3]">website-health-report.json</span>
+              <span className="flex items-center gap-1.5 font-mono text-xs text-[#38E1C6]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#38E1C6] animate-pulse" />
+                live
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-6 p-8">
+              {scores.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <div key={s.label} className="flex flex-col items-center text-center">
+                    <div
+                      className="relative w-20 h-20 rounded-full flex items-center justify-center mb-3"
+                      style={{
+                        background: `conic-gradient(#38E1C6 ${s.value * 3.6}deg, #232330 0deg)`,
+                      }}
+                    >
+                      <div className="w-16 h-16 rounded-full bg-[#0F141B] flex items-center justify-center font-mono font-bold text-lg">
+                        {s.value}
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[#8E8CA3] text-xs font-mono">
+                      <Icon className="w-3.5 h-3.5" />
+                      {s.label}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="px-8 pb-6 font-mono text-[11px] text-[#5C5A6E]">
+              {'// typical scores across websites we build — measured, not promised'}
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <p className="text-lg md:text-xl text-[#8E8CA3] max-w-3xl mx-auto mb-12">
-            We don&apos;t build pretty websites. We engineer high-performance digital assets that attract the
-            right traffic, build trust instantly, and turn visitors into paying customers — in the Kenyan
-            market.
+      {/* DEFINITION — What is a high-converting website */}
+      <section className="py-20 px-6 border-b border-[#232330]">
+        <div className="max-w-4xl mx-auto">
+          <div className="font-mono text-sm text-[#7B5CFF] mb-6">{'// definition'}</div>
+          <div className="border-l-2 border-[#7B5CFF] pl-6 md:pl-10">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              What Is a High-Converting Website, Exactly?
+            </h2>
+            <p className="text-lg text-[#C7C5D6] leading-relaxed mb-4">
+              A <strong className="text-[#F2F1F7]">high-converting website </strong> is a website engineered to
+              turn visitors into paying customers — not just a site that looks good. It combines three things
+              most agencies treat separately: persuasive design that guides a visitor toward action, technical
+              performance fast enough that visitors don&apos;t leave before it loads, and search visibility
+              that gets the right people to the site in the first place.
+            </p>
+            <p className="text-lg text-[#C7C5D6] leading-relaxed">
+              This is deliberately a different kind of build from a{' '}
+              <a href="/services/custom-web-apps" className="text-[#7B5CFF] hover:text-[#8E73FF]">
+                custom web application
+              </a>
+              . A high-converting website doesn&apos;t need user logins, databases, or backend logic — it
+              needs to be fast, findable, and convincing. That simplicity is exactly what makes it possible to
+              build one this quickly and this affordably, without cutting corners on quality.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ARCHITECTURE — static vs typical, no server */}
+      <section className="py-20 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-14">
+            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// built-different'}</div>
+            <h2 className="text-3xl font-bold tracking-tight mb-3">No Traditional Server. On Purpose.</h2>
+            <p className="text-lg text-[#8E8CA3] max-w-2xl">
+              We build these sites <strong className="text-[#F2F1F7]">statically</strong> using Next.js — the
+              entire site is pre-built into plain HTML ahead of time, not assembled on the fly for every
+              visitor.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-[#0F141B] border border-[#232330] rounded-xl p-8">
+              <div className="flex items-center gap-2 mb-6">
+                <Server className="w-5 h-5 text-[#5C5A6E]" />
+                <span className="font-mono text-xs uppercase tracking-wider text-[#5C5A6E]">Typical Website</span>
+              </div>
+              <div className="space-y-3 font-mono text-sm text-[#8E8CA3]">
+                <div>1. Visitor requests page</div>
+                <div>2. Server wakes up, runs code</div>
+                <div>3. Server queries a database</div>
+                <div>4. Page is assembled, line by line</div>
+                <div>5. Response finally sent</div>
+              </div>
+              <div className="mt-6 inline-block font-mono text-xs bg-[#232330] text-[#8E8CA3] px-3 py-1.5 rounded-full">
+                slower, and only as fast as its server
+              </div>
+            </div>
+
+            <div className="bg-[#0F141B] border border-[#7B5CFF]/40 rounded-xl p-8">
+              <div className="flex items-center gap-2 mb-6">
+                <Zap className="w-5 h-5 text-[#38E1C6]" />
+                <span className="font-mono text-xs uppercase tracking-wider text-[#38E1C6]">Our Static Sites</span>
+              </div>
+              <div className="space-y-3 font-mono text-sm text-[#F2F1F7]">
+                <div>1. Site is pre-built before launch</div>
+                <div>2. Finished HTML sits on a global edge network</div>
+                <div>3. Visitor requests page</div>
+                <div>4. Nearest edge location responds instantly</div>
+              </div>
+              <div className="mt-6 inline-block font-mono text-xs bg-[#38E1C6]/10 text-[#38E1C6] px-3 py-1.5 rounded-full">
+                near-instant, and built for how Google crawls
+              </div>
+            </div>
+          </div>
+
+          <p className="text-[#8E8CA3] mt-8 max-w-3xl leading-relaxed">
+            This matters for two reasons at once: visitors get a page that loads before they lose patience, and
+            Google gets fully-formed, instantly readable HTML to crawl — which is exactly what static sites are
+            built for.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
-            >
-              Get Your Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </Link>
-            <Link
-              href="#process"
-              className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all"
-            >
-              See Our Process
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -183,6 +328,39 @@ const HighConvertingWebsitePage: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* HONEST SEO TIMELINE */}
+      <section className="py-24 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16 max-w-2xl">
+            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// honest-seo-timeline'}</div>
+            <h2 className="text-4xl font-bold tracking-tight mb-4">
+              The Honest Truth About SEO Timelines
+            </h2>
+            <p className="text-lg text-[#8E8CA3] leading-relaxed">
+              If someone promises page-one Google rankings within days of launch, that&apos;s not realistic —
+              for any website, on any budget. SEO is a gradual process Google runs deliberately, especially for
+              a brand-new site still building trust. Here&apos;s what actually happens.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {seoTimeline.map((item, i) => (
+              <div key={i} className="relative">
+                <div className="flex items-center gap-2 mb-4">
+                  <Clock className="w-4 h-4 text-[#7B5CFF]" />
+                  <span className="font-mono text-xs text-[#7B5CFF] uppercase tracking-wider">{item.stage}</span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-[#8E8CA3] text-sm leading-relaxed">{item.desc}</p>
+                {i < seoTimeline.length - 1 && (
+                  <div className="hidden md:block absolute top-2 -right-3 w-6 border-t border-dashed border-[#232330]" />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
