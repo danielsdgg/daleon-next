@@ -1,290 +1,400 @@
 // app/contact/ContactClient.tsx
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import React, { useState } from "react";
+import Link from "next/link";
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle } from "lucide-react";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+// Web3Forms access keys are public by design (they ship to the browser).
+const WEB3FORMS_KEY = "cdda325c-9fb8-4ccc-8b6f-a0e8d79e981c";
+const SHEETS_URL =
+  "https://script.google.com/macros/s/AKfycby3SzjjASBWBEK_4wdqCPriHNuZldeG-TOL9bKNEj5kfGgom4JIqetKmE5QZgX9gIAy/exec";
+const WHATSAPP_URL = "https://wa.me/254142021359";
+const EMAIL = "daleondynamics@gmail.com";
+
+type FormState = {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  budget: string;
+  message: string;
+};
+
+const emptyForm: FormState = {
+  name: "",
+  email: "",
+  phone: "",
+  service: "",
+  budget: "",
+  message: "",
+};
+
+const serviceOptions = [
+  "High-Converting Website",
+  "Custom Web App or System",
+  "Not sure yet / General consultation",
+];
+
+const budgetOptions = [
+  "Under KES 55,000",
+  "KES 55,000 – 150,000",
+  "KES 150,000 – 500,000",
+  "KES 500,000+",
+  "Not sure yet",
+];
+
+const nextSteps = [
+  "We reply within 24 hours to confirm the details.",
+  "A short discovery call to understand your goals and scope.",
+  "You receive a fixed-price quote and timeline before any work begins.",
+];
+
+const inputClasses =
+  "w-full px-5 py-3.5 text-base bg-[#0A0A0F] border border-[#232330] rounded-lg text-[#F2F1F7] focus:outline-none focus:border-[#7B5CFF] focus:ring-4 focus:ring-[#7B5CFF]/15 transition-all placeholder:text-[#7F7D93]";
+const labelClasses = "block text-sm font-semibold text-[#C9C8D6] mb-2";
 
 const ContactClient = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-
+  const [formData, setFormData] = useState<FormState>(emptyForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
-  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    if (submitStatus) setSubmitStatus(null);
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError(null);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     setIsSubmitting(true);
-    setSubmitStatus(null);
+    setError(null);
 
-    const form = e.target as HTMLFormElement;
-    const formDataToSend = new FormData(form);
-
-    formDataToSend.append('access_key', 'cdda325c-9fb8-4ccc-8b6f-a0e8d79e981c');
-    formDataToSend.append('subject', 'New Contact Form Submission - Daleon Dynamics');
+    const payload = new FormData(e.currentTarget);
+    payload.append("access_key", WEB3FORMS_KEY);
+    payload.append("subject", "New enquiry from daleondynamics.com");
+    const snapshot = { ...formData };
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formDataToSend,
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
       });
-
       const data = await response.json();
 
       if (data.success) {
-        setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been received.' });
-        setShowSuccessToast(true);
+        setSubmitted(true);
+        setFormData(emptyForm);
 
-        // Best-effort: log this submission to Google Sheets and send the
-        // submitter a confirmation email. Fire-and-forget on purpose — the
-        // "message sent" experience above is already confirmed by Web3Forms,
-        // so this doesn't block or affect the UI if it's slow or fails.
-        fetch(
-          'https://script.google.com/macros/s/AKfycby3SzjjASBWBEK_4wdqCPriHNuZldeG-TOL9bKNEj5kfGgom4JIqetKmE5QZgX9gIAy/exec',
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body: JSON.stringify(formData),
-          }
-        ).catch(() => {});
-
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-      } else {
-        setSubmitStatus({
-          type: 'error',
-          message: data.message || 'Something went wrong. Please try again.',
+        // Conversion event (works once GA4 is installed on the site)
+        window.gtag?.("event", "generate_lead", {
+          form: "contact",
+          service: snapshot.service || "unspecified",
         });
+
+        // Best-effort log to Google Sheets and confirmation email.
+        // Fire-and-forget: the enquiry is already safely delivered above.
+        fetch(SHEETS_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(snapshot),
+          keepalive: true,
+        }).catch(() => {});
+      } else {
+        setError(data.message || "Something went wrong. Please try again, or message us on WhatsApp.");
       }
     } catch {
-      setSubmitStatus({
-        type: 'error',
-        message: 'Failed to send message. Please check your connection and try again.',
-      });
+      setError("Failed to send your message. Please check your connection, or message us on WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  useEffect(() => {
-    if (showSuccessToast) {
-      const timer = setTimeout(() => setShowSuccessToast(false), 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [showSuccessToast]);
-
-  const inputClasses =
-    'w-full px-5 py-3.5 text-base bg-[#0A0A0F] border border-[#232330] rounded-lg text-[#F2F1F7] focus:outline-none focus:border-[#7B5CFF] focus:ring-4 focus:ring-[#7B5CFF]/15 transition-all placeholder:text-[#5C5A6E]';
-
   return (
     <div className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
-      {/* Compact page header — no oversized hero */}
-      <section className="pt-32 pb-4 px-6">
+      {/* Page header */}
+      <section className="pt-28 pb-4 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-4">
-            <span>{'//'}</span>
+            <span>{"//"}</span>
             <span>get-in-touch</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            Let&apos;s Build Something Great Together
+            Get a Free Quote for Your Website or Web App
           </h1>
           <p className="text-lg text-[#8E8CA3] max-w-2xl mx-auto">
-            Your vision deserves exceptional execution. Tell us about your project — we personally review
-            every inquiry.
+            Tell us what you need. We reply within 24 hours, and you get a fixed-price quote and
+            timeline before any work begins.
           </p>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20 grid lg:grid-cols-5 gap-12 lg:gap-16">
-        {/* Contact Form */}
+        {/* Form card */}
         <div className="lg:col-span-3 bg-[#0F141B] border border-[#232330] rounded-2xl shadow-2xl shadow-black/30 p-8 lg:p-12">
-          <h2 className="text-3xl font-bold tracking-tight mb-2">Start Your Project</h2>
-          <p className="text-[#8E8CA3] mb-10">We typically respond within 24 hours.</p>
-
-          <form onSubmit={handleSubmit} className="space-y-7">
-            <input type="hidden" name="from_name" value="Daleon Dynamics Website" />
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Full Name *</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className={inputClasses}
-                  placeholder="John Doe"
-                />
+          {submitted ? (
+            <div role="status" className="py-8 text-center fade-in-up">
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#38E1C6]/10 text-[#38E1C6]">
+                <CheckCircle className="h-8 w-8" aria-hidden="true" />
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Phone Number *</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className={inputClasses}
-                  placeholder="+254 712 345 678"
-                />
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Email Address *</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className={inputClasses}
-                  placeholder="you@company.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">Interested Service</label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className={`${inputClasses} appearance-none`}
+              <h2 className="text-3xl font-bold tracking-tight mb-3">Message received</h2>
+              <p className="text-[#8E8CA3] mb-8 max-w-md mx-auto">
+                Thank you. We&apos;ll get back to you within 24 hours. For a faster reply, message us
+                on WhatsApp.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#7B5CFF] px-6 py-3 font-semibold text-white transition-all hover:bg-[#8E73FF]"
                 >
-                  <option value="">Choose a service</option>
-                  <option value="website">High-Converting Websites</option>
-                  <option value="web-apps">Custom Web Apps & Systems</option>
-                  <option value="access-control">Access Control Systems</option>
-                  <option value="consultation">General Consultation</option>
-                </select>
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  Chat on WhatsApp
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="rounded-lg border border-[#232330] px-6 py-3 font-semibold transition-colors hover:border-[#38E1C6] hover:text-[#38E1C6]"
+                >
+                  Send another message
+                </button>
               </div>
             </div>
+          ) : (
+            <>
+              <h2 className="text-3xl font-bold tracking-tight mb-2">Tell us about your project</h2>
+              <p className="text-[#8E8CA3] mb-10">Fields marked * are required.</p>
 
-            <div>
-              <label className="block text-sm font-semibold text-[#8E8CA3] mb-2">
-                Project Details / Requirements *
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className={`${inputClasses} resize-y`}
-                placeholder="Tell us about your project goals, timeline, budget range, or any specific requirements..."
-              />
-            </div>
+              <form onSubmit={handleSubmit} className="space-y-7" noValidate={false}>
+                <input type="hidden" name="from_name" value="Daleon Dynamics Website" />
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-[#7B5CFF] hover:bg-[#8E73FF] disabled:bg-[#7B5CFF]/40 text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-lg shadow-[#7B5CFF]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F141B]"
-            >
-              {isSubmitting ? (
-                <>Sending Your Message...</>
-              ) : (
-                <>
-                  Send Message
-                  <Send className="w-5 h-5" />
-                </>
-              )}
-            </button>
+                {/* Spam trap: real visitors never see or tick this */}
+                <div className="hidden" aria-hidden="true">
+                  <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
+                </div>
 
-            {submitStatus && submitStatus.type === 'error' && (
-              <div className="text-center p-4 rounded-lg text-sm font-medium bg-red-500/10 text-red-400 border border-red-500/30">
-                {submitStatus.message}
-              </div>
-            )}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className={labelClasses}>Full name *</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      autoComplete="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className={inputClasses}
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className={labelClasses}>Phone / WhatsApp *</label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      name="phone"
+                      autoComplete="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className={inputClasses}
+                      placeholder="+254 712 345 678"
+                    />
+                  </div>
+                </div>
 
-            <p className="text-center text-sm text-[#5C5A6E]">
-              We respect your time. Every inquiry is personally reviewed.
-            </p>
-          </form>
+                <div>
+                  <label htmlFor="email" className={labelClasses}>Email address *</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className={inputClasses}
+                    placeholder="you@company.com"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="service" className={labelClasses}>What do you need?</label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className={`${inputClasses} appearance-none`}
+                    >
+                      <option value="">Choose a service</option>
+                      {serviceOptions.map((o) => (
+                        <option key={o} value={o}>{o}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="budget" className={labelClasses}>Budget range (optional)</label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className={`${inputClasses} appearance-none`}
+                    >
+                      <option value="">Select a range</option>
+                      {budgetOptions.map((o) => (
+                        <option key={o} value={o}>{o}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className={labelClasses}>Project details *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className={`${inputClasses} resize-y`}
+                    placeholder="What do you need, what is your timeline, and are there any must-have features?"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
+                  className="w-full bg-[#7B5CFF] hover:bg-[#8E73FF] disabled:bg-[#7B5CFF]/40 disabled:cursor-not-allowed text-white py-4 rounded-lg font-semibold text-lg flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-lg shadow-[#7B5CFF]/20"
+                >
+                  {isSubmitting ? (
+                    "Sending…"
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-5 h-5" aria-hidden="true" />
+                    </>
+                  )}
+                </button>
+
+                {error && (
+                  <div
+                    role="alert"
+                    className="text-center p-4 rounded-lg text-sm font-medium bg-red-500/10 text-red-300 border border-red-500/30"
+                  >
+                    {error}
+                  </div>
+                )}
+
+                <p className="text-center text-sm text-[#8E8CA3]">
+                  We use your details only to respond to your enquiry. See our{" "}
+                  <Link href="/privacy" className="underline underline-offset-4 hover:text-[#38E1C6]">
+                    Privacy Policy
+                  </Link>
+                  .
+                </p>
+              </form>
+            </>
+          )}
         </div>
 
-        {/* Contact Information Sidebar */}
-        <div id="lets-connect" className="lg:col-span-2 space-y-10">
-          <div>
-            <h3 className="text-2xl font-semibold mb-8">Let&apos;s Connect</h3>
+        {/* Sidebar */}
+        <aside className="lg:col-span-2 space-y-8">
+          {/* WhatsApp: fastest route */}
+          <div className="rounded-2xl border border-[#38E1C6]/30 bg-[#0F141B] p-8">
+            <h2 className="text-xl font-semibold mb-2">Prefer to chat?</h2>
+            <p className="text-sm text-[#8E8CA3] mb-5">
+              Message us on WhatsApp for the quickest reply.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3 font-semibold text-[#0A0A0F] transition-colors hover:bg-[#20BD5A]"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              Chat on WhatsApp
+            </a>
+          </div>
 
-            <div className="space-y-8">
-              <div className="flex gap-5">
+          {/* Contact details */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-6">Contact details</h2>
+            <ul className="space-y-6">
+              <li className="flex gap-5">
                 <div className="w-12 h-12 bg-[#7B5CFF]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-medium text-[#F2F1F7] mb-1">Email</p>
                   <a
-                    href="mailto:daleondynamics@gmail.com"
-                    className="text-[#7B5CFF] hover:text-[#8E73FF] transition-colors"
+                    href={`mailto:${EMAIL}`}
+                    className="text-[#7B5CFF] hover:text-[#8E73FF] transition-colors break-all"
                   >
-                    daleondynamics@gmail.com
+                    {EMAIL}
                   </a>
                 </div>
-              </div>
-
-              <div className="flex gap-5">
+              </li>
+              <li className="flex gap-5">
                 <div className="w-12 h-12 bg-[#7B5CFF]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="font-medium text-[#F2F1F7] mb-1">Phone / WhatsApp</p>
                   <a
-                    href="https://wa.me/254142021359"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="tel:+254142021359"
                     className="text-[#7B5CFF] hover:text-[#8E73FF] transition-colors"
                   >
                     +254 142 021 359
                   </a>
                 </div>
-              </div>
-
-              <div className="flex gap-5">
+              </li>
+              <li className="flex gap-5">
                 <div className="w-12 h-12 bg-[#7B5CFF]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5" />
+                  <MapPin className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-medium text-[#F2F1F7] mb-1">Based In</p>
-                  <p className="text-[#8E8CA3] leading-relaxed">Nairobi, Kenya</p>
+                  <p className="font-medium text-[#F2F1F7] mb-1">Based in</p>
+                  <p className="text-[#8E8CA3] leading-relaxed">
+                    Nairobi, Kenya. Serving clients nationwide and remotely.
+                  </p>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
 
+          {/* What happens next */}
           <div className="bg-[#0F141B] border border-[#232330] rounded-2xl p-8">
-            <p className="italic text-lg leading-relaxed text-[#8E8CA3]">
-              &ldquo;We personally review every inquiry. No bots. No generic responses.&rdquo;
-            </p>
-            <p className="mt-4 text-[#5C5A6E] font-medium text-sm">— The Daleon Dynamics Team</p>
+            <h2 className="text-xl font-semibold mb-5">What happens next</h2>
+            <ol className="space-y-4">
+              {nextSteps.map((s, i) => (
+                <li key={s} className="flex gap-4 text-sm text-[#C9C8D6]">
+                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-[#232330] font-mono text-xs text-[#7B5CFF]">
+                    {i + 1}
+                  </span>
+                  <span className="pt-1">{s}</span>
+                </li>
+              ))}
+            </ol>
           </div>
-        </div>
+        </aside>
       </div>
-
-      {/* Success Toast */}
-      {showSuccessToast && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none px-6">
-          <div className="bg-[#0F0F14] border border-[#38E1C6]/40 text-[#F2F1F7] px-8 py-5 rounded-2xl shadow-2xl shadow-black/50 flex items-center gap-4 animate-in fade-in slide-in-from-bottom-10 duration-500">
-            <div className="w-10 h-10 bg-[#38E1C6]/10 text-[#38E1C6] rounded-xl flex items-center justify-center flex-shrink-0">
-              <CheckCircle className="w-6 h-6" />
-            </div>
-            <div>
-              <p className="text-lg font-semibold tracking-tight">Message Sent Successfully!</p>
-              <p className="text-[#8E8CA3] mt-0.5 text-sm">We&apos;ll get back to you within 24 hours.</p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

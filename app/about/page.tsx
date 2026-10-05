@@ -3,135 +3,170 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  Users, Target, Award, Clock, Code2, Globe,
-  ShieldCheck, Zap, MapPin, Layout, Server,
+  Users,
+  Target,
+  Award,
+  Clock,
+  Code2,
+  Globe,
+  ShieldCheck,
+  Zap,
+  MapPin,
+  Layout,
+  Server,
+  ArrowRight,
+  MessageCircle,
 } from 'lucide-react';
 import type { Metadata } from 'next';
 
+const SITE_URL = 'https://daleondynamics.com';
+const PAGE_PATH = '/about';
+const WHATSAPP_URL = 'https://wa.me/254142021359';
+
+const TITLE = 'About Daleon Dynamics | Web Design & Software Company in Nairobi';
+const DESCRIPTION =
+  'Daleon Dynamics is a Nairobi web design and software company founded in 2024. We build high-converting websites and custom web apps for Kenyan businesses, with M-Pesa integration.';
+
 export const metadata: Metadata = {
-  title: { absolute: 'About Daleon Dynamics | Software Company in Nairobi, Kenya' },
-  description:
-    'Daleon Dynamics is a Nairobi-based software company founded in 2024. We build high-converting, SEO-rich websites and custom web applications — including ecommerce stores, insurance platforms, and M-Pesa payment integrations — for Kenyan businesses.',
-  keywords: [
-    'about daleon dynamics', 'software development company nairobi', 'web development kenya',
-    'custom software development nairobi', 'website design company kenya', 'access control systems kenya',
-    'business automation kenya', 'software company nairobi', 'custom web apps kenya',
-    'web design nairobi', 'crm development nairobi', 'm-pesa integration kenya',
-    'high converting website design kenya', 'seo services nairobi', 'biometric access control kenya',
-    'ecommerce website development kenya', 'insurance software development kenya',
-    'payment gateway integration kenya', 'custom web application development kenya',
-    'nairobi software company', 'kenyan web design agency',
-  ],
-  alternates: {
-    canonical: 'https://daleondynamics.com/about',
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_PATH },
   openGraph: {
-    title: 'About Daleon Dynamics - Software Company in Nairobi, Kenya',
-    description:
-      'Founded in 2024, Daleon Dynamics builds high-converting websites and custom web applications — ecommerce, insurance platforms, and payment integrations — for businesses across Kenya.',
-    url: 'https://daleondynamics.com/about',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PAGE_PATH}`,
     siteName: 'Daleon Dynamics',
-    images: [
-      {
-        url: '/icon.png',
-        width: 1200,
-        height: 630,
-        alt: 'Daleon Dynamics - About Us',
-      },
-    ],
+    images: [{ url: '/icon.png', alt: 'Daleon Dynamics logo' }],
     locale: 'en_KE',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'About Daleon Dynamics - Software Company in Nairobi, Kenya',
-    description: 'Nairobi-based software company building high-converting websites and custom web applications for Kenyan businesses.',
+    card: 'summary',
+    title: TITLE,
+    description: DESCRIPTION,
     images: ['/icon.png'],
   },
 };
 
+/* ====================== CONTENT ====================== */
+
+// Fill these in to show the founder section (strongly recommended: a real
+// name, a real photo at /public/founder.jpg, and a short honest bio).
+// While `name` or `bio` is empty, the section and its schema stay hidden.
+const founder = {
+  name: '',
+  role: 'Founder & Lead Developer',
+  bio: '',
+  photo: '/founder.jpg',
+  linkedin: '',
+};
+const showFounder = founder.name.length > 0 && founder.bio.length > 0;
+
+const heroFacts = [
+  { value: '2024', label: 'Founded in Nairobi' },
+  { value: '4–8 wks', label: 'Typical website delivery' },
+  { value: 'Next.js', label: 'Our primary stack' },
+];
+
+// Check these years against your projects page (the LMS is listed as 2024).
 const milestones = [
   {
     year: '2024',
     label: 'Founded in Nairobi',
-    desc: 'Daleon Dynamics was started with a simple goal: build websites and software that Kenyan businesses actually needed, instead of generic templates.',
+    desc: 'Daleon Dynamics started with a simple goal: build websites and software around how Kenyan businesses actually work, not one-size-fits-all templates.',
   },
   {
     year: '2025',
-    label: 'Work begins',
-    desc: 'Our first client projects went live — a mix of high-converting business websites and custom web applications with real backends and integrations.',
+    label: 'First client projects',
+    desc: 'Our first client projects went live: business websites and custom web applications with real backends and integrations.',
   },
   {
     year: '2026',
-    label: 'Full operations',
-    desc: 'Visibility and referrals grew our client base significantly. We now run full operations, supporting businesses across multiple sectors in Kenya.',
+    label: 'A focused offering',
+    desc: 'Today we focus on two things we do well: high-converting websites and custom web applications, with published starting prices and fixed-price quotes.',
   },
 ];
 
 const coreOfferings = [
   {
-    icon: <Layout className="w-7 h-7" />,
+    icon: Layout,
     accent: '#38E1C6',
     title: 'High-Converting Websites',
-    tagline: 'Static, content-first, built to be found and to convert.',
+    tagline: 'Fast, content-first, built to be found and to convert.',
     description:
-      'No backend, no logins — just fast, SEO-rich pages designed to rank on Google and turn visitors into leads. Ideal for businesses that need a strong, informative online presence.',
-    examples: ['Business & company websites', 'Landing and service pages', 'Portfolio and brochure sites', 'SEO-first content pages'],
+      'No logins and no complex back end. Just fast, SEO-ready pages designed to rank on Google and turn visitors into enquiries. Ideal for businesses that need a strong, informative online presence.',
+    examples: [
+      'Business and company websites',
+      'Landing and service pages',
+      'Portfolio and brochure sites',
+      'SEO-first content pages',
+    ],
+    link: '/services/high-converting-website',
+    cta: 'See high-converting websites',
+    price: 'From KES 55,000',
   },
   {
-    icon: <Server className="w-7 h-7" />,
+    icon: Server,
     accent: '#7B5CFF',
     title: 'Custom Web Applications',
-    tagline: 'Dynamic platforms with a real backend behind them.',
+    tagline: 'Dynamic platforms with a real back end behind them.',
     description:
-      'Anything that needs a database, user accounts, or a live integration falls here — built to handle transactions and data securely, and to scale as your business grows.',
-    examples: ['Ecommerce stores', 'Insurance platforms', 'M-Pesa & payment gateway integration', 'CRMs, dashboards & booking systems'],
+      'Anything that needs a database, user accounts, or a live integration falls here. Built to handle data and transactions securely, and to grow with your business.',
+    examples: [
+      'E-commerce stores',
+      'Learning management systems',
+      'M-Pesa and payment gateway integration',
+      'CRMs, dashboards, and internal tools',
+    ],
+    link: '/services/custom-web-apps',
+    cta: 'See custom web apps',
+    price: 'From KES 200,000',
   },
 ];
 
 const values = [
   {
-    icon: <Target className="w-8 h-8" />,
-    title: 'Client Success First',
-    desc: 'Every solution is designed to deliver measurable business impact — more leads, better efficiency, or stronger security.',
+    icon: Target,
+    title: 'Results First',
+    desc: 'Every build starts from a business goal: more enquiries, less manual work, or smoother operations.',
   },
   {
-    icon: <Code2 className="w-8 h-8" />,
+    icon: Code2,
     title: 'Quality Over Quantity',
-    desc: 'We build clean, maintainable, and scalable code instead of relying on templates or shortcuts.',
+    desc: 'Clean, maintainable, scalable code, and the right tool for each job instead of shortcuts.',
   },
   {
-    icon: <Globe className="w-8 h-8" />,
+    icon: Globe,
     title: 'Built for Kenya',
-    desc: 'Deep understanding of local challenges, M-Pesa integrations, regulatory needs, and market realities.',
+    desc: 'We understand M-Pesa, local payment flows, and how Kenyan businesses actually operate.',
   },
   {
-    icon: <ShieldCheck className="w-8 h-8" />,
-    title: 'Transparency & Ownership',
-    desc: 'Clear communication, no hidden fees, and full ownership of the final working product upon completion.',
+    icon: ShieldCheck,
+    title: 'Transparency',
+    desc: 'Published starting prices, fixed-price quotes, clear timelines, and no hidden fees.',
   },
 ];
 
 const whyChooseUs = [
   {
-    icon: <Zap />,
+    icon: Zap,
     title: 'Modern Tech Stack',
-    desc: 'We use Next.js, TypeScript, Tailwind, and scalable cloud infrastructure — no outdated templates.',
+    desc: 'We primarily build with Next.js, TypeScript, and Tailwind CSS on scalable cloud infrastructure. On request, we also work with WordPress and other platforms.',
   },
   {
-    icon: <Users />,
-    title: 'Local Market Expertise',
-    desc: 'We understand Kenyan business challenges, payment systems (M-Pesa), and the regulatory environment.',
+    icon: Users,
+    title: 'Local Market Knowledge',
+    desc: 'M-Pesa (Daraja) integration, local payment flows, and a practical grasp of how Kenyan businesses run.',
   },
   {
-    icon: <Award />,
-    title: 'Full Ownership & Transparency',
-    desc: 'You own the final product with cPanel access. Clear timelines, regular updates, and honest communication.',
+    icon: Award,
+    title: 'Ownership & Transparency',
+    desc: 'You own the finished product, with hosting access at handover. Clear timelines, regular updates, and honest communication.',
   },
   {
-    icon: <Clock />,
-    title: 'Long-term Partnership',
-    desc: 'We provide ongoing support, training, and maintenance so your system continues to evolve with your business.',
+    icon: Clock,
+    title: 'Direct Access & Ongoing Support',
+    desc: 'You deal directly with the person who designs and builds your project. After launch we offer training and flexible maintenance packages.',
   },
 ];
 
@@ -142,14 +177,14 @@ const faqs = [
   },
   {
     q: 'When was Daleon Dynamics founded?',
-    a: 'Daleon Dynamics was founded in 2024 in Nairobi. We began delivering client projects in 2025, and by 2026 have grown into full operations with a steadily expanding client base.',
+    a: 'Daleon Dynamics was founded in 2024 in Nairobi. We build high-converting websites and custom web applications for Kenyan businesses.',
   },
   {
     q: "What's the difference between a high-converting website and a custom web application?",
-    a: 'A high-converting website is a static, content-rich site built for visibility and lead generation — no backend required. A custom web application involves a real backend, such as an ecommerce store, insurance platform, or payment-integrated system, built to handle data, accounts, and transactions.',
+    a: 'A high-converting website is a fast, content-rich site built for visibility and lead generation, with no back end required. A custom web application has a real back end, such as an e-commerce store, learning platform, or payment-integrated system, built to handle data, accounts, and transactions.',
   },
   {
-    q: 'Do you build ecommerce, insurance, or payment integration platforms?',
+    q: 'Do you build e-commerce stores and payment integrations?',
     a: 'Yes. These fall under our custom web application work, and commonly include M-Pesa and other payment gateway integrations, secure user accounts, and admin dashboards.',
   },
   {
@@ -157,130 +192,129 @@ const faqs = [
     a: 'We primarily build with Next.js, TypeScript, and Tailwind CSS for fast, scalable, SEO-friendly sites and applications. On request, we can also work with WordPress or other platforms depending on the project.',
   },
   {
+    q: 'Who will work on my project?',
+    a: 'You work directly with the person who designs and builds your project, so there is no account manager between you and the developer. You get clear updates and a timeline before work starts.',
+  },
+  {
     q: 'Do you offer ongoing support after launch?',
-    a: 'Yes. We provide training, handover documentation, and flexible maintenance and support packages after your site or application goes live.',
+    a: 'Yes. Every project includes a support window, and we offer training, handover documentation, and flexible monthly maintenance packages after your site or application goes live.',
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': `${SITE_URL}${PAGE_PATH}#page`,
+      url: `${SITE_URL}${PAGE_PATH}`,
+      name: 'About Daleon Dynamics',
+      description: DESCRIPTION,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
+      mainEntity: { '@id': `${SITE_URL}/#organization` },
+    },
+    ...(showFounder
+      ? [
+          {
+            '@type': 'Person',
+            '@id': `${SITE_URL}${PAGE_PATH}#founder`,
+            name: founder.name,
+            jobTitle: founder.role,
+            worksFor: { '@id': `${SITE_URL}/#organization` },
+            ...(founder.linkedin ? { sameAs: [founder.linkedin] } : {}),
+          },
+        ]
+      : []),
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'About Us', item: `${SITE_URL}${PAGE_PATH}` },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+
+/* ====================== PAGE ====================== */
+
 const About: React.FC = () => {
-  const aboutJsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': 'https://daleondynamics.com/#organization',
-        name: 'Daleon Dynamics',
-        url: 'https://daleondynamics.com',
-        logo: 'https://daleondynamics.com/icon.png',
-        foundingDate: '2024',
-        description:
-          'Nairobi-based software company building high-converting websites and custom web applications, including ecommerce, insurance, and payment-integrated platforms.',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Nairobi',
-          addressCountry: 'KE',
-        },
-        sameAs: [
-          'https://www.facebook.com/daleondynamics',
-          'https://x.com/daleondynamics',
-          'https://linkedin.com/company/daleon-dynamics',
-          'https://instagram.com/daleondynamics',
-        ],
-      },
-      {
-        '@type': 'AboutPage',
-        '@id': 'https://daleondynamics.com/about',
-        url: 'https://daleondynamics.com/about',
-        name: 'About Daleon Dynamics',
-        description: 'Nairobi-based software company building custom digital solutions for Kenyan businesses since 2024.',
-        mainEntityOfPage: {
-          '@type': 'Organization',
-          '@id': 'https://daleondynamics.com/#organization',
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://daleondynamics.com' },
-          { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://daleondynamics.com/about' },
-        ],
-      },
-    ],
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  };
-
   return (
-    <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
-      {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+    <div className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-[#232330]">
-        <div className="absolute inset-0">
+        <div aria-hidden="true" className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(123,92,255,0.20),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(56,225,198,0.18),transparent_35%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:70px_70px]" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-28">
+        <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28">
+          <nav aria-label="Breadcrumb" className="mb-10 font-mono text-xs text-[#8E8CA3]">
+            <ol className="flex items-center gap-2">
+              <li><Link href="/" className="hover:text-[#38E1C6]">Home</Link></li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="text-[#F2F1F7]">About Us</li>
+            </ol>
+          </nav>
+
           <div className="grid items-center gap-16 lg:grid-cols-2">
-            {/* LEFT */}
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-[#38E1C6]/30 bg-[#38E1C6]/10 px-5 py-2 text-sm font-medium text-[#38E1C6]">
-                <MapPin className="h-4 w-4" />
+                <MapPin className="h-4 w-4" aria-hidden="true" />
                 Nairobi-based software company
               </span>
 
-              <h1 className="mt-8 text-4xl font-bold leading-tight md:text-5xl tracking-tight text-[#F2F1F7]">
-                Websites and web apps built to perform, not just look good.
+              <h1 className="mt-8 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+                About Daleon Dynamics: web design and custom software in Nairobi
               </h1>
 
               <p className="mt-8 max-w-xl text-lg leading-8 text-[#8E8CA3]">
-                Since 2024, Daleon Dynamics has designed and built digital products for ambitious Kenyan
-                businesses — from high-converting, SEO-rich websites to custom web applications like
-                ecommerce stores, insurance platforms, and M-Pesa payment integrations.
+                Since 2024, we have designed and built websites and web applications for ambitious Kenyan
+                businesses, from high-converting, SEO-ready websites to custom systems like e-commerce
+                stores, learning platforms, and M-Pesa payment integrations.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/services"
-                  className="rounded-xl bg-[#7B5CFF] hover:bg-[#8E73FF] px-8 py-4 font-semibold text-white transition"
+                  className="rounded-xl bg-[#7B5CFF] px-8 py-4 font-semibold text-white transition hover:bg-[#8E73FF]"
                 >
                   Explore Our Services
                 </Link>
                 <Link
                   href="/projects"
-                  className="rounded-xl border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 font-semibold transition"
+                  className="rounded-xl border border-[#232330] px-8 py-4 font-semibold transition hover:border-[#38E1C6] hover:text-[#38E1C6]"
                 >
-                  View Our Projects
+                  View Our Work
                 </Link>
               </div>
 
-              <div className="mt-16 grid grid-cols-3 gap-6 max-w-md">
-                {milestones.map((m) => (
-                  <div key={m.year}>
-                    <h3 className="text-3xl font-bold text-[#F2F1F7]">{m.year}</h3>
-                    <p className="text-sm text-[#8E8CA3] mt-1">{m.label}</p>
+              <dl className="mt-16 grid max-w-lg grid-cols-3 gap-6">
+                {heroFacts.map((f) => (
+                  <div key={f.label}>
+                    <dd className="text-2xl font-bold text-[#F2F1F7] md:text-3xl">{f.value}</dd>
+                    <dt className="mt-1 text-sm text-[#8E8CA3]">{f.label}</dt>
                   </div>
                 ))}
-              </div>
+              </dl>
             </div>
 
-            {/* RIGHT */}
             <div className="relative">
-              <div className="relative overflow-hidden rounded-3xl border border-[#232330] bg-[#0F141B] h-[560px] lg:h-[620px]">
+              <div className="relative h-[480px] overflow-hidden rounded-3xl border border-[#232330] bg-[#0F141B] lg:h-[580px]">
+                {/* Decorative image: swap for a real photo of you or your workspace when you can */}
                 <Image
                   src="/code2.png"
-                  alt="Software developer at Daleon Dynamics"
+                  alt=""
                   fill
                   className="object-cover"
                   priority
@@ -288,17 +322,14 @@ const About: React.FC = () => {
                 />
               </div>
 
-              {/* Floating Card */}
-              <div className="absolute -left-6 -bottom-8 lg:-left-10 lg:bottom-10 rounded-2xl border border-[#232330] bg-[#0F0F14] p-6 shadow-2xl shadow-black/50 max-w-xs">
-                <div className="mb-3 font-mono text-xs text-[#38E1C6]">
-                  {'// our-mission'}
-                </div>
-                <h3 className="text-xl font-bold leading-snug">
-                  Building technology that creates impact.
-                </h3>
+              <div className="absolute -bottom-8 -left-4 max-w-xs rounded-2xl border border-[#232330] bg-[#0F0F14] p-6 shadow-2xl shadow-black/50 lg:-left-10 lg:bottom-10">
+                <div className="mb-3 font-mono text-xs text-[#38E1C6]">{'// our-mission'}</div>
+                <p className="text-xl font-bold leading-snug">
+                  Technology that helps Kenyan businesses grow.
+                </p>
                 <p className="mt-3 text-sm text-[#8E8CA3]">
-                  Whether it&apos;s a lead-generating website or a full ecommerce platform, we combine
-                  strategy, design, and engineering to help businesses grow faster.
+                  Whether it is a lead-generating website or a full e-commerce platform, we combine
+                  strategy, design, and engineering to get results.
                 </p>
               </div>
             </div>
@@ -306,137 +337,219 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* MISSION STATEMENT */}
-      <section className="py-16 border-b border-[#232330]">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* MISSION */}
+      <section className="border-b border-[#232330] py-16">
+        <div className="mx-auto max-w-4xl px-6">
           <p className="text-xl leading-relaxed text-[#8E8CA3]">
-            At Daleon Dynamics, we believe Kenyan businesses deserve world-class digital tools — built locally
-            with deep understanding of the Kenyan market. We don&apos;t just code; we solve problems and create
-            systems that help businesses grow, automate, and compete effectively.
+            We believe Kenyan businesses deserve world-class digital tools, built locally with a real
+            understanding of the market. We don&apos;t just write code; we solve problems and build systems
+            that help businesses grow, automate, and compete.
           </p>
         </div>
       </section>
 
-      {/* OUR STORY — TIMELINE */}
-      <section className="py-24 border-b border-[#232330]">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* FOUNDER (only shows once you fill in the `founder` object above) */}
+      {showFounder && (
+        <section className="border-b border-[#232330] py-24">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="mb-12">
+              <div className="mb-3 font-mono text-sm text-[#7B5CFF]">{'// the-founder'}</div>
+              <h2 className="text-4xl font-bold tracking-tight">Meet the founder</h2>
+            </div>
+            <div className="grid items-center gap-10 md:grid-cols-[240px_1fr]">
+              <div className="relative h-72 w-full overflow-hidden rounded-2xl border border-[#232330] md:h-80">
+                <Image
+                  src={founder.photo}
+                  alt={`${founder.name}, ${founder.role} at Daleon Dynamics`}
+                  fill
+                  sizes="240px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold">{founder.name}</h3>
+                <p className="mb-4 font-mono text-sm text-[#38E1C6]">{founder.role}</p>
+                <p className="leading-relaxed text-[#C9C8D6]">{founder.bio}</p>
+                {founder.linkedin && (
+                  <a
+                    href={founder.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#38E1C6] hover:underline"
+                  >
+                    Connect on LinkedIn <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* OUR STORY */}
+      <section className="border-b border-[#232330] py-24">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// our-story'}</div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Our Story</h2>
-            <p className="max-w-2xl text-lg text-[#8E8CA3] leading-relaxed">
-              Daleon Dynamics was born from the frustration of seeing Kenyan businesses stuck with generic
-              templates, slow websites, and software that didn&apos;t match how they actually worked. Here&apos;s
-              how far we&apos;ve come since.
+            <div className="mb-3 font-mono text-sm text-[#7B5CFF]">{'// our-story'}</div>
+            <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">Our Story</h2>
+            <p className="max-w-2xl text-lg leading-relaxed text-[#8E8CA3]">
+              Daleon Dynamics grew from seeing Kenyan businesses stuck with generic templates, slow
+              websites, and software that didn&apos;t match how they actually worked. Here is the path so
+              far.
             </p>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-3">
+          <ol className="grid gap-10 md:grid-cols-3">
             {milestones.map((m) => (
-              <div key={m.year} className="relative pt-8 border-t-2 border-[#232330]">
-                <span className="absolute -top-[9px] left-0 h-4 w-4 rounded-full bg-[#0A0A0F] border-2 border-[#7B5CFF]" />
+              <li key={m.year} className="relative border-t-2 border-[#232330] pt-8">
+                <span
+                  aria-hidden="true"
+                  className="absolute -top-[9px] left-0 h-4 w-4 rounded-full border-2 border-[#7B5CFF] bg-[#0A0A0F]"
+                />
                 <div className="font-mono text-sm text-[#7B5CFF]">{m.year}</div>
-                <h3 className="mt-2 text-xl font-semibold text-[#F2F1F7]">{m.label}</h3>
-                <p className="mt-3 text-[#8E8CA3] leading-relaxed">{m.desc}</p>
-              </div>
+                <h3 className="mt-2 text-xl font-semibold">{m.label}</h3>
+                <p className="mt-3 leading-relaxed text-[#8E8CA3]">{m.desc}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* WHAT WE BUILD */}
-      <section className="py-24 border-b border-[#232330]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// what-we-build'}</div>
-            <h2 className="text-4xl font-bold mb-4">Two Ways We Build for You</h2>
+      <section className="border-b border-[#232330] py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <div className="mb-3 font-mono text-sm text-[#7B5CFF]">{'// what-we-build'}</div>
+            <h2 className="mb-4 text-4xl font-bold">Two Ways We Build for You</h2>
             <p className="text-lg text-[#8E8CA3]">
-              Every project starts by figuring out which of these you actually need.
+              Every project starts by working out which of these you actually need.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {coreOfferings.map((offer) => (
-              <div key={offer.title} className="bg-[#0F141B] border border-[#232330] p-8 rounded-2xl">
-                <div style={{ color: offer.accent }}>{offer.icon}</div>
-                <h3 className="text-2xl font-semibold mt-5 text-[#F2F1F7]">{offer.title}</h3>
-                <p className="mt-2 text-sm font-medium" style={{ color: offer.accent }}>{offer.tagline}</p>
-                <p className="mt-4 text-[#8E8CA3] leading-relaxed">{offer.description}</p>
-                <ul className="mt-6 space-y-2">
-                  {offer.examples.map((ex) => (
-                    <li key={ex} className="flex items-start gap-2 text-sm text-[#A6A4B8]">
-                      <span className="mt-2 h-1 w-1 rounded-full flex-shrink-0" style={{ backgroundColor: offer.accent }} />
-                      {ex}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid gap-6 md:grid-cols-2">
+            {coreOfferings.map((offer) => {
+              const Icon = offer.icon;
+              return (
+                <article
+                  key={offer.title}
+                  className="flex flex-col rounded-2xl border border-[#232330] bg-[#0F141B] p-8"
+                >
+                  <div style={{ color: offer.accent }}>
+                    <Icon className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-5 text-2xl font-semibold">{offer.title}</h3>
+                  <p className="mt-2 text-sm font-medium" style={{ color: offer.accent }}>
+                    {offer.tagline}
+                  </p>
+                  <p className="mt-4 leading-relaxed text-[#8E8CA3]">{offer.description}</p>
+                  <ul className="mt-6 flex-1 space-y-2">
+                    {offer.examples.map((ex) => (
+                      <li key={ex} className="flex items-start gap-2 text-sm text-[#C9C8D6]">
+                        <span
+                          aria-hidden="true"
+                          className="mt-2 h-1 w-1 flex-shrink-0 rounded-full"
+                          style={{ backgroundColor: offer.accent }}
+                        />
+                        {ex}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 flex items-center justify-between gap-4">
+                    <Link
+                      href={offer.link}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#38E1C6] hover:underline"
+                    >
+                      {offer.cta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                    <span className="font-mono text-xs text-[#8E8CA3]">{offer.price}</span>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* OUR VALUES */}
-      <section className="py-24 border-b border-[#232330]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// core-values'}</div>
-            <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
+      {/* VALUES */}
+      <section className="border-b border-[#232330] py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-16 text-center">
+            <div className="mb-3 font-mono text-sm text-[#7B5CFF]">{'// core-values'}</div>
+            <h2 className="mb-4 text-4xl font-bold">Our Core Values</h2>
             <p className="text-lg text-[#8E8CA3]">The principles that guide every project we deliver</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {values.map((value, i) => (
-              <div key={i} className="flex gap-6 bg-[#0F141B] border border-[#232330] p-8 rounded-2xl">
-                <div className="text-[#38E1C6] mt-1 flex-shrink-0">{value.icon}</div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                  <p className="text-[#8E8CA3]">{value.desc}</p>
+          <div className="grid gap-6 md:grid-cols-2">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
+                <div
+                  key={value.title}
+                  className="flex gap-6 rounded-2xl border border-[#232330] bg-[#0F141B] p-8"
+                >
+                  <div className="mt-1 flex-shrink-0 text-[#38E1C6]">
+                    <Icon className="h-8 w-8" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold">{value.title}</h3>
+                    <p className="text-[#8E8CA3]">{value.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="py-24 border-b border-[#232330]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// why-choose-us'}</div>
-            <h2 className="text-4xl font-bold">Why Kenyan Businesses Trust Daleon Dynamics</h2>
+      <section className="border-b border-[#232330] py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-16 text-center">
+            <div className="mb-3 font-mono text-sm text-[#7B5CFF]">{'// why-choose-us'}</div>
+            <h2 className="text-4xl font-bold">Why Choose Daleon Dynamics</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {whyChooseUs.map((item, i) => (
-              <div key={i} className="flex gap-6">
-                <div className="text-[#38E1C6] mt-1 flex-shrink-0">{item.icon}</div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                  <p className="text-[#8E8CA3]">{item.desc}</p>
+          <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
+            {whyChooseUs.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="flex gap-6">
+                  <div className="mt-1 flex-shrink-0 text-[#38E1C6]">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="mb-3 text-xl font-semibold">{item.title}</h3>
+                    <p className="text-[#8E8CA3]">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-24 border-b border-[#232330]">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// faq'}</div>
-          <h2 className="text-4xl font-bold mb-12">Frequently Asked Questions</h2>
+      <section className="border-b border-[#232330] py-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="mb-3 font-mono text-sm text-[#7B5CFF]">{'// faq'}</div>
+          <h2 className="mb-12 text-4xl font-bold">About Daleon Dynamics: Frequently Asked Questions</h2>
 
           <div className="space-y-4">
-            {faqs.map((faq, i) => (
+            {faqs.map((faq) => (
               <details
-                key={i}
-                className="bg-[#0F141B] border border-[#232330] rounded-xl p-6 group open:border-[#38E1C6]"
+                key={faq.q}
+                className="group rounded-xl border border-[#232330] bg-[#0F141B] p-6 open:border-[#38E1C6]"
               >
-                <summary className="font-medium text-lg cursor-pointer flex justify-between items-start gap-4 list-none">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-lg font-medium">
                   {faq.q}
-                  <span className="text-[#38E1C6] group-open:rotate-45 transition flex-shrink-0">+</span>
+                  <span
+                    className="flex-shrink-0 text-[#38E1C6] transition group-open:rotate-45"
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
                 </summary>
-                <p className="mt-4 text-[#8E8CA3] leading-relaxed">{faq.a}</p>
+                <p className="mt-4 leading-relaxed text-[#8E8CA3]">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -445,21 +558,33 @@ const About: React.FC = () => {
 
       {/* FINAL CTA */}
       <section className="py-24 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Let&apos;s Build Something Great Together</h2>
-          <p className="text-lg text-[#8E8CA3] mb-10 max-w-2xl mx-auto">
-            Whether you need a high-converting website or a custom web application with a full backend —
-            we&apos;re ready to help your business grow.
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="mb-6 text-4xl font-bold md:text-5xl">Let&apos;s Build Something Great Together</h2>
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-[#8E8CA3]">
+            Whether you need a high-converting website or a custom web application, tell us what you
+            need and we&apos;ll send a fixed-price quote and timeline.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-10 py-5 rounded-xl text-lg font-semibold transition"
-          >
-            Start a Conversation
-          </Link>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 rounded-xl bg-[#7B5CFF] px-10 py-5 text-lg font-semibold text-white transition hover:bg-[#8E73FF]"
+            >
+              Start a Conversation
+              <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 rounded-xl border border-[#232330] px-10 py-5 text-lg font-semibold transition hover:border-[#38E1C6] hover:text-[#38E1C6]"
+            >
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 
