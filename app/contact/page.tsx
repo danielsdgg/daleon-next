@@ -1,40 +1,32 @@
 // app/contact/page.tsx
+
 import type { Metadata } from 'next';
 import ContactClient from './ContactClient';
 
+const SITE_URL = 'https://daleondynamics.com';
+const PAGE_PATH = '/contact';
+
+const TITLE = 'Contact Daleon Dynamics | Free Quote for Websites & Web Apps';
+const DESCRIPTION =
+  'Get a free, fixed-price quote for a website from KES 55,000 or a custom web app from KES 200,000. Nairobi web design and software company. Reply within 24 hours.';
+
 export const metadata: Metadata = {
-  title: { absolute: 'Contact Us | Daleon Dynamics' },
-  description:
-    'Get a free quote for professional websites, custom web applications, business automation systems, or biometric access control solutions in Nairobi, Kenya.',
-  keywords: [
-    'web design nairobi contact', 'custom software development kenya quote',
-    'website development nairobi', 'access control systems kenya',
-    'software company nairobi contact', 'hire web developers nairobi',
-    'daleon dynamics contact',
-  ],
-  alternates: {
-    canonical: 'https://daleondynamics.com/contact',
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_PATH },
   openGraph: {
-    title: 'Get a Free Quote - Web Design & Custom Software Nairobi',
-    description: 'Ready to transform your business? Contact Daleon Dynamics in Nairobi today.',
-    url: 'https://daleondynamics.com/contact',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PAGE_PATH}`,
     siteName: 'Daleon Dynamics',
-    images: [
-      {
-        url: '/icon.png',
-        width: 1200,
-        height: 630,
-        alt: 'Contact Daleon Dynamics Nairobi',
-      },
-    ],
+    images: [{ url: '/icon.png', alt: 'Daleon Dynamics logo' }],
     locale: 'en_KE',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Get a Free Quote - Web Design & Custom Software Nairobi',
-    description: 'Ready to transform your business? Contact Daleon Dynamics in Nairobi today.',
+    card: 'summary',
+    title: TITLE,
+    description: DESCRIPTION,
     images: ['/icon.png'],
   },
 };
@@ -44,21 +36,17 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'ContactPage',
-      '@id': 'https://daleondynamics.com/contact',
-      url: 'https://daleondynamics.com/contact',
+      '@id': `${SITE_URL}${PAGE_PATH}#page`,
+      url: `${SITE_URL}${PAGE_PATH}`,
       name: 'Contact Daleon Dynamics',
-      description:
-        'Get a free quote for web design, custom software, business automation, or access control systems in Nairobi, Kenya.',
-      about: {
-        '@type': 'Organization',
-        '@id': 'https://daleondynamics.com/#organization',
-      },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
     },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://daleondynamics.com' },
-        { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://daleondynamics.com/contact' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE_URL}${PAGE_PATH}` },
       ],
     },
   ],
@@ -67,7 +55,10 @@ const jsonLd = {
 export default function ContactPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ContactClient />
     </>
   );

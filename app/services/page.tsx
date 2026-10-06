@@ -1,96 +1,115 @@
 // app/services/page.tsx
+
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Code2, Globe, ShieldCheck, Terminal, Zap } from 'lucide-react';
+import {
+  ArrowRight,
+  CheckCircle,
+  Code2,
+  Globe,
+  MessageCircle,
+  Terminal,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 
+const SITE_URL = 'https://daleondynamics.com';
+const PAGE_PATH = '/services';
+const WHATSAPP_URL = 'https://wa.me/254142021359';
+
+const TITLE = 'Web Design & Custom Software Services in Nairobi';
+const DESCRIPTION =
+  'Websites from KES 55,000 and custom web apps from KES 200,000. Nairobi web design and software development with M-Pesa integration and fixed-price quotes.';
+
 export const metadata: Metadata = {
-  title: { absolute: 'Websites & Software Development | Daleon Dynamics' },
-  description:
-    'Nairobi-based web & custom software agency. High-converting websites, business automation, M-Pesa integrations for Kenyan businesses.',
-  keywords: [
-    'web design nairobi', 'creating websites nairobi', 'software companies nairobi',
-    'where can i get a website in kenya', 'website development nairobi', 'custom software development nairobi',
-    'converting websites','web servces nairobi', 'web application development kenya', 'high converting websites nairobi',
-    'websites and business softwares nairobi', 'daleon dynamics', 'software consultancy', 'UI/UX design websites nairobi',
-    'websites that convert nairobi', 'custom we applications for businesses'
-  ],
-  alternates: { canonical: 'https://daleondynamics.com/services' },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
-  },
+  title: { absolute: `${TITLE} | Daleon Dynamics` },
+  description: DESCRIPTION,
+  alternates: { canonical: PAGE_PATH },
   openGraph: {
-    title: { absolute: 'Web Design & Custom Software Development in Nairobi' },
-    description:
-      'End-to-end digital solutions for Kenyan businesses — websites, custom software, automation, and access control.',
-    url: 'https://daleondynamics.com/services',
+    title: `${TITLE} | Daleon Dynamics`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PAGE_PATH}`,
     siteName: 'Daleon Dynamics',
-    images: [
-      {
-        url: '/icon.png',
-        width: 1200,
-        height: 630,
-        alt: 'Daleon Dynamics — Web Design & Custom Software Nairobi',
-      },
-    ],
+    images: [{ url: '/icon.png', alt: 'Daleon Dynamics logo' }],
     locale: 'en_KE',
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: { absolute: 'Web Design & Custom Software Development in Nairobi' },
-    description: 'High-converting websites, custom software, and business automation for Kenyan businesses.',
+    card: 'summary',
+    title: `${TITLE} | Daleon Dynamics`,
+    description: DESCRIPTION,
     images: ['/icon.png'],
   },
 };
+
+/* ====================== CONTENT ====================== */
 
 const coreServices = [
   {
     icon: Globe,
     tag: 'frontend',
     title: 'High-Converting Websites',
-    desc: 'Fast, beautiful, SEO-optimized websites engineered to generate leads and sales.',
+    short: 'high-converting websites',
+    price: 'From KES 55,000',
+    desc: 'Fast, SEO-ready business websites engineered to generate enquiries and sales.',
     link: '/services/high-converting-website',
   },
   {
     icon: Code2,
     tag: 'fullstack',
     title: 'Custom Web Applications',
-    desc: 'Bespoke CRMs, ERPs, dashboards, and automation platforms built exactly to your needs.',
+    short: 'custom web applications',
+    price: 'From KES 200,000',
+    desc: 'Custom CRMs, dashboards, internal tools, and automation platforms built around your exact process.',
     link: '/services/custom-web-apps',
   },
+];
+
+const guide = [
   {
-    icon: ShieldCheck,
-    tag: 'security',
-    title: 'Access Control Systems',
-    desc: 'Biometric, cloud-based security solutions for offices, estates, and institutions.',
-    link: '/contact',
+    heading: 'Choose a website if you need…',
+    points: [
+      'More customers finding you on Google',
+      'A professional online presence that builds trust',
+      'Enquiries through forms, calls, and WhatsApp',
+      'No logins, databases, or complex back-end logic',
+    ],
+    cta: 'See high-converting websites',
+    link: '/services/high-converting-website',
+  },
+  {
+    heading: 'Choose a web app if you need…',
+    points: [
+      'Staff or customers to log in and use a system',
+      'To replace spreadsheets and manual processes',
+      'Dashboards, approvals, invoicing, or automation',
+      'Integrations such as M-Pesa, accounting, or a CRM',
+    ],
+    cta: 'See custom web apps',
+    link: '/services/custom-web-apps',
   },
 ];
 
 const pricingTiers = [
   {
-    name: 'High Converting Website',
-    price: 'KES 60,000',
+    name: 'High-Converting Website',
+    price: 'KES 55,000',
     priceNote: 'starting',
     desc: 'Perfect for small businesses and professionals',
     features: [
       'Modern responsive website (up to 8 pages)',
       'Mobile-first design',
-      'Advanced SEO',
-      'Contact form & basic integrations',
+      'Technical and on-page SEO',
+      'Contact form and basic integrations',
       '1 month support',
     ],
   },
   {
-    name: 'Custom Web App Package',
+    name: 'Custom Web App',
     price: 'KES 200,000',
     priceNote: 'starting',
-    desc: 'Most popular for growing Kenyan businesses',
+    desc: 'For growing businesses that need a system, not just a site',
     features: [
-      'Custom design & user authentication',
+      'Custom design and user authentication',
       'Advanced website or light web application',
       'SEO',
       'Payment integration (M-Pesa)',
@@ -105,9 +124,9 @@ const pricingTiers = [
     priceNote: null,
     desc: 'For complex systems and large organizations',
     features: [
-      'Custom web applications',
-      'Biometric systems',
-      'Full automation',
+      'Multi-module custom web applications',
+      'Complex integrations',
+      'Full workflow automation',
       'Dedicated support',
       'Ongoing maintenance',
     ],
@@ -117,185 +136,176 @@ const pricingTiers = [
 const faqs = [
   {
     q: 'How much does a professional website cost in Nairobi?',
-    a: 'Starter professional websites start from KES 60,000. Growth packages (with advanced features and SEO optimization) typically range from KES 200,000. Complex custom software is quoted after discovery.',
+    a: 'At Daleon Dynamics, high-converting business websites start from KES 55,000, and custom web applications start from KES 200,000. Larger systems with several modules or complex integrations are quoted after discovery, and you receive a fixed-price quote before any work begins.',
+  },
+  {
+    q: 'Should I get a website or a custom web app?',
+    a: 'If you mainly want customers to find you and contact you, a website is the right choice. If staff or customers need to log in, or you want to replace spreadsheets and manual processes with a system, you need a custom web app. We will recommend the simpler option when it covers your needs.',
   },
   {
     q: 'Do you integrate M-Pesa and other payment gateways?',
-    a: 'Yes. We specialize in secure Daraja API integration, card payments, and bank transfers for Kenyan businesses.',
+    a: 'Yes. We build secure Daraja API integrations, along with card payments and bank transfer flows for Kenyan businesses. M-Pesa is included in our custom web app packages and available as an add-on for websites.',
   },
   {
     q: 'How long does it take to complete a project?',
-    a: 'Standard websites take 4–8 weeks. Custom web applications take 12–20 weeks depending on scope. Enterprise systems vary based on complexity.',
+    a: 'Standard websites take 4–8 weeks. Custom web applications take 12–20 weeks depending on scope. Enterprise systems vary based on complexity. You get a clear timeline before work starts.',
   },
   {
     q: 'Do you provide ongoing support and maintenance?',
-    a: 'Yes. We offer monthly maintenance and support retainers to keep your website or system secure, fast, and up-to-date.',
+    a: 'Yes. Every project includes a support window, and monthly maintenance retainers are available afterward to keep your website or system secure, fast, and up to date.',
   },
   {
-    q: 'Will I own the website and source code?',
-    a: 'You will own your website and receive full cPanel access once the project is completed and paid for. The source code, built with Next.js, is not included but can be purchased separately if needed.',
+    q: 'Will I own the website and the source code?',
+    a: 'You own the finished product and receive hosting access once the project is completed and paid for. Complete source code transfer is available as an optional add-on, priced separately, and terms are confirmed in writing before the project starts.',
   },
   {
-    q: 'Can you build systems for businesses outside Nairobi?',
-    a: 'Absolutely. We work with clients across Kenya and remotely where the project allows.',
+    q: 'Can you build for businesses outside Nairobi?',
+    a: 'Yes. We work with clients across Kenya, and remotely where the project allows.',
   },
 ];
 
-const ServicesPage: React.FC = () => {
-  // No physical office — omit address/geo entirely rather than fabricate one.
-  // areaServed communicates coverage without implying a storefront location.
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
-    name: 'Daleon Dynamics',
-    image: '/icon.png',
-    '@id': 'https://daleondynamics.com/services',
-    url: 'https://daleondynamics.com/services',
-    telephone: '+254142021359',
-    priceRange: '$$',
-    areaServed: {
-      '@type': 'Country',
-      name: 'Kenya',
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE_URL}${PAGE_PATH}#page`,
+      url: `${SITE_URL}${PAGE_PATH}`,
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'High-Converting Websites',
+            url: `${SITE_URL}/services/high-converting-website`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Custom Web Applications',
+            url: `${SITE_URL}/services/custom-web-apps`,
+          },
+        ],
+      },
     },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Web & Software Services',
+    {
+      '@type': 'BreadcrumbList',
       itemListElement: [
-        {
-          '@type': 'Offer',
-          price: '60000',
-          priceCurrency: 'KES',
-          itemOffered: { '@type': 'Service', name: 'High Converting Website' },
-        },
-        {
-          '@type': 'Offer',
-          price: '200000',
-          priceCurrency: 'KES',
-          itemOffered: { '@type': 'Service', name: 'Custom Web Application' },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Business Automation' },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'Access Control Systems' },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: { '@type': 'Service', name: 'M-Pesa Integration' },
-        },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${SITE_URL}${PAGE_PATH}` },
       ],
     },
-    sameAs: [
-      'https://www.facebook.com/daleondynamics',
-      'https://x.com/daleondynamics',
-      'https://linkedin.com/company/daleon-dynamics',
-      'https://instagram.com/daleondynamics',
-    ],
-  };
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
 
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  };
+/* ====================== PAGE ====================== */
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://daleondynamics.com' },
-      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://daleondynamics.com/services' },
-    ],
-  };
-
+const ServicesPage: React.FC = () => {
   return (
-    <main className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
-      {/* Structured data */}
+    <div className="min-h-screen bg-[#0A0A0F] text-[#F2F1F7]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* HERO */}
-      <section className="pt-32 pb-24 px-6 border-b border-[#232330]">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-6">
-              <span>{'//'}</span>
-              <span>nairobi-based software company</span>
-            </div>
-            <h1 className="font-mono text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
-              Web Design &amp; Custom Software Development in Nairobi
-            </h1>
-            <p className="text-lg text-[#8E8CA3] leading-relaxed mb-10 max-w-lg">
-              Software engineering for Kenyan growth — high-converting websites, custom systems, and secure
-              access control, built to global standards for the local market.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
-                className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
-              >
-                Start Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-              </Link>
-              <Link
-                href="#services"
-                className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all font-mono text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#38E1C6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0F]"
-              >
-                explore_services()
-              </Link>
-            </div>
-          </div>
+      <section className="pt-28 pb-24 px-6 border-b border-[#232330]">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8 font-mono text-xs text-[#8E8CA3]">
+            <ol className="flex flex-wrap items-center gap-2">
+              <li><Link href="/" className="hover:text-[#38E1C6]">Home</Link></li>
+              <li aria-hidden="true">/</li>
+              <li aria-current="page" className="text-[#F2F1F7]">Services</li>
+            </ol>
+          </nav>
 
-          {/* Terminal signature element */}
-          <div className="rounded-xl border border-[#232330] bg-[#0F141B] overflow-hidden shadow-2xl shadow-black/40">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#232330] bg-[#131A22]">
-              <span className="w-3 h-3 rounded-full bg-[#7B5CFF]" />
-              <span className="w-3 h-3 rounded-full bg-[#38E1C6]" />
-              <span className="w-3 h-3 rounded-full bg-[#3A4553]" />
-              <span className="ml-3 font-mono text-xs text-[#8E8CA3]">daleondynamics — zsh</span>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 font-mono text-sm text-[#7B5CFF] mb-6">
+                <span>{'//'}</span>
+                <span>nairobi-based software company</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
+                Web Design &amp; Custom Software Development in Nairobi
+              </h1>
+              <p className="text-lg text-[#8E8CA3] leading-relaxed mb-4 max-w-lg">
+                High-converting websites and custom business systems for Kenyan companies, with M-Pesa
+                integration and fixed-price quotes.
+              </p>
+              <p className="mb-10 font-mono text-sm text-[#38E1C6]">
+                Websites from KES 55,000 · Web apps from KES 200,000
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
+                >
+                  Start Your Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" aria-hidden="true" />
+                </Link>
+                <Link
+                  href="#services"
+                  className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all"
+                >
+                  Explore Services
+                </Link>
+              </div>
             </div>
-            <pre className="font-mono text-sm leading-relaxed p-6 overflow-x-auto">
-              <code>
-                <span className="text-[#38E1C6]">const</span>{' '}
-                <span className="text-[#F2F1F7]">solution</span>{' '}
-                <span className="text-[#8E8CA3]">=</span> <span className="text-[#38E1C6]">new</span>{' '}
-                <span className="text-[#7B5CFF]">DaleonDynamics</span>
-                <span className="text-[#8E8CA3]">{'({'}</span>
-                {'\n'}
-                {'  '}
-                <span className="text-[#8E8CA3]">services:</span> <span className="text-[#7B5CFF]">[</span>
-                {'\n'}
-                {"    '"}
-                <span className="text-[#F2F1F7]">web-design</span>
-                {"',\n    '"}
-                <span className="text-[#F2F1F7]">custom-software</span>
-                {"',\n    '"}
-                <span className="text-[#F2F1F7]">automation</span>
-                {"',\n    '"}
-                <span className="text-[#F2F1F7]">access-control</span>
-                {"'\n  "}
-                <span className="text-[#7B5CFF]">]</span>
-                <span className="text-[#8E8CA3]">,</span>
-                {'\n  '}
-                <span className="text-[#8E8CA3]">location:</span> {"'"}
-                <span className="text-[#F2F1F7]">Nairobi, KE</span>
-                {"',\n  "}
-                <span className="text-[#8E8CA3]">status:</span> {"'"}
-                <span className="text-[#F2F1F7]">shipping</span>
-                {"'\n"}
-                <span className="text-[#8E8CA3]">{'});'}</span>
-                {'\n\n'}
-                <span className="text-[#5C5A6E]">{'// '}</span>
-                <span className="text-[#5C5A6E]">ready when you are</span>
-                <span className="inline-block w-2 h-4 bg-[#38E1C6] ml-1 animate-pulse align-middle" />
-              </code>
-            </pre>
+
+            {/* Terminal signature element (decorative) */}
+            <div
+              aria-hidden="true"
+              className="rounded-xl border border-[#232330] bg-[#0F141B] overflow-hidden shadow-2xl shadow-black/40"
+            >
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-[#232330] bg-[#131A22]">
+                <span className="w-3 h-3 rounded-full bg-[#7B5CFF]" />
+                <span className="w-3 h-3 rounded-full bg-[#38E1C6]" />
+                <span className="w-3 h-3 rounded-full bg-[#3A4553]" />
+                <span className="ml-3 font-mono text-xs text-[#8E8CA3]">daleondynamics — zsh</span>
+              </div>
+              <pre className="font-mono text-sm leading-relaxed p-6 overflow-x-auto">
+                <code>
+                  <span className="text-[#38E1C6]">const</span>{' '}
+                  <span className="text-[#F2F1F7]">solution</span>{' '}
+                  <span className="text-[#8E8CA3]">=</span> <span className="text-[#38E1C6]">new</span>{' '}
+                  <span className="text-[#7B5CFF]">DaleonDynamics</span>
+                  <span className="text-[#8E8CA3]">{'({'}</span>
+                  {'\n'}
+                  {'  '}
+                  <span className="text-[#8E8CA3]">services:</span> <span className="text-[#7B5CFF]">[</span>
+                  {'\n'}
+                  {"    '"}
+                  <span className="text-[#F2F1F7]">web-design</span>
+                  {"',\n    '"}
+                  <span className="text-[#F2F1F7]">custom-software</span>
+                  {"',\n    '"}
+                  <span className="text-[#F2F1F7]">automation</span>
+                  {"'\n  "}
+                  <span className="text-[#7B5CFF]">]</span>
+                  <span className="text-[#8E8CA3]">,</span>
+                  {'\n  '}
+                  <span className="text-[#8E8CA3]">location:</span> {"'"}
+                  <span className="text-[#F2F1F7]">Nairobi, KE</span>
+                  {"',\n  "}
+                  <span className="text-[#8E8CA3]">status:</span> {"'"}
+                  <span className="text-[#F2F1F7]">accepting-projects</span>
+                  {"'\n"}
+                  <span className="text-[#8E8CA3]">{'});'}</span>
+                  {'\n\n'}
+                  <span className="text-[#8E8CA3]">{'// ready when you are'}</span>
+                  <span className="inline-block w-2 h-4 bg-[#38E1C6] ml-1 animate-pulse align-middle" />
+                </code>
+              </pre>
+            </div>
           </div>
         </div>
       </section>
@@ -305,33 +315,72 @@ const ServicesPage: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// core-services'}</div>
-            <h2 className="text-4xl font-bold tracking-tight">What we build</h2>
-            <p className="text-lg text-[#8E8CA3] mt-3">Built for the Kenyan market, engineered to global standards.</p>
+            <h2 className="text-4xl font-bold tracking-tight">Website and software development services</h2>
+            <p className="text-lg text-[#8E8CA3] mt-3">
+              Built for the Kenyan market, with clear starting prices.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
-            {coreServices.map((service, i) => {
+          <div className="grid md:grid-cols-2 gap-6">
+            {coreServices.map((service) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={i}
-                  className="group bg-[#0F141B] border border-[#232330] rounded-xl p-8 hover:border-[#7B5CFF] transition-all"
+                <article
+                  key={service.title}
+                  className="group bg-[#0F141B] border border-[#232330] rounded-xl p-8 hover:border-[#7B5CFF] transition-all flex flex-col"
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <Icon className="w-8 h-8 text-[#38E1C6]" />
-                    <span className="font-mono text-xs text-[#5C5A6E]">{service.tag}</span>
+                    <Icon className="w-8 h-8 text-[#38E1C6]" aria-hidden="true" />
+                    <span className="font-mono text-xs text-[#8E8CA3]">{service.tag}</span>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-[#8E8CA3] mb-8 leading-relaxed">{service.desc}</p>
+                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="font-mono text-sm text-[#38E1C6] mb-4">{service.price}</p>
+                  <p className="text-[#8E8CA3] mb-8 leading-relaxed flex-1">{service.desc}</p>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center gap-2 text-[#7B5CFF] font-mono text-sm font-medium group-hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-[#7B5CFF] hover:text-[#8E73FF] text-sm font-semibold group-hover:gap-3 transition-all"
                   >
-                    learn_more() <ArrowRight className="w-4 h-4" />
+                    Explore {service.short} <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
-                </div>
+                </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* WHICH ONE DO YOU NEED */}
+      <section className="py-24 px-6 border-b border-[#232330]">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-14 max-w-2xl">
+            <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// which-one'}</div>
+            <h2 className="text-4xl font-bold tracking-tight mb-3">Website or web app: which do you need?</h2>
+            <p className="text-lg text-[#8E8CA3]">
+              Many businesses need only the first. We will tell you honestly if the simpler option covers
+              your goals.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {guide.map((g) => (
+              <div key={g.heading} className="rounded-xl border border-[#232330] bg-[#0F141B] p-8">
+                <h3 className="text-xl font-semibold mb-5">{g.heading}</h3>
+                <ul className="space-y-3 mb-8">
+                  {g.points.map((p) => (
+                    <li key={p} className="flex gap-3 text-sm text-[#C7C5D6]">
+                      <CheckCircle className="w-4 h-4 text-[#38E1C6] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={g.link}
+                  className="inline-flex items-center gap-2 text-[#38E1C6] text-sm font-semibold hover:underline"
+                >
+                  {g.cta} <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -341,14 +390,16 @@ const ServicesPage: React.FC = () => {
         <div className="max-w-5xl mx-auto">
           <div className="mb-16">
             <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// pricing'}</div>
-            <h2 className="text-4xl font-bold tracking-tight">Transparent pricing</h2>
-            <p className="text-lg text-[#8E8CA3] mt-3">Realistic starting points for typical projects in Kenya.</p>
+            <h2 className="text-4xl font-bold tracking-tight">Website and software pricing in Kenya</h2>
+            <p className="text-lg text-[#8E8CA3] mt-3">
+              Clear starting points. You receive a fixed-price quote before any work begins.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {pricingTiers.map((tier, i) => (
+            {pricingTiers.map((tier) => (
               <div
-                key={i}
+                key={tier.name}
                 className={`bg-[#0F141B] border rounded-xl p-8 transition-all flex flex-col ${
                   tier.popular ? 'border-[#7B5CFF]' : 'border-[#232330] hover:border-[#38E1C6]'
                 }`}
@@ -358,13 +409,16 @@ const ServicesPage: React.FC = () => {
                 )}
                 <h3 className="text-lg font-semibold mb-1">{tier.name}</h3>
                 <div className="font-mono text-2xl font-bold mb-1">{tier.price}</div>
-                {tier.priceNote && <div className="text-xs text-[#5C5A6E] mb-4">{tier.priceNote}</div>}
-                {!tier.priceNote && <div className="mb-4" />}
+                {tier.priceNote ? (
+                  <div className="text-xs text-[#8E8CA3] mb-4">{tier.priceNote}</div>
+                ) : (
+                  <div className="mb-4" />
+                )}
                 <p className="text-[#8E8CA3] text-sm mb-6">{tier.desc}</p>
                 <ul className="space-y-3 mb-8 flex-1">
-                  {tier.features.map((f, idx) => (
-                    <li key={idx} className="flex gap-3 text-sm text-[#F2F1F7]/90">
-                      <CheckCircle className="w-4 h-4 text-[#38E1C6] mt-0.5 flex-shrink-0" />
+                  {tier.features.map((f) => (
+                    <li key={f} className="flex gap-3 text-sm text-[#F2F1F7]/90">
+                      <CheckCircle className="w-4 h-4 text-[#38E1C6] mt-0.5 flex-shrink-0" aria-hidden="true" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -377,7 +431,7 @@ const ServicesPage: React.FC = () => {
                       : 'border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6]'
                   }`}
                 >
-                  Get Quote
+                  Get a Quote
                 </Link>
               </div>
             ))}
@@ -389,22 +443,21 @@ const ServicesPage: React.FC = () => {
       <section className="py-24 px-6 border-b border-[#232330]">
         <div className="max-w-3xl mx-auto">
           <div className="font-mono text-sm text-[#7B5CFF] mb-3">{'// faq'}</div>
-          <h2 className="text-4xl font-bold tracking-tight mb-12">Common questions</h2>
+          <h2 className="text-4xl font-bold tracking-tight mb-12">
+            Web design and software in Nairobi: common questions
+          </h2>
 
           <div className="space-y-4">
-            {faqs.map((faq, i) => (
+            {faqs.map((faq) => (
               <details
-                key={i}
+                key={faq.q}
                 className="bg-[#0F141B] border border-[#232330] rounded-xl p-6 group open:border-[#38E1C6]"
               >
-                <summary className="font-mono font-medium cursor-pointer flex justify-between items-start gap-4 list-none">
-                  <span className="flex gap-3">
-                    <span className="text-[#7B5CFF] select-none">{'>'}</span>
-                    {faq.q}
-                  </span>
-                  <span className="text-[#38E1C6] group-open:rotate-45 transition flex-shrink-0">+</span>
+                <summary className="font-medium text-lg cursor-pointer flex justify-between items-start gap-4 list-none">
+                  {faq.q}
+                  <span className="text-[#38E1C6] group-open:rotate-45 transition flex-shrink-0" aria-hidden="true">+</span>
                 </summary>
-                <p className="mt-4 pl-6 text-[#8E8CA3] leading-relaxed">{faq.a}</p>
+                <p className="mt-4 text-[#8E8CA3] leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -414,21 +467,31 @@ const ServicesPage: React.FC = () => {
       {/* FINAL CTA */}
       <section className="py-24 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <Zap className="w-8 h-8 text-[#7B5CFF] mx-auto mb-6" />
-          <h2 className="text-4xl font-bold tracking-tight mb-4">Ready to build something exceptional?</h2>
+          <h2 className="text-4xl font-bold tracking-tight mb-4">Ready to talk about your project?</h2>
           <p className="text-lg text-[#8E8CA3] mb-10">
-            Let&apos;s discuss your project and create technology that drives real growth.
+            Tell us what you need and we&apos;ll send a fixed-price quote and timeline.
           </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
-          >
-            <Terminal className="w-5 h-5" />
-            Book a Free Discovery Call
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-3 bg-[#7B5CFF] hover:bg-[#8E73FF] text-white px-8 py-4 rounded-lg font-semibold transition-all active:scale-95"
+            >
+              <Terminal className="w-5 h-5" aria-hidden="true" />
+              Book a Free Discovery Call
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 border border-[#232330] hover:border-[#38E1C6] hover:text-[#38E1C6] px-8 py-4 rounded-lg font-semibold transition-all"
+            >
+              <MessageCircle className="w-5 h-5" aria-hidden="true" />
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 
