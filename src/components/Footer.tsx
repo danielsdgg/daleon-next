@@ -19,7 +19,7 @@ const companyLinks = [
   { name: "About Us", path: "/about" },
   { name: "Projects", path: "/projects" },
   { name: "Blogs", path: "/blogs" },
-  { name: "Careers", path: "/careers" },
+  // { name: "Careers", path: "/careers" },
   { name: "Contact", path: "/contact" },
 ];
 

@@ -1,4 +1,5 @@
 // app/projects/data.ts
+
 export type Project = {
   slug: string;
   title: string;
